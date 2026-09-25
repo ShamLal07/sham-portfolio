@@ -9,18 +9,19 @@ import { Marquee } from "@/components/Marquee";
 import { ProjectCard } from "@/components/ProjectCard";
 import { CodeCard } from "@/components/CodeCard";
 import { InsightCard } from "@/components/InsightCard";
+import { TechStackTabs } from "@/components/TechStackTabs";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { CtaSection } from "@/components/CtaSection";
 import {
   PROJECTS,
   SERVICES,
   PROCESS,
-  TECH_GROUPS,
   INSIGHTS,
   BRAND_NAME,
 } from "@/data/portfolio";
 
 export default function HomePage() {
-  const heroWords = "One creative powerhouse. Agency-grade digital realities.".split(
+  const heroWords = "Engineering High-Impact Digital Products & Brand Realities.".split(
     " "
   );
 
@@ -61,7 +62,7 @@ export default function HomePage() {
               <i className="pulse" />
               Accepting Select Projects &amp; Retainers
             </span>
-            <span className="tag accent">One-Person Powerhouse Agency</span>
+            <span className="tag accent">Boutique Digital Product Studio</span>
             <span className="tag accent">6+ Years Industry Mastery</span>
             <span className="tag accent">UI/UX &amp; 3D Web Systems</span>
           </div>
@@ -89,12 +90,14 @@ export default function HomePage() {
             >
               <h1
                 className="display"
-                aria-label="One creative powerhouse. Agency-grade digital realities."
+                aria-label="Engineering High-Impact Digital Products & Brand Realities."
                 style={{
-                  fontSize: "clamp(2.4rem, 4.6vw, 4.2rem)",
-                  lineHeight: 1.04,
-                  letterSpacing: "-0.035em",
+                  fontSize: "clamp(2.4rem, 4.6vw, 4.1rem)",
+                  lineHeight: 1.06,
+                  letterSpacing: "-0.03em",
                   maxWidth: "18ch",
+                  fontFamily: "var(--display)",
+                  fontWeight: 800,
                 }}
               >
                 {heroWords.map((word, i) => (
@@ -107,7 +110,7 @@ export default function HomePage() {
               <p
                 className="tagline"
                 style={{
-                  fontSize: "clamp(1.1rem, 1.8vw, 1.35rem)",
+                  fontSize: "clamp(1.1rem, 1.8vw, 1.32rem)",
                   color: "var(--accent-t)",
                   margin: 0,
                   fontWeight: 700,
@@ -118,12 +121,12 @@ export default function HomePage() {
               </p>
 
               <p style={{ fontSize: "1.05rem", lineHeight: 1.65 }}>
-                Founded by Sham Lal, {BRAND_NAME} is an elite one-person
-                creative studio engineered for ambitious startups and global
+                Founded by Sham Lal, {BRAND_NAME} is an independent creative
+                engineering studio partnering with ambitious startups and global
                 brands. We orchestrate pro-level UI/UX architecture, immersive
                 2D/3D kinetic animations, and high-velocity web development in
                 Next.js, Shopify, and WordPress. Zero bureaucratic lag, zero
-                communication gaps — from initial concept to public launch.
+                handoff friction — from strategic concept to production launch.
               </p>
 
               <div
@@ -179,10 +182,10 @@ export default function HomePage() {
                       color: "var(--accent-t)",
                     }}
                   >
-                    Zero Bloat
+                    Direct Execution
                   </b>
                   <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
-                    Direct Founder Execution
+                    Principal-led, Zero Bloat
                   </span>
                 </div>
                 <div>
@@ -228,7 +231,7 @@ export default function HomePage() {
             <span>Design &amp; Code Mastery</span>
           </div>
           <div className="fact">
-            <b>One-Man Army</b>
+            <b>Direct Senior Access</b>
             <span>Direct execution, zero bloat</span>
           </div>
           <div className="fact">
@@ -250,7 +253,7 @@ export default function HomePage() {
         <div className="container">
           <div className="sec-head">
             <h2>Why partner with our studio</h2>
-            <p>Four distinct advantages of a one-person powerhouse agency.</p>
+            <p>Four distinct advantages of a boutique creative engineering studio.</p>
           </div>
           <div className="why rv in">
             <article>
@@ -390,47 +393,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Technology teaser */}
+      {/* Improved Interactive Technology Tabs */}
       <section>
         <div className="container">
           <div className="sec-head">
-            <h2>Production Technology Stack</h2>
+            <div>
+              <span
+                className="tag accent"
+                style={{ marginBottom: "12px", display: "inline-flex" }}
+              >
+                Enterprise Stack
+              </span>
+              <h2>Production Technology Stack</h2>
+            </div>
             <p>
-              The industry-leading tools and frameworks we leverage to build
-              unmatched digital products.
+              The industry-proven frameworks, design systems, and platforms we
+              leverage to build market-leading digital products.
             </p>
           </div>
-          <div className="rv in">
-            {TECH_GROUPS.slice(0, 3).map((g) => (
-              <div key={g.group} className="tech-group">
-                <div>
-                  <h3>{g.group}</h3>
-                  <p className="small">{g.desc}</p>
-                </div>
-                <div className="tech-items">
-                  {g.items.map((i) => {
-                    const badgeLabels = {
-                      strong: "Daily Production",
-                      mid: "Active Architecture",
-                      grow: "Specialized",
-                      tool: "AI-Augmented",
-                    };
-                    return (
-                      <div key={i.name} className="tech">
-                        <b>{i.name}</b>
-                        <span className={`badge ${i.level}`}>
-                          {badgeLabels[i.level]}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-          <p style={{ marginTop: "24px" }}>
+
+          {/* Tabbed Interface */}
+          <TechStackTabs />
+
+          <p style={{ marginTop: "32px" }}>
             <Link className="btn btn-ghost" href="/technology">
-              View full technology matrix
+              View full technology matrix &amp; documentation
             </Link>
           </p>
         </div>
@@ -451,8 +438,9 @@ export default function HomePage() {
             </p>
             <p>
               From custom Shopify stores and WordPress CMS frameworks to complex
-              interactive Next.js applications, our one-man army agency structure
-              gives clients senior-level attention without agency bloat.
+              interactive Next.js applications, our boutique studio structure
+              gives clients senior-level attention and direct execution without
+              agency bloat.
             </p>
             <p>
               <Link className="btn btn-ghost" href="/about">
@@ -512,8 +500,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Client Testimonials Section */}
+      <TestimonialsSection />
+
       {/* Insights */}
-      <section style={{ background: "var(--surface)" }}>
+      <section>
         <div className="container">
           <div className="sec-head">
             <h2>Studio Insights &amp; Articles</h2>

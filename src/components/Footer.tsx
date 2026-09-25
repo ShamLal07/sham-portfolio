@@ -16,7 +16,7 @@ export function Footer() {
               <span className="nm">{BRAND_NAME}</span>
             </Link>
             <p className="small" style={{ marginTop: "16px" }}>
-              Full-cycle digital studio and one-person creative powerhouse.
+              Full-cycle digital product studio and creative engineering agency.
               Bespoke UI/UX, 2D/3D motion, and high-performance web development.
               Available for select partnerships and enterprise builds.
             </p>

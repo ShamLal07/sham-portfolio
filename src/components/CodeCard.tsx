@@ -16,7 +16,7 @@ export function CodeCard() {
     <div
       className="codecard rv in"
       role="img"
-      aria-label="Summary card: ShamWeb Creative — one-person digital agency founded by Sham Lal with 6+ years experience in UI/UX architecture, 2D/3D motion, Next.js, Shopify, and WordPress."
+      aria-label="Summary card: ShamWeb Creative — boutique digital product studio founded by Sham Lal with 6+ years experience in UI/UX architecture, 2D/3D motion, Next.js, Shopify, and WordPress."
     >
       <div className="cc-bar">
         <i />

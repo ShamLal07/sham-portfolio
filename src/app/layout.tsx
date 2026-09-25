@@ -26,12 +26,12 @@ export const metadata: Metadata = {
     template: `%s — ${BRAND_NAME}`,
   },
   description:
-    `${BRAND_NAME} is an elite one-person digital agency and studio founded by ${FOUNDER_NAME} with 6+ years of mastery in pro-level UI/UX architecture, 2D/3D motion, Next.js, custom Shopify, and WordPress.`,
+    `${BRAND_NAME} is an elite boutique digital studio founded by ${FOUNDER_NAME} with 6+ years of mastery in pro-level UI/UX architecture, 2D/3D motion, Next.js, custom Shopify, and WordPress.`,
   keywords: [
     BRAND_NAME,
     FOUNDER_NAME,
-    "One Person Digital Agency",
-    "Creative Studio",
+    "Boutique Digital Studio",
+    "Creative Agency",
     "UI UX Architecture",
     "3D Motion Design",
     "Next.js Development Agency",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: BRAND_NAME,
     title: `${BRAND_NAME} — ${AGENCY_TAGLINE}`,
     description:
-      "Full-cycle digital studio and one-person creative powerhouse. Pro UI/UX, 2D/3D kinetic motion, and high-velocity Next.js/Shopify web systems.",
+      "Full-cycle digital studio and boutique creative powerhouse. Pro UI/UX, 2D/3D kinetic motion, and high-velocity Next.js/Shopify web systems.",
     images: [
       {
         url: "/hero-3d.jpg",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${BRAND_NAME} — ${AGENCY_TAGLINE}`,
     description:
-      "Full-cycle digital studio and one-person creative powerhouse. Pro UI/UX, 2D/3D kinetic motion, and high-velocity Next.js/Shopify web systems.",
+      "Full-cycle digital studio and boutique creative powerhouse. Pro UI/UX, 2D/3D kinetic motion, and high-velocity Next.js/Shopify web systems.",
     images: ["/hero-3d.jpg"],
   },
   robots: {
@@ -98,7 +98,7 @@ const jsonLd = {
         jobTitle: "Founder & Lead Creative Technologist",
       },
       description:
-        "Full-cycle digital studio and one-person creative agency specializing in pro-level UI/UX, 2D/3D motion, Next.js, Shopify, and technical SEO.",
+        "Full-cycle boutique digital studio and creative agency specializing in pro-level UI/UX, 2D/3D motion, Next.js, Shopify, and technical SEO.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Chandigarh / Mohali",

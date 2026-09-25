@@ -75,7 +75,7 @@ export interface PricingPlan {
 
 /* Constants & Social Links */
 export const BRAND_NAME = "ShamWeb Creative";
-export const AGENCY_TAGLINE = "Next-Gen Digital Studio & One-Person Creative Agency";
+export const AGENCY_TAGLINE = "Boutique Digital Product Studio & Full-Stack Creative Agency";
 export const FOUNDER_NAME = "Sham Lal";
 export const SITE_URL = "https://shamwebcreative.com";
 export const EMAIL = "shamwebcreative@gmail.com";
@@ -391,7 +391,7 @@ export const EXPERIENCE: Experience[] = [
     place: "Chandigarh / Mohali",
     dates: "2020 – Present",
     pts: [
-      "Operating as a full-cycle, one-person creative agency delivering high-impact websites and e-commerce platforms.",
+      "Operating as a full-cycle, boutique digital studio delivering high-impact websites and e-commerce platforms.",
       "Delivering bespoke UI/UX architecture, 2D/3D interactive animations, and custom Shopify/WordPress implementations.",
       "Direct client engagement, technical scoping, design systems, and production engineering with zero agency overhead."
     ]
@@ -464,12 +464,12 @@ export const INSIGHTS: Insight[] = [
     slug: "design-systems-performance",
     cat: "UI/UX & Code",
     title: "Why Unified Design-to-Code Eliminates 80% of Agency Bottlenecks",
-    desc: "How a one-person powerhouse agency bridges the gap between Figma mockups and 60fps web execution.",
+    desc: "How a boutique creative engineering studio bridges the gap between Figma mockups and 60fps web execution.",
     date: "Sep 2026",
     readTime: "4 min read",
     body: [
       "In traditional agencies, a design passes through account managers, UI designers, and separate developers. With every handoff, design fidelity decays and technical compromises multiply.",
-      "When one creative technologist conceptualizes the UX in Figma and writes the Next.js and CSS code, what is signed off is exactly what executes live in the browser."
+      "When a principal creative technologist conceptualizes the UX in Figma and writes the Next.js and CSS code, what is signed off is exactly what executes live in the browser."
     ]
   },
   {
@@ -504,7 +504,7 @@ export const FAQ: [string, string][] = [
     "Yes. ShamWeb Creative operates globally. We partner with clients across North America, Europe, the Middle East, and Asia. Communication is streamlined via video conferences, Slack/Teams, and scheduled project milestones."
   ],
   [
-    "What makes a one-person agency different from traditional creative agencies?",
+    "What makes a boutique studio different from traditional creative agencies?",
     "Traditional agencies have heavy overheads, layers of account managers, and endless handoffs where your vision gets diluted. With ShamWeb Creative, you collaborate directly with a senior creative technologist who handles both design and code. You get agency-grade results at double the speed with zero bureaucratic lag."
   ],
   [

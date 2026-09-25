@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `About ${BRAND_NAME} & ${FOUNDER_NAME}`,
     description:
-      "A one-person powerhouse digital agency bridging the gap between bespoke visual storytelling and precision code.",
+      "A boutique digital product studio bridging the gap between bespoke visual storytelling and precision code.",
   },
 };
 
@@ -39,7 +39,7 @@ export default function AboutPage() {
             I am a Senior Creative Technologist, UI/UX Architect, and Founder of{" "}
             <strong>{BRAND_NAME}</strong> based in Chandigarh / Mohali, India.
             With over <strong>6 years of deep multidisciplinary experience</strong>,
-            I operate as a full-cycle, one-person creative agency — delivering
+            I operate as a full-cycle, boutique digital product studio — delivering
             world-class brand identities, high-converting digital products, and
             custom web platforms.
           </p>
@@ -49,7 +49,7 @@ export default function AboutPage() {
             directly with select global partners through {BRAND_NAME}.
           </p>
 
-          <h3>The One-Man Army Agency Advantage</h3>
+          <h3>The Boutique Studio Advantage</h3>
           <p>
             Traditional creative agencies charge steep markups to cover layers
             of account executives, junior designers, and siloed developers. With{" "}

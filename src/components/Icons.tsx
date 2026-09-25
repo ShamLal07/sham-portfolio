@@ -194,31 +194,82 @@ export function Icon({ name, className = "", ariaHidden = true }: IconProps) {
 
 export function LogoMark() {
   return (
-    <svg className="mark" viewBox="0 0 48 48" aria-hidden="true">
-      <rect x="1" y="1" width="46" height="46" rx="13" fill="var(--accent)" />
-      <path
-        className="br bl"
-        d="M15 16 7.5 24 15 32"
-        fill="none"
-        stroke="var(--accent-ink)"
-        strokeWidth="3.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+    <svg
+      className="mark"
+      viewBox="0 0 48 48"
+      aria-hidden="true"
+      style={{ overflow: "visible" }}
+    >
+      <defs>
+        <linearGradient id="swc-gold-1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FFF2B2" />
+          <stop offset="50%" stopColor="#EFBD30" />
+          <stop offset="100%" stopColor="#A87700" />
+        </linearGradient>
+        <linearGradient id="swc-gold-2" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#EFBD30" />
+          <stop offset="100%" stopColor="#F9DF7B" />
+        </linearGradient>
+        <linearGradient id="swc-dark-facet" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#1E1E2A" />
+          <stop offset="100%" stopColor="#0B0B10" />
+        </linearGradient>
+        <filter id="swc-glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="2.5" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+
+      {/* Outer Hexagonal Shield */}
+      <rect
+        x="2"
+        y="2"
+        width="44"
+        height="44"
+        rx="12"
+        fill="url(#swc-dark-facet)"
+        stroke="var(--border)"
+        strokeWidth="1.5"
       />
-      <path
-        className="br brr"
-        d="M33 16l7.5 8L33 32"
-        fill="none"
-        stroke="var(--accent-ink)"
-        strokeWidth="3.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        className="cs"
-        d="M19.5 15.5v16l4-3.5 2.7 6.2 2.7-1.2-2.7-6.1 5.2-.3z"
-        fill="var(--accent-ink)"
-      />
+
+      {/* 3D Isometric Interlocking Crystal Monogram */}
+      <g transform="translate(24, 24)" className="cs">
+        {/* Top Facet */}
+        <polygon
+          points="0,-13 11,-6.5 0,0 -11,-6.5"
+          fill="url(#swc-gold-1)"
+          opacity="0.95"
+        />
+        {/* Right Facet */}
+        <polygon
+          points="0,0 11,-6.5 11,6.5 0,13"
+          fill="url(#swc-gold-2)"
+          opacity="0.85"
+        />
+        {/* Left Facet */}
+        <polygon
+          points="-11,-6.5 0,0 0,13 -11,6.5"
+          fill="#C49312"
+          opacity="0.9"
+        />
+        {/* Center Glowing Energy Core */}
+        <circle
+          cx="0"
+          cy="0"
+          r="2.8"
+          fill="#FFFFFF"
+          filter="url(#swc-glow)"
+        />
+        {/* Sleek S-Curve Light Trail */}
+        <path
+          d="M-8,-4 C-4,-9 4,-9 8,-4 C10,-1 7,3 0,4 C-7,5 -10,9 -8,12 C-6,14 0,15 8,11"
+          fill="none"
+          stroke="url(#swc-gold-1)"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          opacity="0.75"
+        />
+      </g>
     </svg>
   );
 }

@@ -1,13 +1,13 @@
-import { Syne, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 
-export const displayFont = Syne({
+export const displayFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["600", "700", "800"],
   display: "swap",
 });
 
-export const bodyFont = Plus_Jakarta_Sans({
+export const bodyFont = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "600", "700"],
