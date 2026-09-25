@@ -5,6 +5,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Fab } from "@/components/Fab";
+import { Preloader } from "@/components/Preloader";
+import { CustomCursor } from "@/components/CustomCursor";
 import {
   SITE_URL,
   BRAND_NAME,
@@ -238,6 +240,8 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <Preloader />
+        <CustomCursor />
         <a className="skip" href="#main">
           Skip to content
         </a>

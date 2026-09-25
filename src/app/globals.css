@@ -1908,3 +1908,25 @@ main.pg {
     animation: none;
   }
 }
+
+/* 50/50 hero split responsive */
+@media (max-width: 960px) {
+  .hero-split-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-left-col,
+  .hero-right-col {
+    grid-column: 1 / -1 !important;
+  }
+  .hero-badge-bottom-right {
+    display: none !important;
+  }
+}
+
+/* Preloader animation */
+.preloader-overlay.slide-out {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.85s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.85s ease;
+}
+

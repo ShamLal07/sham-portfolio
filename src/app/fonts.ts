@@ -1,15 +1,15 @@
-import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
+import { Syne, Plus_Jakarta_Sans } from "next/font/google";
 
-export const displayFont = Bricolage_Grotesque({
+export const displayFont = Syne({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["500", "700", "800"],
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
-export const bodyFont = Instrument_Sans({
+export const bodyFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });

@@ -1,14 +1,15 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@/components/Icons";
 import { HeroWorkflow } from "@/components/HeroWorkflow";
 import { HeroVisual3D } from "@/components/HeroVisual3D";
+import { HeroCanvasBackground } from "@/components/HeroCanvasBackground";
 import { Marquee } from "@/components/Marquee";
 import { ProjectCard } from "@/components/ProjectCard";
 import { CodeCard } from "@/components/CodeCard";
 import { InsightCard } from "@/components/InsightCard";
 import { CtaSection } from "@/components/CtaSection";
-import Image from "next/image";
 import {
   PROJECTS,
   SERVICES,
@@ -25,9 +26,36 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="container">
+      {/* Hero Section with 100% Canvas Background & 50/50 Desktop Split */}
+      <section
+        className="hero"
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          paddingBlock: "clamp(56px, 8vw, 110px) clamp(48px, 6vw, 96px)",
+        }}
+      >
+        {/* Full-width 100% interactive background with ambient lighting */}
+        <HeroCanvasBackground />
+
+        <div
+          style={{
+            position: "absolute",
+            top: "-10%",
+            left: "15%",
+            width: "50vw",
+            height: "50vw",
+            maxWidth: "650px",
+            maxHeight: "650px",
+            background:
+              "radial-gradient(circle, rgba(239, 189, 48, 0.12) 0%, transparent 70%)",
+            filter: "blur(80px)",
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
+
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div className="hero-top">
             <span className="tag live">
               <i className="pulse" />
@@ -38,21 +66,58 @@ export default function HomePage() {
             <span className="tag accent">UI/UX &amp; 3D Web Systems</span>
           </div>
 
-          <h1
-            className="display"
-            aria-label="One creative powerhouse. Agency-grade digital realities."
+          {/* 50% / 50% Desktop Split Grid */}
+          <div
+            className="hero-split-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(12, 1fr)",
+              gap: "clamp(24px, 4vw, 48px)",
+              alignItems: "center",
+              marginTop: "var(--s3)",
+            }}
           >
-            {heroWords.map((word, i) => (
-              <span key={i} className="w" aria-hidden="true">
-                <span style={{ ["--i" as string]: i }}>{word} </span>
-              </span>
-            ))}
-          </h1>
+            {/* Left Column (50% on desktop) */}
+            <div
+              style={{
+                gridColumn: "span 7",
+                display: "flex",
+                flexDirection: "column",
+                gap: "var(--s3)",
+              }}
+              className="hero-left-col"
+            >
+              <h1
+                className="display"
+                aria-label="One creative powerhouse. Agency-grade digital realities."
+                style={{
+                  fontSize: "clamp(2.4rem, 4.6vw, 4.2rem)",
+                  lineHeight: 1.04,
+                  letterSpacing: "-0.035em",
+                  maxWidth: "18ch",
+                }}
+              >
+                {heroWords.map((word, i) => (
+                  <span key={i} className="w" aria-hidden="true">
+                    <span style={{ ["--i" as string]: i }}>{word} </span>
+                  </span>
+                ))}
+              </h1>
 
-          <div className="hero-sub">
-            <div className="copy">
-              <p className="tagline">Design. 3D Motion. Precision Engineering.</p>
-              <p>
+              <p
+                className="tagline"
+                style={{
+                  fontSize: "clamp(1.1rem, 1.8vw, 1.35rem)",
+                  color: "var(--accent-t)",
+                  margin: 0,
+                  fontWeight: 700,
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                Pro UI/UX Architecture · 2D/3D Kinetic Motion · Next.js Web Systems
+              </p>
+
+              <p style={{ fontSize: "1.05rem", lineHeight: 1.65 }}>
                 Founded by Sham Lal, {BRAND_NAME} is an elite one-person
                 creative studio engineered for ambitious startups and global
                 brands. We orchestrate pro-level UI/UX architecture, immersive
@@ -60,19 +125,95 @@ export default function HomePage() {
                 Next.js, Shopify, and WordPress. Zero bureaucratic lag, zero
                 communication gaps — from initial concept to public launch.
               </p>
+
+              <div
+                className="cta"
+                style={{
+                  display: "flex",
+                  gap: "14px",
+                  flexWrap: "wrap",
+                  alignItems: "center",
+                  marginTop: "8px",
+                }}
+              >
+                <Link className="btn btn-primary" href="/contact">
+                  Start a project <Icon name="i-arrow" />
+                </Link>
+                <Link className="btn btn-ghost" href="/work">
+                  Explore selected work
+                </Link>
+              </div>
+
+              {/* Fast credibility metrics */}
+              <div
+                style={{
+                  display: "flex",
+                  gap: "clamp(16px, 3vw, 32px)",
+                  marginTop: "var(--s2)",
+                  paddingTop: "var(--s3)",
+                  borderTop: "1px solid var(--border)",
+                  flexWrap: "wrap",
+                }}
+              >
+                <div>
+                  <b
+                    style={{
+                      fontFamily: "var(--display)",
+                      fontSize: "1.35rem",
+                      display: "block",
+                      color: "var(--text)",
+                    }}
+                  >
+                    6+ Years
+                  </b>
+                  <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
+                    Design &amp; Code Mastery
+                  </span>
+                </div>
+                <div>
+                  <b
+                    style={{
+                      fontFamily: "var(--display)",
+                      fontSize: "1.35rem",
+                      display: "block",
+                      color: "var(--accent-t)",
+                    }}
+                  >
+                    Zero Bloat
+                  </b>
+                  <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
+                    Direct Founder Execution
+                  </span>
+                </div>
+                <div>
+                  <b
+                    style={{
+                      fontFamily: "var(--display)",
+                      fontSize: "1.35rem",
+                      display: "block",
+                      color: "var(--success)",
+                    }}
+                  >
+                    100/100
+                  </b>
+                  <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
+                    Core Web Vitals Speed
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="cta">
-              <Link className="btn btn-primary" href="/contact">
-                Start a project <Icon name="i-arrow" />
-              </Link>
-              <Link className="btn btn-ghost" href="/work">
-                Explore portfolio
-              </Link>
+
+            {/* Right Column (50% on desktop) - 3D Showcase */}
+            <div
+              style={{
+                gridColumn: "span 5",
+                width: "100%",
+              }}
+              className="hero-right-col"
+            >
+              <HeroVisual3D />
             </div>
           </div>
-
-          {/* Interactive 3D Hero Banner Visual */}
-          <HeroVisual3D />
 
           {/* Workflow Stepper */}
           <HeroWorkflow />
