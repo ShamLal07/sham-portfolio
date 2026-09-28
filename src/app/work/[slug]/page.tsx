@@ -51,20 +51,12 @@ export default async function CaseStudyPage({ params }: PageProps) {
       <div className="container cs-hero">
         <Link
           href="/work"
-          className="small"
-          style={{ textDecoration: "none", color: "var(--muted)" }}
+          className="small text-[var(--muted)] hover:underline no-underline"
         >
           ← All client work
         </Link>
 
-        <div
-          style={{
-            marginTop: "24px",
-            display: "flex",
-            gap: "8px",
-            flexWrap: "wrap",
-          }}
-        >
+        <div className="mt-6 flex flex-wrap gap-2">
           {project.cat.map((c) => (
             <span key={c} className="tag">
               {c}
@@ -73,10 +65,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
           <span className="tag accent">Case Study</span>
         </div>
 
-        <h1 style={{ marginTop: "20px", maxWidth: "18ch" }}>
+        <h1 className="mt-5 max-w-[18ch]">
           {project.title}
         </h1>
-        <p style={{ marginTop: "16px", fontSize: "1.15rem" }}>{project.desc}</p>
+        <p className="mt-4 text-lg text-[var(--text-2)]">{project.desc}</p>
 
         <dl className="cs-meta">
           <div>
@@ -100,15 +92,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
       <div className="container">
         {/* Main High-Res Showcase Screen */}
-        <div
-          className="cs-shot"
-          style={{
-            position: "relative",
-            aspectRatio: "16 / 9",
-            overflow: "hidden",
-            boxShadow: "0 24px 64px -20px rgba(0,0,0,0.5)",
-          }}
-        >
+        <div className="cs-shot relative aspect-video overflow-hidden shadow-2xl rounded-2xl">
           {project.image ? (
             <Image
               src={project.image}
@@ -116,7 +100,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               fill
               priority
               sizes="(max-width: 1240px) 100vw, 1240px"
-              style={{ objectFit: "cover" }}
+              className="object-cover"
             />
           ) : (
             <BrowserMockup
@@ -173,37 +157,23 @@ export default async function CaseStudyPage({ params }: PageProps) {
               {project.visualDesign ||
                 "Harmonious typographic scale, dark aesthetic tokens, and purposeful kinetic micro-interactions."}
             </p>
-            <div className="two" style={{ marginTop: "24px" }}>
-              <div
-                className="cs-shot"
-                style={{
-                  position: "relative",
-                  aspectRatio: "16 / 9",
-                  overflow: "hidden",
-                }}
-              >
+            <div className="two mt-6">
+              <div className="cs-shot relative aspect-video overflow-hidden rounded-xl">
                 <Image
                   src={project.image || "/projects/saas-dashboard.jpg"}
                   alt="Visual design viewport preview 1"
                   fill
                   sizes="(max-width: 700px) 100vw, 50vw"
-                  style={{ objectFit: "cover" }}
+                  className="object-cover"
                 />
               </div>
-              <div
-                className="cs-shot"
-                style={{
-                  position: "relative",
-                  aspectRatio: "16 / 9",
-                  overflow: "hidden",
-                }}
-              >
+              <div className="cs-shot relative aspect-video overflow-hidden rounded-xl">
                 <Image
                   src="/hero-3d.jpg"
                   alt="3D interactive asset view"
                   fill
                   sizes="(max-width: 700px) 100vw, 50vw"
-                  style={{ objectFit: "cover" }}
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -223,15 +193,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
         <div className="cs-sec rv in">
           <h2>Technologies Leveraged</h2>
           <div>
-            <ul
-              style={{
-                listStyle: "none",
-                padding: 0,
-                display: "flex",
-                gap: "8px",
-                flexWrap: "wrap",
-              }}
-            >
+            <ul className="list-none p-0 flex flex-wrap gap-2">
               {project.tech.map((t) => (
                 <li key={t} className="tag">
                   {t}
@@ -261,10 +223,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="cs-sec rv in" style={{ display: "block" }}>
+        <div className="cs-sec rv in block">
           <Link className="next" href={`/work/${nextProject.slug}`}>
             <span className="caption">Next Case Study</span>
-            <h2 style={{ marginTop: "8px" }}>{nextProject.title}</h2>
+            <h2 className="mt-2">{nextProject.title}</h2>
           </Link>
         </div>
       </div>

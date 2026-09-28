@@ -4,18 +4,16 @@ import React, { useEffect, useState } from "react";
 import { Icon } from "./Icons";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    let currentTheme: "light" | "dark" = "light";
+    let currentTheme: "light" | "dark" = "dark";
     try {
-      const saved = localStorage.getItem("sl-theme") as "light" | "dark" | null;
-      if (saved) {
+      const saved = localStorage.getItem("sl-theme-v2") as "light" | "dark" | null;
+      if (saved === "light" || saved === "dark") {
         currentTheme = saved;
-      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        currentTheme = "dark";
       }
     } catch {
       // fallback
@@ -29,7 +27,7 @@ export function ThemeToggle() {
     setTheme(nextTheme);
     document.documentElement.setAttribute("data-theme", nextTheme);
     try {
-      localStorage.setItem("sl-theme", nextTheme);
+      localStorage.setItem("sl-theme-v2", nextTheme);
     } catch {
       // ignore
     }

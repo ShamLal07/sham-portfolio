@@ -31,7 +31,7 @@ export default function AboutPage() {
         <p>Strategic design thinking, backed by 6+ years of precision engineering.</p>
       </div>
 
-      <div className="container about-grid" style={{ paddingBottom: "96px" }}>
+      <div className="container about-grid pb-24">
         <CodeCard />
         <div className="about-text rv in">
           <h2>Hi, I&apos;m {FOUNDER_NAME}.</h2>
@@ -75,7 +75,7 @@ export default function AboutPage() {
             Web Vitals are foundational requirements, never an afterthought.
           </p>
 
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "12px" }}>
+          <div className="flex flex-wrap gap-3 mt-3">
             <Link className="btn btn-primary" href="/contact">
               Initiate a Project
             </Link>
@@ -103,7 +103,7 @@ export default function AboutPage() {
               {EXPERIENCE.map((e) => (
                 <li key={e.role + e.org}>
                   <h3>{e.role}</h3>
-                  <p className="caption" style={{ margin: "4px 0 12px" }}>
+                  <p className="caption my-1 mb-3">
                     {e.org}, {e.place} · {e.dates}
                   </p>
                   <ul className="pts">
@@ -115,7 +115,7 @@ export default function AboutPage() {
               ))}
             </ol>
             <div className="edu">
-              <h3 style={{ marginBottom: "16px" }}>Education &amp; Foundations</h3>
+              <h3 className="mb-4">Education &amp; Foundations</h3>
               {EDUCATION.map((x) => (
                 <div key={x.degree} className="edu-i">
                   <h4>{x.degree}</h4>
@@ -123,7 +123,7 @@ export default function AboutPage() {
                   <p className="caption">{x.period}</p>
                 </div>
               ))}
-              <h3 style={{ margin: "32px 0 12px" }}>Communication</h3>
+              <h3 className="mt-8 mb-3">Communication</h3>
               <p className="small">English (Fluent Professional), Hindi (Native)</p>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
       </section>
 
       {/* Tools and skills */}
-      <section style={{ background: "var(--surface)" }}>
+      <section className="bg-[var(--surface)]">
         <div className="container">
           <div className="sec-head">
             <h2>Core Disciplines &amp; Tooling</h2>

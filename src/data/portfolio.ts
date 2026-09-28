@@ -19,14 +19,33 @@ export interface Project {
   liveUrl?: string;
 }
 
+export interface ServiceDeliverable {
+  title: string;
+  desc: string;
+}
+
+export interface ServiceProcess {
+  phase: string;
+  title: string;
+  desc: string;
+}
+
 export interface Service {
+  slug: string;
   icon: string;
   name: string;
+  shortName: string;
+  badge?: string;
   lead: string;
   items: string[];
   tags: string[];
   moreDetail: string;
   bestFor: string;
+  timeline?: string;
+  pricingEstimate?: string;
+  deliverables?: ServiceDeliverable[];
+  processSteps?: ServiceProcess[];
+  faqs?: [string, string][];
 }
 
 export interface TechItem {
@@ -206,8 +225,13 @@ export const FILTERS = ["All", "Web Design", "UI/UX", "WordPress", "Shopify", "C
 
 export const SERVICES: Service[] = [
   {
+    slug: "ui-ux-architecture",
     icon: "i-pen",
     name: "UI/UX Architecture & Product Design",
+    shortName: "UI/UX Architecture",
+    badge: "Core Discipline",
+    timeline: "2 – 4 Weeks",
+    pricingEstimate: "Starting from ₹35,000 / $650",
     lead: "User-centric digital interfaces designed in Figma with obsessive attention to user psychology, typography, and conversion.",
     items: [
       "User research, wireframing and user journey mapping",
@@ -217,11 +241,33 @@ export const SERVICES: Service[] = [
     ],
     tags: ["Figma", "Adobe XD", "Design Systems", "Prototyping"],
     moreDetail: "Every project starts with the user flow and business objective. Structure and wireframes are validated before visual styling begins, ensuring that interfaces are not merely attractive, but intuitively functional and high-converting.",
-    bestFor: "Startups, SaaS platforms, and digital brands that demand an elite digital presence that converts visitors into loyal customers."
+    bestFor: "Startups, SaaS platforms, and digital brands that demand an elite digital presence that converts visitors into loyal customers.",
+    deliverables: [
+      { title: "Complete Figma Master Workspace", desc: "Organized design tokens, color variables, typography scales, and modular components." },
+      { title: "Interactive Clickable Prototype", desc: "High-fidelity clickable user flows demonstrating micro-interactions and transitions." },
+      { title: "Responsive Screen Matrix", desc: "Validated layouts for desktop (1440px), laptop (1280px), tablet (768px), and mobile (390px)." },
+      { title: "Production Design Token Export", desc: "JSON/CSS design tokens ready for direct integration into Tailwind CSS or code repositories." }
+    ],
+    processSteps: [
+      { phase: "01", title: "Discovery & User Journey Mapping", desc: "Analyzing target personas, user funnels, and competitive benchmarks." },
+      { phase: "02", title: "Low-Fidelity Wireframes", desc: "Structuring information architecture and layout hierarchy before visual polish." },
+      { phase: "03", title: "Design Systems & High-Fidelity UI", desc: "Crafting bespoke dark/light theme tokens, typography, and atomic components." },
+      { phase: "04", title: "Interactive Prototyping & Handoff", desc: "Testing transitions and preparing pixel-perfect assets for front-end engineers." }
+    ],
+    faqs: [
+      ["How do we collaborate during design?", "We work directly in Figma where you can leave real-time comments, review interactive prototypes, and participate in weekly milestone walkthroughs."],
+      ["What tools do you use?", "Figma is our primary system, complemented by Adobe XD, Photoshop, and Illustrator for specialized vector assets and photo editing."],
+      ["Do you provide developer handoff?", "Yes, 100%. We provide organized layers, auto-layout components, documented variable tokens, and CSS properties for zero handoff friction."]
+    ]
   },
   {
+    slug: "web-design-brand-experience",
     icon: "i-layout",
     name: "Web Design & Digital Brand Experience",
+    shortName: "Web & Brand Design",
+    badge: "Popular",
+    timeline: "2 – 3 Weeks",
+    pricingEstimate: "Starting from ₹30,000 / $500",
     lead: "Modern, high-impact business websites and conversion-focused landing pages with unforgettable visual storytelling.",
     items: [
       "Bespoke visual identity and digital brand systems",
@@ -231,11 +277,33 @@ export const SERVICES: Service[] = [
     ],
     tags: ["Brand Identity", "Figma", "Responsive Web", "Visual Strategy"],
     moreDetail: "We build websites with clear hierarchy, magnetic visuals, and an obvious call to action. Spacing, color psychology, and modern typography are calibrated to hold attention and elevate your brand credibility.",
-    bestFor: "Companies seeking to reposition their brand at the top of their market and outshine competitors."
+    bestFor: "Companies seeking to reposition their brand at the top of their market and outshine competitors.",
+    deliverables: [
+      { title: "Bespoke Brand Digital Style Guide", desc: "Logomarks, typographic hierarchy, color palette, and visual language rules." },
+      { title: "High-Impact Landing Page Wireframes", desc: "Conversion-optimized hero banners, credibility proof sections, and value propositions." },
+      { title: "Multi-Breakpoint Layouts", desc: "Tailored visual designs across ultra-wide, standard desktop, tablet, and iPhone screens." },
+      { title: "Custom Vector & Iconography Suite", desc: "SVG icons and customized illustration assets tailored specifically to your brand." }
+    ],
+    processSteps: [
+      { phase: "01", title: "Brand Audit & Strategic Positioning", desc: "Deconstructing your value proposition and defining the aesthetic tone of voice." },
+      { phase: "02", title: "Moodboarding & Visual Direction", desc: "Curating typography pairings, color harmonies, and layout inspirations." },
+      { phase: "03", title: "Page Architecture & Content Hierarchy", desc: "Drafting high-converting layouts that guide visitors toward your primary action." },
+      { phase: "04", title: "Final Polish & Asset Production", desc: "Exporting high-resolution web assets, OpenGraph previews, and design documentation." }
+    ],
+    faqs: [
+      ["Can you redesign our existing website?", "Absolutely. We specialize in transforming outdated corporate sites into sleek, modern, high-converting digital flagships."],
+      ["Do you write website copy?", "We provide strategic content structure, conversion copywriting guidelines, and headline polishing to ensure maximum marketing impact."],
+      ["Will the design be mobile-first?", "Yes. Every layout is engineered mobile-first so your mobile visitors enjoy an app-like experience with sub-second responsiveness."]
+    ]
   },
   {
+    slug: "figma-to-code-nextjs",
     icon: "i-code",
     name: "Figma to Code & Next.js Development",
+    shortName: "Next.js Engineering",
+    badge: "High Velocity",
+    timeline: "2 – 5 Weeks",
+    pricingEstimate: "Starting from ₹45,000 / $800",
     lead: "Designs transformed into blazing-fast, cross-browser, accessible code with modern React, Next.js, and clean CSS.",
     items: [
       "Pixel-perfect translation from Figma/XD to code",
@@ -245,11 +313,33 @@ export const SERVICES: Service[] = [
     ],
     tags: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "HTML5/CSS3"],
     moreDetail: "What is designed in Figma is translated line by line into responsive, performant, clean code. Zero guesswork, zero handoff friction, and full cross-browser testing across all modern screen resolutions.",
-    bestFor: "Tech companies and agencies requiring precision engineering and sub-second load times."
+    bestFor: "Tech companies and agencies requiring precision engineering and sub-second load times.",
+    deliverables: [
+      { title: "Production Next.js Codebase", desc: "Fully typed TypeScript repository with Next.js App Router, server components, and Tailwind CSS." },
+      { title: "100/100 Core Web Vitals Optimization", desc: "Optimized font preloading, layout stability (zero CLS), and sub-second Largest Contentful Paint." },
+      { title: "Interactive UI Micro-Components", desc: "Preloader sequences, dynamic search filters, mobile drawers, and accessible forms." },
+      { title: "CI/CD & Deployment Pipeline", desc: "One-click deployment setup on Vercel, Netlify, or custom cloud hosting." }
+    ],
+    processSteps: [
+      { phase: "01", title: "Figma Architecture Deconstruction", desc: "Auditing layout grid systems, typography variables, and reusable component tokens." },
+      { phase: "02", title: "Next.js Foundation Setup", desc: "Setting up TypeScript, Tailwind v4 design tokens, Google Font optimizations, and SEO wrappers." },
+      { phase: "03", title: "Component Development & Styling", desc: "Coding responsive blocks line-by-line with 100% pixel-fidelity to the approved Figma screens." },
+      { phase: "04", title: "Cross-Browser Testing & Deployment", desc: "Testing across Safari, Chrome, Edge, iOS, and Android before public production launch." }
+    ],
+    faqs: [
+      ["What Next.js version do you use?", "We build using the latest Next.js App Router with React 19, Turbopack, and Tailwind CSS v4 for maximum speed and longevity."],
+      ["Is the code clean and well-documented?", "Yes. Every component follows strict single-responsibility principles with modular imports, clean TypeScript types, and zero spaghetti code."],
+      ["Can we connect a headless CMS later?", "Yes. The Next.js architecture is headless-ready and can connect to Sanity, Contentful, Strapi, or WordPress REST APIs whenever you require."]
+    ]
   },
   {
+    slug: "wordpress-cms-architecture",
     icon: "i-box",
     name: "WordPress & CMS Architecture",
+    shortName: "WordPress & ACF Pro",
+    badge: "Client Favorite",
+    timeline: "2 – 4 Weeks",
+    pricingEstimate: "Starting from ₹35,000 / $600",
     lead: "Dynamic, scalable CMS platforms with Advanced Custom Fields (ACF) that non-technical teams can manage effortlessly.",
     items: [
       "Custom ACF blocks and dynamic content modeling",
@@ -259,11 +349,33 @@ export const SERVICES: Service[] = [
     ],
     tags: ["WordPress", "ACF Pro", "Elementor", "WooCommerce", "PHP"],
     moreDetail: "We build structured WordPress architectures that eliminate reliance on brittle visual builders. Your team receives an intuitive, custom-tailored editing dashboard where updating text, imagery, and products is effortless.",
-    bestFor: "Enterprises, media outlets, and businesses requiring flexible content publishing and total editorial control."
+    bestFor: "Enterprises, media outlets, and businesses requiring flexible content publishing and total editorial control.",
+    deliverables: [
+      { title: "Custom WordPress Theme (ACF Pro)", desc: "Lightweight, bloat-free PHP/HTML5 theme tailored precisely to your brand." },
+      { title: "Intuitive Client Dashboard", desc: "Custom metaboxes and flexible Gutenberg/ACF blocks allowing effortless content editing without code." },
+      { title: "Security & Speed Optimization", desc: "Advanced caching, database tuning, asset minification, and SSL/firewall configuration." },
+      { title: "Client Training Video & Manual", desc: "Step-by-step Loom walkthrough showing your internal team how to manage pages, posts, and menus." }
+    ],
+    processSteps: [
+      { phase: "01", title: "Data Architecture & Custom Post Types", desc: "Defining taxonomies, content relationships, and editorial input fields." },
+      { phase: "02", title: "Custom Theme Engineering", desc: "Coding semantic PHP templates, ACF flexible blocks, and responsive stylesheets." },
+      { phase: "03", title: "Content Migration & Integration", desc: "Migrating legacy blog posts, pages, media libraries, and redirect mappings." },
+      { phase: "04", title: "Security Hardening & Launch", desc: "Disabling XML-RPC vulnerabilities, setting up automated backups, and switching live DNS." }
+    ],
+    faqs: [
+      ["Will we need to hire a developer to update text?", "No! That is the core advantage of our ACF Pro setup. Every headline, image, testimonial, and project can be edited by anyone in your office."],
+      ["Do you use heavy visual page builders?", "No. Page builders like Divi or generic Elementor themes add massive code bloat. We build clean, lightweight custom code that scores 95+ on Google PageSpeed."],
+      ["Can you handle WooCommerce e-commerce?", "Yes. We engineer bespoke WooCommerce checkout funnels, product sliders, and custom payment gateway integrations."]
+    ]
   },
   {
+    slug: "shopify-ecommerce-development",
     icon: "i-cart",
     name: "Shopify E-Commerce Development",
+    shortName: "Shopify E-Commerce",
+    badge: "Revenue Engine",
+    timeline: "3 – 5 Weeks",
+    pricingEstimate: "Starting from ₹40,000 / $750",
     lead: "High-converting online storefronts optimized for effortless browsing, swift checkout, and high average order values.",
     items: [
       "Bespoke Shopify Liquid theme engineering",
@@ -273,11 +385,33 @@ export const SERVICES: Service[] = [
     ],
     tags: ["Shopify", "Liquid", "E-commerce CRO", "Theme Architecture"],
     moreDetail: "We engineer customized Shopify storefronts using clean Liquid templates. By eliminating unnecessary third-party plugins, we ensure blazing fast mobile load times and a seamless purchasing experience.",
-    bestFor: "Direct-to-consumer (D2C) brands and retail stores ready to scale their digital sales."
+    bestFor: "Direct-to-consumer (D2C) brands and retail stores ready to scale their digital sales.",
+    deliverables: [
+      { title: "Bespoke Shopify 2.0 Theme", desc: "Hand-coded Liquid section architecture with modular theme settings in the Shopify Customizer." },
+      { title: "High-Conversion PDP (Product Detail Page)", desc: "Sticky add-to-cart, swatch pickers, trust badges, customer review grids, and countdowns." },
+      { title: "Slide-Out Ajax Mini-Bag", desc: "Frictionless slide-out cart drawer with free shipping progress bars and cross-sell upsells." },
+      { title: "Speed & SEO Optimization", desc: "Sub-second load times, structured Schema.org product data, and social commerce OpenGraph." }
+    ],
+    processSteps: [
+      { phase: "01", title: "Catalog & Conversion Architecture", desc: "Planning collection navigation, filtering funnels, and average order value (AOV) levers." },
+      { phase: "02", title: "Figma UI/UX for E-Commerce", desc: "Designing responsive storefront mockups with ruthless focus on checkout friction reduction." },
+      { phase: "03", title: "Liquid Section & Theme Development", desc: "Handcrafting clean Shopify 2.0 JSON templates, app blocks, and cart drawer logic." },
+      { phase: "04", title: "Payment & Shipping Testing", desc: "Testing live sandbox transactions, tax rules, courier integrations, and analytics tracking." }
+    ],
+    faqs: [
+      ["Can you customize existing Shopify themes?", "Yes. We can customize your existing Dawn or commercial theme, or build a bespoke theme from scratch in Liquid."],
+      ["How do you make Shopify fast with lots of apps?", "We write custom native JavaScript and Liquid code to replace heavy third-party apps, saving you monthly app fees and dramatically speeding up the site."],
+      ["Do you configure payment gateways?", "Yes, we configure Stripe, PayPal, Razorpay, Cashfree, and international multi-currency conversions."]
+    ]
   },
   {
+    slug: "motion-3d-interactive-animation",
     icon: "i-rocket",
     name: "2D/3D Motion & Interactive Animation",
+    shortName: "2D/3D Kinetic Motion",
+    badge: "Award Winning",
+    timeline: "1 – 3 Weeks",
+    pricingEstimate: "Starting from ₹25,000 / $450",
     lead: "Kinetic animations, smooth scroll interactions, and micro-interactions that breathe life into digital experiences.",
     items: [
       "Interactive 2D & 3D WebGL / Three.js canvas effects",
@@ -287,11 +421,33 @@ export const SERVICES: Service[] = [
     ],
     tags: ["GSAP", "Three.js", "Framer Motion", "2D/3D Animation"],
     moreDetail: "Motion should elevate content, not distract from it. We design purposeful kinetic effects, scroll-linked animations, and interactive cues that guide the user's eye and leave a lasting impression.",
-    bestFor: "Visionary brands looking to stand out with an award-winning, interactive digital presence."
+    bestFor: "Visionary brands looking to stand out with an award-winning, interactive digital presence.",
+    deliverables: [
+      { title: "Interactive 3D WebGL Mesh / Canvas Component", desc: "GPU-accelerated 3D object visualizers, particle terrains, and cursor-reactive models." },
+      { title: "ScrollTrigger Animation Choreography", desc: "Cinematic scroll-linked storytelling, pinning sequences, and parallax depth effects." },
+      { title: "Custom Cursor & Kinetic Micro-Interactions", desc: "Interactive hover magnets, magnetic buttons, and fluid SVG icon animations." },
+      { title: "Frame-Rate Profiling & Performance Tuning", desc: "Guaranteed 60fps renders with hardware acceleration and automatic battery-saving fallbacks." }
+    ],
+    processSteps: [
+      { phase: "01", title: "Motion Storyboarding & Choreography", desc: "Defining timeline easing curves, scroll triggers, and focal points in Figma." },
+      { phase: "02", title: "Asset Optimization & 3D Modeling", desc: "Compressing 3D geometry meshes and SVG vectors for minimal file size." },
+      { phase: "03", title: "GSAP / Three.js Implementation", desc: "Writing performant JavaScript animation loops with requestAnimationFrame and WebGL shaders." },
+      { phase: "04", title: "Mobile & Low-Power Fallbacks", desc: "Ensuring graceful degradation for users with reduced-motion preferences or older devices." }
+    ],
+    faqs: [
+      ["Will 3D animations slow down my website?", "Not when engineered properly. We optimize 3D meshes, limit polygon counts, and use off-screen canvas culling to ensure 60fps speeds."],
+      ["What libraries do you use?", "We leverage GSAP (GreenSock), ScrollTrigger, Framer Motion, and Three.js/WebGL."],
+      ["Can these animations be added to an existing site?", "Yes, we can inject bespoke kinetic animations and micro-interactions into your existing React, Next.js, or WordPress codebase."]
+    ]
   },
   {
+    slug: "technical-seo-smo-aio",
     icon: "i-globe",
     name: "Technical SEO, SMO & AIO Optimization",
+    shortName: "Technical SEO & AIO",
+    badge: "Growth Engine",
+    timeline: "1 – 2 Weeks",
+    pricingEstimate: "Starting from ₹20,000 / $350",
     lead: "Deep on-page optimization, Schema.org structured data, and search engine readiness for human searchers and AI engines.",
     items: [
       "Comprehensive on-page technical SEO & structured data (JSON-LD)",
@@ -301,7 +457,24 @@ export const SERVICES: Service[] = [
     ],
     tags: ["Technical SEO", "AIO Search", "Schema.org", "Core Web Vitals"],
     moreDetail: "Search engines and AI overview engines demand clean semantic HTML, fast loading speeds, and structured schema graphs. We build SEO directly into the code foundation of every project.",
-    bestFor: "Any business that wants organic discoverability across Google, Bing, ChatGPT, and modern search engines."
+    bestFor: "Any business that wants organic discoverability across Google, Bing, ChatGPT, and modern search engines.",
+    deliverables: [
+      { title: "Complete Schema.org JSON-LD Graph", desc: "Structured data for Organization, LocalBusiness, Service, Article, and Product entities." },
+      { title: "Dynamic OpenGraph & Twitter Cards", desc: "High-resolution branded social preview cards for rich link rendering across WhatsApp, LinkedIn, and X." },
+      { title: "XML Sitemap & Robots Architecture", desc: "Proper canonical URLs, crawl directives, and dynamic sitemaps generated at build time." },
+      { title: "Core Web Vitals Audit & Fix Report", desc: "Detailed Lighthouse diagnostic showing 95+ scores in Performance, Accessibility, and SEO." }
+    ],
+    processSteps: [
+      { phase: "01", title: "Technical Crawl & Semantic Audit", desc: "Auditing heading hierarchy, meta tags, indexability, and broken links." },
+      { phase: "02", title: "Schema Graph Implementation", desc: "Writing comprehensive JSON-LD structured data scripts for Google rich snippets and AI engines." },
+      { phase: "03", title: "Performance & Asset Compression", desc: "Converting images to WebP/AVIF, lazy loading media, and eliminating render-blocking CSS/JS." },
+      { phase: "04", title: "Search Console & Verification", desc: "Submitting sitemaps to Google Search Console and Bing Webmaster Tools for indexation." }
+    ],
+    faqs: [
+      ["What is AIO (AI Optimization)?", "AIO ensures your website's content and structured schema are properly formatted for citation by AI search engines like ChatGPT Search, Google Gemini, and Perplexity."],
+      ["How fast will we see results?", "Technical SEO fixes usually index within 2 to 4 weeks, with improved crawl efficiency and visibility noticeable shortly thereafter."],
+      ["Is this included with website development?", "Yes! When you build a website with our studio, foundational technical SEO and Schema.org data are built into the code from day one."]
+    ]
   }
 ];
 

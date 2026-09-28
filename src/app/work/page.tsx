@@ -24,7 +24,7 @@ export default function WorkPage() {
         <p>Websites, e-commerce stores, and digital platforms engineered end-to-end.</p>
       </div>
 
-      <div className="container" style={{ paddingBottom: "96px" }}>
+      <div className="container pb-24">
         <div className="notice rv in">
           <Icon name="i-info" />
           <p>

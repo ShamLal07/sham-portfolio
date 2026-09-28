@@ -10,7 +10,7 @@ interface InsightCardProps {
 export function InsightCard({ insight }: InsightCardProps) {
   return (
     <Link className="pcard" href={`/insights/${insight.slug}`}>
-      <div className="thumb" style={{ aspectRatio: "16 / 9" }}>
+      <div className="thumb aspect-video">
         <svg
           viewBox="0 0 640 360"
           role="img"

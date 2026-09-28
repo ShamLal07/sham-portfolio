@@ -47,43 +47,33 @@ export default async function ArticlePage({ params }: PageProps) {
       <div className="container page-head article">
         <Link
           href="/insights"
-          className="small"
-          style={{ textDecoration: "none", color: "var(--muted)" }}
+          className="small text-[var(--muted)] hover:underline no-underline"
         >
           ← All studio insights
         </Link>
-        <div style={{ margin: "24px 0 16px" }}>
+        <div className="my-5 mb-4">
           <span className="tag accent">{article.cat}</span>
         </div>
         <h1>{article.title}</h1>
-        <p className="caption" style={{ marginTop: "16px" }}>
+        <p className="caption mt-4">
           By {FOUNDER_NAME} · {BRAND_NAME} · {article.date || "Sep 2026"} ·{" "}
           {article.readTime || "5 min read"}
         </p>
       </div>
 
-      <div className="container article" style={{ paddingBottom: "96px" }}>
-        <div
-          className="cs-shot"
-          style={{
-            position: "relative",
-            marginBottom: "40px",
-            aspectRatio: "16 / 9",
-            overflow: "hidden",
-            boxShadow: "0 24px 64px -20px rgba(0,0,0,0.5)",
-          }}
-        >
+      <div className="container article pb-24">
+        <div className="cs-shot relative mb-10 aspect-video overflow-hidden shadow-2xl rounded-2xl">
           <Image
             src="/hero-3d.jpg"
             alt={article.title}
             fill
             priority
             sizes="(max-width: 720px) 100vw, 720px"
-            style={{ objectFit: "cover" }}
+            className="object-cover"
           />
         </div>
 
-        <p style={{ fontSize: "1.2rem", fontWeight: 500, color: "var(--text)" }}>
+        <p className="text-lg font-medium text-[var(--text)]">
           {article.desc}
         </p>
 

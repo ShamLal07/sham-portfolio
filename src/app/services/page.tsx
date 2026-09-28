@@ -33,31 +33,22 @@ export default function ServicesPage() {
         </p>
       </div>
 
-      <div className="container" style={{ paddingBottom: "64px" }}>
+      <div className="container pb-16">
         {SERVICES.map((s) => (
           <article key={s.name} className="svc rv in">
             <div className="l">
               <Icon name={s.icon} />
-              <h2 style={{ fontSize: "1.8rem" }}>{s.name}</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold">{s.name}</h2>
             </div>
             <div className="m">
               <p>{s.lead}</p>
-              <p className="small" style={{ marginTop: "12px" }}>
+              <p className="small mt-3">
                 {s.moreDetail}
               </p>
-              <p className="small" style={{ marginTop: "12px" }}>
+              <p className="small mt-3">
                 <strong>Best for:</strong> {s.bestFor}
               </p>
-              <ul
-                style={{
-                  marginTop: "16px",
-                  listStyle: "none",
-                  padding: 0,
-                  display: "flex",
-                  gap: "6px",
-                  flexWrap: "wrap",
-                }}
-              >
+              <ul className="mt-4 list-none p-0 flex flex-wrap gap-1.5">
                 {s.tags.map((t) => (
                   <li key={t} className="tag">
                     {t}
@@ -65,22 +56,32 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
-            <div className="r">
-              <h3 style={{ fontSize: "1rem", marginBottom: "12px" }}>
-                What&apos;s included
-              </h3>
-              <ul>
-                {s.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+            <div className="r flex flex-col justify-between">
+              <div>
+                <h3 className="text-base font-semibold mb-3">
+                  What&apos;s included
+                </h3>
+                <ul>
+                  {s.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-5 pt-4 border-t border-[var(--border)]">
+                <Link
+                  href={`/services/${s.slug}`}
+                  className="inline-flex items-center gap-2 text-sm font-bold text-[var(--accent-t)] hover:underline"
+                >
+                  View Full Architecture &amp; Deliverables <Icon name="i-arrow" />
+                </Link>
+              </div>
             </div>
           </article>
         ))}
       </div>
 
       {/* Included on every project */}
-      <section style={{ background: "var(--surface)" }}>
+      <section className="bg-[var(--surface)]">
         <div className="container">
           <div className="sec-head">
             <h2>Included on every project</h2>
@@ -106,10 +107,10 @@ export default function ServicesPage() {
             <h2>How a project works</h2>
             <p>Six steps from the first message to launch.</p>
           </div>
-          <ol className="cards rv in" style={{ listStyle: "none", padding: 0 }}>
+          <ol className="cards rv in list-none p-0">
             {PROCESS.map((x, i) => (
               <li key={x[0]} className="card">
-                <span className="badge" style={{ alignSelf: "flex-start" }}>
+                <span className="badge self-start">
                   Step {i + 1}
                 </span>
                 <h3>{x[0]}</h3>
@@ -121,7 +122,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Pricing section */}
-      <section style={{ background: "var(--surface)" }}>
+      <section className="bg-[var(--surface)]">
         <div className="container">
           <div className="sec-head">
             <h2>Pricing</h2>
@@ -139,7 +140,7 @@ export default function ServicesPage() {
               >
                 <h3>{plan.name}</h3>
                 <div className="amt">{plan.price}</div>
-                <span className="caption" style={{ marginTop: "-12px" }}>
+                <span className="caption -mt-3">
                   {plan.prefix === "Around " ? "Approximate" : "Starting from"}
                 </span>
                 <p className="small">{plan.desc}</p>
@@ -152,8 +153,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
                 <Link
-                  className={`btn ${plan.featured ? "btn-primary" : "btn-ghost"}`}
-                  style={{ marginTop: "auto" }}
+                  className={`btn ${plan.featured ? "btn-primary" : "btn-ghost"} mt-auto`}
                   href="/contact"
                 >
                   Get a quote
@@ -161,7 +161,7 @@ export default function ServicesPage() {
               </article>
             ))}
           </div>
-          <p className="small" style={{ marginTop: "24px" }}>
+          <p className="small mt-6">
             Prices are indicative only. Final pricing depends on project scope,
             features and requirements.
           </p>

@@ -195,10 +195,9 @@ export function Icon({ name, className = "", ariaHidden = true }: IconProps) {
 export function LogoMark() {
   return (
     <svg
-      className="mark"
+      className="mark overflow-visible"
       viewBox="0 0 48 48"
       aria-hidden="true"
-      style={{ overflow: "visible" }}
     >
       <defs>
         <linearGradient id="swc-gold-1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -271,5 +270,60 @@ export function LogoMark() {
         />
       </g>
     </svg>
+  );
+}
+
+export function LogoHorizontal({ className = "" }: { className?: string }) {
+  return (
+    <div className={`inline-flex items-center gap-2.5 h-[42px] max-w-[200px] ${className}`}>
+      {/* Sleek Modern Mark */}
+      <svg
+        className="w-[38px] h-[38px] shrink-0"
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="swc-gold-h1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FFF2B2" />
+            <stop offset="50%" stopColor="#EFBD30" />
+            <stop offset="100%" stopColor="#A87700" />
+          </linearGradient>
+          <linearGradient id="swc-gold-h2" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#EFBD30" />
+            <stop offset="100%" stopColor="#F9DF7B" />
+          </linearGradient>
+          <linearGradient id="swc-dark-facet-h" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#1E1E2A" />
+            <stop offset="100%" stopColor="#0B0B10" />
+          </linearGradient>
+        </defs>
+        <rect
+          x="2"
+          y="2"
+          width="44"
+          height="44"
+          rx="12"
+          fill="url(#swc-dark-facet-h)"
+          stroke="#EFBD30"
+          strokeWidth="1.5"
+        />
+        <g transform="translate(24, 24)">
+          <polygon points="0,-12 10,-6 0,0 -10,-6" fill="url(#swc-gold-h1)" />
+          <polygon points="0,0 10,-6 10,6 0,12" fill="url(#swc-gold-h2)" opacity="0.85" />
+          <polygon points="-10,-6 0,0 0,12 -10,6" fill="#C49312" opacity="0.9" />
+          <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" />
+        </g>
+      </svg>
+
+      {/* Horizontal Brand Typography */}
+      <div className="flex items-center gap-1.5 leading-none">
+        <span className="font-display font-extrabold text-[1.12rem] tracking-tight text-white group-hover:text-[#EFBD30] transition-colors">
+          ShamWeb
+        </span>
+        <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#EFBD30] bg-[#EFBD30]/15 px-1.5 py-0.5 rounded border border-[#EFBD30]/30">
+          Studio
+        </span>
+      </div>
+    </div>
   );
 }

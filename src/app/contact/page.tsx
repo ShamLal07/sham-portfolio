@@ -33,14 +33,14 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="container contact-grid" style={{ paddingBottom: "96px" }}>
+      <div className="container contact-grid pb-24">
         <div className="f">
           <ContactForm />
         </div>
 
         <aside className="s">
           <div>
-            <h2 style={{ fontSize: "1.4rem", marginBottom: "8px" }}>
+            <h2 className="text-xl font-bold mb-2">
               Direct Studio Contact
             </h2>
             <a className="linkrow" href={`mailto:${EMAIL}`}>
@@ -69,24 +69,17 @@ export default function ContactPage() {
               <Icon name="i-file" />
               Agency Deck (PDF)
             </a>
-            <div className="linkrow" style={{ fontWeight: 500 }}>
+            <div className="linkrow font-medium">
               <Icon name="i-globe" />
               {LOCATION} · Global Client Engagements
             </div>
           </div>
 
           <div>
-            <h2 style={{ fontSize: "1.4rem", marginBottom: "12px" }}>
+            <h2 className="text-xl font-bold mb-3">
               Our Engagement Process
             </h2>
-            <ol
-              style={{
-                paddingLeft: "20px",
-                color: "var(--text-2)",
-                display: "grid",
-                gap: "8px",
-              }}
-            >
+            <ol className="pl-5 text-[var(--text-2)] grid gap-2 list-decimal">
               <li>Submit your project vision &amp; scope</li>
               <li>Discovery &amp; technical scoping call</li>
               <li>Fixed proposal &amp; architecture roadmap</li>

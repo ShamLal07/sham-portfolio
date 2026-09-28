@@ -20,44 +20,20 @@ export function HeroVisual3D() {
 
   return (
     <div
-      className="hero-3d-wrapper"
+      className="hero-3d-wrapper relative mt-12 rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--surface)] shadow-2xl"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{
-        position: "relative",
-        marginTop: "var(--s5)",
-        borderRadius: "var(--r-lg)",
-        overflow: "hidden",
-        border: "1px solid var(--border)",
-        background: "var(--surface)",
-        boxShadow: "0 24px 64px -24px rgba(0,0,0,0.45)",
-      }}
     >
       {/* Ambient background glow */}
-      <div
-        className="hero-ambient-glow"
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(circle at 50% 50%, rgba(239, 189, 48, 0.18), transparent 70%)",
-          pointerEvents: "none",
-          zIndex: 1,
-        }}
-      />
+      <div className="hero-ambient-glow absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(239,189,48,0.18),_transparent_70%)] pointer-events-none z-[1]" />
 
       {/* Main 3D Banner Image with Perspective Tilt */}
       <div
+        className="relative w-full aspect-video max-h-[520px] transition-transform duration-200 ease-out overflow-hidden"
         style={{
-          position: "relative",
-          width: "100%",
-          aspectRatio: "16 / 9",
-          maxHeight: "520px",
           transform: `perspective(1000px) rotateY(${coords.x * 6}deg) rotateX(${
             coords.y * -6
           }deg)`,
-          transition: "transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1)",
-          overflow: "hidden",
         }}
       >
         <Image
@@ -66,166 +42,46 @@ export function HeroVisual3D() {
           fill
           priority
           sizes="(max-width: 1240px) 100vw, 1240px"
-          style={{
-            objectFit: "cover",
-            filter: "brightness(0.92) contrast(1.08)",
-          }}
+          className="object-cover brightness-[0.92] contrast-[1.08]"
         />
 
         {/* Dynamic Video-style scanline overlay & dark gradient overlay */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(180deg, rgba(14,14,20,0.2) 0%, rgba(14,14,20,0.85) 100%)",
-            pointerEvents: "none",
-          }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(14,14,20,0.2)] to-[rgba(14,14,20,0.85)] pointer-events-none" />
 
         {/* Floating Glassmorphic Badges */}
-        <div
-          className="hero-badge hero-badge-top"
-          style={{
-            position: "absolute",
-            top: "24px",
-            left: "24px",
-            background: "rgba(20, 20, 29, 0.82)",
-            backdropFilter: "blur(16px)",
-            border: "1px solid rgba(239, 189, 48, 0.35)",
-            borderRadius: "99px",
-            padding: "8px 18px",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "10px",
-            color: "var(--themewhite)",
-            fontSize: "0.85rem",
-            fontWeight: 600,
-            zIndex: 2,
-            boxShadow: "0 12px 24px rgba(0,0,0,0.4)",
-          }}
-        >
-          <span
-            style={{
-              width: "10px",
-              height: "10px",
-              borderRadius: "50%",
-              background: "var(--accent)",
-              boxShadow: "0 0 10px var(--accent)",
-            }}
-          />
-          Next-Gen AI & WebGL Production
+        <div className="hero-badge hero-badge-top absolute top-6 left-6 bg-[#14141d]/80 backdrop-blur-md border border-[var(--accent)]/35 rounded-full px-4 py-2 inline-flex items-center gap-2.5 text-[#F8F9FA] text-xs font-semibold z-[2] shadow-lg">
+          <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
+          Next-Gen AI &amp; WebGL Production
         </div>
 
-        <div
-          className="hero-badge hero-badge-bottom-left"
-          style={{
-            position: "absolute",
-            bottom: "28px",
-            left: "28px",
-            zIndex: 2,
-            maxWidth: "380px",
-          }}
-        >
-          <div
-            style={{
-              background: "rgba(14, 14, 20, 0.85)",
-              backdropFilter: "blur(18px)",
-              border: "1px solid var(--border)",
-              borderRadius: "var(--r-md)",
-              padding: "16px 20px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                color: "var(--accent)",
-                fontSize: "0.82rem",
-                fontWeight: 700,
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-              }}
-            >
+        <div className="hero-badge hero-badge-bottom-left absolute bottom-7 left-7 z-[2] max-w-[380px]">
+          <div className="bg-[#0E0E14]/85 backdrop-blur-lg border border-[var(--border)] rounded-xl p-4 sm:p-5 flex flex-col gap-1.5 shadow-xl">
+            <div className="flex items-center gap-2 text-[var(--accent)] text-xs font-bold uppercase tracking-wider">
               <Icon name="i-rocket" />
               <span>Full-Cycle Agency Execution</span>
             </div>
-            <p
-              style={{
-                margin: 0,
-                fontSize: "0.95rem",
-                color: "#F8F9FA",
-                fontWeight: 600,
-                lineHeight: 1.4,
-              }}
-            >
-              Pro UI/UX Architecture · 2D/3D Kinetic Motion · Next.js & Shopify
+            <p className="m-0 text-sm text-[#F8F9FA] font-semibold leading-snug">
+              Pro UI/UX Architecture · 2D/3D Kinetic Motion · Next.js &amp; Shopify
               Engineering
             </p>
           </div>
         </div>
 
-        <div
-          className="hero-badge hero-badge-bottom-right"
-          style={{
-            position: "absolute",
-            bottom: "28px",
-            right: "28px",
-            zIndex: 2,
-            display: "flex",
-            gap: "12px",
-          }}
-        >
-          <div
-            style={{
-              background: "rgba(14, 14, 20, 0.85)",
-              backdropFilter: "blur(18px)",
-              border: "1px solid var(--border)",
-              borderRadius: "var(--r-md)",
-              padding: "12px 18px",
-              textAlign: "center",
-            }}
-          >
-            <b
-              style={{
-                display: "block",
-                fontSize: "1.4rem",
-                color: "var(--accent)",
-                fontFamily: "var(--display)",
-              }}
-            >
+        <div className="hero-badge hero-badge-bottom-right absolute bottom-7 right-7 z-[2] hidden sm:flex gap-3">
+          <div className="bg-[#0E0E14]/85 backdrop-blur-lg border border-[var(--border)] rounded-xl px-4 py-3 text-center shadow-xl">
+            <b className="block text-xl text-[var(--accent)] font-display">
               6+ Years
             </b>
-            <span style={{ fontSize: "0.78rem", color: "#c4c5cc" }}>
-              Design & Dev Mastery
+            <span className="text-xs text-[#c4c5cc]">
+              Design &amp; Dev Mastery
             </span>
           </div>
 
-          <div
-            style={{
-              background: "rgba(14, 14, 20, 0.85)",
-              backdropFilter: "blur(18px)",
-              border: "1px solid var(--border)",
-              borderRadius: "var(--r-md)",
-              padding: "12px 18px",
-              textAlign: "center",
-            }}
-          >
-            <b
-              style={{
-                display: "block",
-                fontSize: "1.4rem",
-                color: "#4cd08c",
-                fontFamily: "var(--display)",
-              }}
-            >
+          <div className="bg-[#0E0E14]/85 backdrop-blur-lg border border-[var(--border)] rounded-xl px-4 py-3 text-center shadow-xl">
+            <b className="block text-xl text-[#4cd08c] font-display">
               100/100
             </b>
-            <span style={{ fontSize: "0.78rem", color: "#c4c5cc" }}>
+            <span className="text-xs text-[#c4c5cc]">
               Performance Speed
             </span>
           </div>

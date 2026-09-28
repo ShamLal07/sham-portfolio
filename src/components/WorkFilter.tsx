@@ -35,7 +35,7 @@ export function WorkFilter({ initialProjects }: WorkFilterProps) {
         {filtered.length > 0 ? (
           filtered.map((p) => <ProjectCard key={p.slug} project={p} />)
         ) : (
-          <div className="empty" style={{ gridColumn: "1 / -1" }}>
+          <div className="empty col-span-full">
             <h3>No projects in this category yet</h3>
             <p>New work is added regularly. Try another filter.</p>
             <button

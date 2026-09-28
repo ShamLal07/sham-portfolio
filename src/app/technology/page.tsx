@@ -32,7 +32,7 @@ export default function TechnologyPage() {
         </p>
       </div>
 
-      <div className="container" style={{ paddingBottom: "96px" }}>
+      <div className="container pb-24">
         <div className="legend">
           <span className="badge strong">Work with daily</span>
           <span className="badge mid">Working knowledge</span>
@@ -61,13 +61,13 @@ export default function TechnologyPage() {
           ))}
         </div>
 
-        <p className="small" style={{ marginTop: "24px" }}>
+        <p className="small mt-6">
           GitHub:{" "}
           <a
             href={GITHUB}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "var(--accent-t)" }}
+            className="text-[var(--accent-t)] hover:underline"
           >
             github.com/ShamLal07
           </a>

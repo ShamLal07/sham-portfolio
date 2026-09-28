@@ -48,139 +48,44 @@ export function Preloader() {
 
   return (
     <div
-      className={`preloader-overlay ${complete ? "slide-out" : ""}`}
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 9999,
-        background: "#08080C",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        padding: "clamp(24px, 5vw, 64px)",
-        color: "#F8F9FA",
-        transition: "transform 0.85s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.85s ease",
-        transform: complete ? "translateY(-100%)" : "translateY(0)",
-        pointerEvents: complete ? "none" : "auto",
-        overflow: "hidden",
-      }}
+      className={`preloader-overlay fixed inset-0 z-[9999] bg-[#08080C] flex flex-col justify-between p-6 sm:p-10 lg:p-16 text-[#F8F9FA] transition-all duration-[850ms] overflow-hidden ${
+        complete ? "slide-out -translate-y-full opacity-0 pointer-events-none" : "translate-y-0 opacity-100 pointer-events-auto"
+      }`}
     >
       {/* Background ambient lighting */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "600px",
-          height: "600px",
-          background:
-            "radial-gradient(circle, rgba(239, 189, 48, 0.15) 0%, transparent 70%)",
-          filter: "blur(60px)",
-          pointerEvents: "none",
-        }}
-      />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(239,189,48,0.15)_0%,_transparent_70%)] blur-[60px] pointer-events-none" />
 
       {/* Top Header */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          position: "relative",
-          zIndex: 2,
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+      <div className="flex justify-between items-center relative z-[2]">
+        <div className="flex items-center gap-3">
           <LogoMark />
-          <span
-            style={{
-              fontFamily: "var(--display)",
-              fontWeight: 800,
-              fontSize: "1.1rem",
-              letterSpacing: "-0.02em",
-              color: "#F8F9FA",
-            }}
-          >
+          <span className="font-display font-extrabold text-lg tracking-tight text-[#F8F9FA]">
             {BRAND_NAME}
           </span>
         </div>
-        <span
-          style={{
-            fontSize: "0.78rem",
-            textTransform: "uppercase",
-            letterSpacing: "0.15em",
-            color: "var(--accent)",
-            fontWeight: 700,
-          }}
-        >
+        <span className="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">
           Studio v2.5 / 2026
         </span>
       </div>
 
       {/* Center Hero Reveal */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 2,
-          maxWidth: "800px",
-          margin: "auto 0",
-        }}
-      >
-        <p
-          style={{
-            fontSize: "clamp(0.85rem, 1.8vw, 1.1rem)",
-            textTransform: "uppercase",
-            letterSpacing: "0.2em",
-            color: "rgba(248, 249, 250, 0.6)",
-            marginBottom: "16px",
-            fontWeight: 600,
-          }}
-        >
+      <div className="relative z-[2] max-w-[800px] my-auto">
+        <p className="text-xs sm:text-sm uppercase tracking-widest text-[#F8F9FA]/60 mb-4 font-semibold">
           Initializing Digital Space · UI/UX &amp; 3D Motion
         </p>
-        <h2
-          style={{
-            fontFamily: "var(--display)",
-            fontSize: "clamp(2rem, 5vw, 4.5rem)",
-            fontWeight: 800,
-            lineHeight: 1.05,
-            letterSpacing: "-0.03em",
-            color: "#F8F9FA",
-          }}
-        >
+        <h2 className="font-display text-3xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-[#F8F9FA]">
           Crafting Digital Realities Without Boundaries.
         </h2>
       </div>
 
       {/* Bottom Progress Bar & Counter */}
-      <div style={{ position: "relative", zIndex: 2 }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-end",
-            marginBottom: "16px",
-          }}
-        >
-          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-            <span
-              style={{
-                fontSize: "0.75rem",
-                color: "rgba(248, 249, 250, 0.45)",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-              }}
-            >
+      <div className="relative z-[2]">
+        <div className="flex justify-between items-end mb-4">
+          <div className="flex flex-col gap-1">
+            <span className="text-xs text-[#F8F9FA]/45 uppercase tracking-wider">
               Loading High-Performance Systems
             </span>
-            <span
-              style={{
-                fontSize: "0.85rem",
-                fontWeight: 600,
-                color: "var(--accent)",
-              }}
-            >
+            <span className="text-sm font-semibold text-[var(--accent)]">
               {percent < 30
                 ? "Connecting Design Tokens..."
                 : percent < 70
@@ -191,40 +96,18 @@ export function Preloader() {
             </span>
           </div>
 
-          <div
-            style={{
-              fontFamily: "var(--display)",
-              fontSize: "clamp(3rem, 7vw, 6rem)",
-              fontWeight: 800,
-              lineHeight: 0.9,
-              color: "var(--accent)",
-              letterSpacing: "-0.04em",
-            }}
-          >
+          <div className="font-display text-5xl sm:text-7xl lg:text-8xl font-extrabold leading-none text-[var(--accent)] tracking-tight">
             {percent}
-            <span style={{ fontSize: "0.5em", opacity: 0.8 }}>%</span>
+            <span className="text-[0.5em] opacity-80">%</span>
           </div>
         </div>
 
         {/* The Track Line */}
-        <div
-          style={{
-            width: "100%",
-            height: "3px",
-            background: "rgba(255, 255, 255, 0.08)",
-            borderRadius: "4px",
-            overflow: "hidden",
-            position: "relative",
-          }}
-        >
+        <div className="w-full h-[3px] bg-white/10 rounded-full overflow-hidden relative">
           <div
+            className="h-full bg-gradient-to-r from-[#d9a514] via-[#EFBD30] to-white shadow-[0_0_16px_rgba(239,189,48,0.8)] transition-[width] duration-150 ease-out"
             style={{
-              height: "100%",
               width: `${percent}%`,
-              background:
-                "linear-gradient(90deg, #d9a514, #EFBD30, #ffffff)",
-              boxShadow: "0 0 16px rgba(239, 189, 48, 0.8)",
-              transition: "width 0.15s ease",
             }}
           />
         </div>

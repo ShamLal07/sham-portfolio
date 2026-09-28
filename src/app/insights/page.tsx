@@ -26,7 +26,7 @@ export default function InsightsPage() {
         </p>
       </div>
 
-      <div className="container" style={{ paddingBottom: "96px" }}>
+      <div className="container pb-24">
         <div className="notice">
           <Icon name="i-info" />
           <p>

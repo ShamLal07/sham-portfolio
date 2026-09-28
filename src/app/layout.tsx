@@ -5,7 +5,6 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Fab } from "@/components/Fab";
-import { Preloader } from "@/components/Preloader";
 import { CustomCursor } from "@/components/CustomCursor";
 import {
   SITE_URL,
@@ -213,11 +212,7 @@ const jsonLd = {
 
 const themeScript = `
 (function() {
-  try {
-    var saved = localStorage.getItem('sl-theme');
-    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', theme);
-  } catch (e) {}
+  document.documentElement.setAttribute('data-theme', 'light');
 })();
 `;
 
@@ -240,7 +235,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Preloader />
         <CustomCursor />
         <a className="skip" href="#main">
           Skip to content

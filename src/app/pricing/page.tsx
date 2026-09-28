@@ -23,7 +23,7 @@ export default function PricingPage() {
         <p>Simple starting points. Final pricing depends on your project.</p>
       </div>
 
-      <div className="container" style={{ paddingBottom: "96px" }}>
+      <div className="container pb-24">
         <div className="cards rv in">
           {PRICING_PLANS.map((plan) => (
             <article
@@ -32,7 +32,7 @@ export default function PricingPage() {
             >
               <h3>{plan.name}</h3>
               <div className="amt">{plan.price}</div>
-              <span className="caption" style={{ marginTop: "-12px" }}>
+              <span className="caption -mt-3">
                 {plan.prefix === "Around " ? "Approximate" : "Starting from"}
               </span>
               <p className="small">{plan.desc}</p>
@@ -45,8 +45,7 @@ export default function PricingPage() {
                 ))}
               </ul>
               <Link
-                className={`btn ${plan.featured ? "btn-primary" : "btn-ghost"}`}
-                style={{ marginTop: "auto" }}
+                className={`btn ${plan.featured ? "btn-primary" : "btn-ghost"} mt-auto`}
                 href="/contact"
               >
                 Get a quote
@@ -54,7 +53,7 @@ export default function PricingPage() {
             </article>
           ))}
         </div>
-        <p className="small" style={{ marginTop: "24px" }}>
+        <p className="small mt-6">
           Prices are indicative only. Final pricing depends on project scope,
           features and requirements.
         </p>
