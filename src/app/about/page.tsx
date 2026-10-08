@@ -1,224 +1,264 @@
 import React from "react";
-import type { Metadata } from "next";
 import Link from "next/link";
-import { Icon } from "@/components/Icons";
-import { CodeCard } from "@/components/CodeCard";
-import { CtaSection } from "@/components/CtaSection";
-import {
-  EXPERIENCE,
-  EDUCATION,
-  PORTFOLIO_PDF,
-  BRAND_NAME,
-  FOUNDER_NAME,
-} from "@/data/portfolio";
+import type { Metadata } from "next";
+import { ArrowUpRight } from "lucide-react";
+import { WHY_WORK_WITH_ME, TOOLS_PLATFORMS } from "@/data/services";
+import { EXPERIENCES, EDUCATION, RESUME_URL } from "@/data/experience";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export const metadata: Metadata = {
-  title: "About Studio & Founder",
+  title: "About — Sham Lal | Web Designer & Frontend Developer",
   description:
-    `Meet ${FOUNDER_NAME}, Founder of ${BRAND_NAME} with 6+ years of mastery across UI/UX architecture, 2D/3D motion design, and high-performance Next.js and Shopify engineering.`,
-  openGraph: {
-    title: `About ${BRAND_NAME} & ${FOUNDER_NAME}`,
-    description:
-      "A boutique digital product studio bridging the gap between bespoke visual storytelling and precision code.",
-  },
+    "Design-minded and development-focused. Learn about Sham Lal's background in web design, frontend development, CMS platforms, and responsive implementation.",
 };
 
 export default function AboutPage() {
   return (
-    <>
-      <div className="container page-head">
-        <h1>About Our Studio</h1>
-        <p>Strategic design thinking, backed by 6+ years of precision engineering.</p>
-      </div>
+    <div className="pt-14 pb-28 md:pt-20 md:pb-36">
+      <div className="site-container">
+        {/* Page Header */}
+        <div className="max-w-4xl mb-24">
+          <div className="eyebrow-tag mb-4">ABOUT SHAM LAL</div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F1117] mb-8 leading-[1.12]">
+            Design-minded. Development-focused.
+          </h1>
 
-      <div className="container about-grid" style={{ paddingBottom: "96px" }}>
-        <CodeCard />
-        <div className="about-text rv in">
-          <h2>Hi, I&apos;m {FOUNDER_NAME}.</h2>
-          <p>
-            I am a Senior Creative Technologist, UI/UX Architect, and Founder of{" "}
-            <strong>{BRAND_NAME}</strong> based in Chandigarh / Mohali, India.
-            With over <strong>6 years of deep multidisciplinary experience</strong>,
-            I operate as a full-cycle, boutique digital product studio — delivering
-            world-class brand identities, high-converting digital products, and
-            custom web platforms.
-          </p>
-          <p>
-            I serve as Senior Frontend Developer at Eminence Technology, leading
-            high-impact Shopify and custom CMS architectures, while collaborating
-            directly with select global partners through {BRAND_NAME}.
-          </p>
+          <div className="space-y-6 text-base sm:text-xl text-[#575A65] leading-[1.8]">
+            <p>
+              I work at the intersection of web design and frontend development. My
+              background includes building websites and digital experiences across CMS,
+              e-commerce and modern frontend platforms.
+            </p>
+            <p>
+              I enjoy taking a design, understanding how it should work, and turning it
+              into a responsive website that is practical to maintain and ready for real
+              users.
+            </p>
+            <p className="text-sm sm:text-base text-[#848792]">
+              Based in India, I collaborate remotely with brands, design studios, and
+              teams across India, the UK, the US, and internationally.
+            </p>
+          </div>
 
-          <h3>The Boutique Studio Advantage</h3>
-          <p>
-            Traditional creative agencies charge steep markups to cover layers
-            of account executives, junior designers, and siloed developers. With{" "}
-            {BRAND_NAME}, you partner directly with a principal architect who
-            conceptualizes the UX, designs the 3D visual language in Figma, and
-            writes the production Next.js and Liquid code. The result: unmatched
-            velocity, zero communication decay, and agency-grade execution.
-          </p>
-
-          <h3>My Design Philosophy</h3>
-          <p>
-            A high-performing digital experience makes the next step effortless.
-            I ground every layout in user psychology, typographic harmony, and
-            deliberate conversion funnels before crafting immersive 2D/3D motion
-            and visual polish.
-          </p>
-
-          <h3>How We Engineer</h3>
-          <p>
-            What is signed off in design is built line-by-line with clean,
-            accessible, performant code. Zero heavy plugins, zero DOM bloat.
-            Technical on-page SEO, Schema.org structured data, and 100/100 Core
-            Web Vitals are foundational requirements, never an afterthought.
-          </p>
-
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "12px" }}>
-            <Link className="btn btn-primary" href="/contact">
-              Initiate a Project
-            </Link>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              className="btn btn-ghost"
-              href={PORTFOLIO_PDF}
+              href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
+              className="btn-primary group"
             >
-              <Icon name="i-file" /> Agency Deck (PDF)
+              <span>View Resume</span>
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
+            <Link href="/contact" className="btn-secondary">
+              Get in Touch
+            </Link>
           </div>
         </div>
-      </div>
 
-      {/* Experience and Education */}
-      <section>
-        <div className="container">
-          <div className="sec-head">
-            <h2>Career &amp; Production Timeline</h2>
-            <p>Proven leadership in creative direction, frontend systems, and client delivery.</p>
+        {/* Practical Strengths Grid */}
+        <div className="mb-28">
+          <div className="mb-12">
+            <div className="eyebrow-tag mb-3">PRACTICAL APPROACH</div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F1117] tracking-tight">
+              Why Work With Me
+            </h2>
           </div>
-          <div className="exp rv in">
-            <ol className="timeline">
-              {EXPERIENCE.map((e) => (
-                <li key={e.role + e.org}>
-                  <h3>{e.role}</h3>
-                  <p className="caption" style={{ margin: "4px 0 12px" }}>
-                    {e.org}, {e.place} · {e.dates}
-                  </p>
-                  <ul className="pts">
-                    {e.pts.map((pt) => (
-                      <li key={pt}>{pt}</li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ol>
-            <div className="edu">
-              <h3 style={{ marginBottom: "16px" }}>Education &amp; Foundations</h3>
-              {EDUCATION.map((x) => (
-                <div key={x.degree} className="edu-i">
-                  <h4>{x.degree}</h4>
-                  <p className="small">{x.institution}</p>
-                  <p className="caption">{x.period}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 sm:gap-8">
+            <div className="bg-white border-1.5 border-[#E5E4DE] rounded-[28px] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:border-[#0F1117] hover:shadow-lg transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+                    🎨
+                  </div>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+                    Zero Loss
+                  </span>
                 </div>
-              ))}
-              <h3 style={{ margin: "32px 0 12px" }}>Communication</h3>
-              <p className="small">English (Fluent Professional), Hindi (Native)</p>
+                <h3 className="text-lg font-bold text-[#0F1117] mb-1.5 tracking-tight">
+                  Design + Development
+                </h3>
+                <div className="text-xs font-bold text-[#2563EB] mb-3">
+                  Both visual and technical sides stay connected
+                </div>
+                <p className="text-xs sm:text-sm text-[#575A65] leading-relaxed">
+                  I understand both the visual design and implementation sides of websites. What is designed in Figma is what gets built in code — with zero handoff friction or misinterpretation.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white border-1.5 border-[#E5E4DE] rounded-[28px] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:border-[#0F1117] hover:shadow-lg transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold">
+                    ⚡
+                  </div>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200">
+                    Flexible
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-[#0F1117] mb-1.5 tracking-tight">
+                  Platform Flexibility
+                </h3>
+                <div className="text-xs font-bold text-[#7C3AED] mb-3">
+                  Stack chosen to match project needs
+                </div>
+                <p className="text-xs sm:text-sm text-[#575A65] leading-relaxed">
+                  I can work with the CMS or frontend stack that fits the project — whether WordPress, Shopify, React/Next.js, Webflow, Wix, or HubSpot CMS — rather than forcing every project into the same tool.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white border-1.5 border-[#E5E4DE] rounded-[28px] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:border-[#0F1117] hover:shadow-lg transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+                    📱
+                  </div>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    Real Devices
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-[#0F1117] mb-1.5 tracking-tight">
+                  Responsive First
+                </h3>
+                <div className="text-xs font-bold text-[#059669] mb-3">
+                  Tested across every viewport and device
+                </div>
+                <p className="text-xs sm:text-sm text-[#575A65] leading-relaxed">
+                  Websites are designed and built with desktop, tablet, and mobile experiences in mind from day one, ensuring buttons, text, and layout adapt gracefully on touchscreens.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white border-1.5 border-[#E5E4DE] rounded-[28px] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:border-[#0F1117] hover:shadow-lg transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+                    💬
+                  </div>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+                    Direct
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-[#0F1117] mb-1.5 tracking-tight">
+                  Client Collaboration
+                </h3>
+                <div className="text-xs font-bold text-[#D97706] mb-3">
+                  Clear communication &amp; plain updates
+                </div>
+                <p className="text-xs sm:text-sm text-[#575A65] leading-relaxed">
+                  Comfortable understanding requirements, coordinating changes, and communicating clearly during projects so you always know where things stand without jargon.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Tools and skills */}
-      <section style={{ background: "var(--surface)" }}>
-        <div className="container">
-          <div className="sec-head">
-            <h2>Core Disciplines &amp; Tooling</h2>
-            <p>Mastery across modern visual craft, motion, and web architecture.</p>
+        {/* Timeline of Experience */}
+        <div className="mb-28">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
+            <div>
+              <div className="eyebrow-tag mb-3">CAREER TIMELINE</div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F1117] tracking-tight">
+                Work Experience
+              </h2>
+            </div>
+            <span className="text-xs font-bold px-3.5 py-1.5 rounded-full bg-[#F1F0EC] text-[#575A65] border border-[#E5E4DE] self-start sm:self-auto">
+              3+ years of professional experience
+            </span>
           </div>
-          <div className="cards rv in">
-            <article className="card">
-              <h3>UI/UX Architecture</h3>
-              <p className="small">
-                Figma, Adobe XD, and Photoshop for design systems, wireframes,
-                prototyping, and user journey mapping.
-              </p>
-            </article>
-            <article className="card">
-              <h3>E-Commerce &amp; CMS</h3>
-              <p className="small">
-                Shopify (Liquid Theme Dev), WordPress (ACF Pro, WooCommerce),
-                and Webflow for autonomy-focused content management.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Next-Gen Frontend</h3>
-              <p className="small">
-                Next.js App Router, React.js, TypeScript, Tailwind CSS, Shadcn,
-                and modern semantic HTML5/CSS3.
-              </p>
-            </article>
-            <article className="card">
-              <h3>2D &amp; 3D Motion</h3>
-              <p className="small">
-                GSAP ScrollTrigger, Three.js WebGL effects, and Framer Motion
-                for kinetic visual storytelling.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Technical SEO &amp; AIO</h3>
-              <p className="small">
-                On-page SEO, Schema.org JSON-LD graph, Core Web Vitals speed
-                tuning, and AI search engine citation optimization.
-              </p>
-            </article>
-            <article className="card">
-              <h3>AI-Augmented Velocity</h3>
-              <p className="small">
-                Cursor AI, Claude 3.7, ChatGPT 4o, and Gemini for rapid
-                ideation, code optimization, and compressed delivery cycles.
-              </p>
-            </article>
+
+          <div className="relative border-l-2 border-[#E5E4DE] ml-3 sm:ml-5 pl-7 sm:pl-10 space-y-12 sm:space-y-14">
+            {EXPERIENCES.map((exp) => (
+              <div key={exp.company} className="relative group">
+                <div className="absolute -left-[37px] sm:-left-[49px] top-2.5 w-4 h-4 rounded-full bg-white border-[3px] border-[#0F1117] group-hover:scale-130 group-hover:border-[#2563EB] transition-all" />
+
+                <div className="bg-white border-1.5 border-[#E5E4DE] rounded-3xl p-8 sm:p-10 shadow-sm group-hover:border-[#CBD5E1] transition-all">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#0F1117]">
+                      {exp.role} · <span className="text-[#2563EB]">{exp.company}</span>
+                    </h3>
+                    <span className="text-xs font-mono font-bold text-[#848792] px-3 py-1 rounded-full bg-[#FAF9F7] border border-[#E5E4DE] self-start sm:self-auto">
+                      {exp.period}
+                    </span>
+                  </div>
+
+                  <div className="text-xs font-semibold text-[#848792] mb-4 uppercase tracking-wider">
+                    {exp.location}
+                  </div>
+                  <p className="text-base text-[#575A65] mb-6 leading-relaxed">
+                    {exp.description}
+                  </p>
+
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-5 border-t border-[#E5E4DE]">
+                    {exp.highlights.map((h, i) => (
+                      <li key={i} className="text-xs sm:text-[0.88rem] text-[#575A65] flex items-start gap-2.5 leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#0F1117] mt-2 flex-shrink-0" />
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
 
-      {/* At a glance */}
-      <section>
-        <div className="container">
-          <div className="sec-head">
-            <h2>Studio Metrics</h2>
-            <p>The essentials, backed by results.</p>
+        {/* Education */}
+        <div className="mb-28">
+          <div className="mb-10">
+            <div className="eyebrow-tag mb-3">ACADEMIC BACKGROUND</div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F1117] tracking-tight">
+              Education
+            </h2>
           </div>
-          <div className="cards rv in">
-            <article className="card">
-              <h3>6+ Years Mastery</h3>
-              <p className="small">
-                Over six years of continuous evolution from graphic and visual
-                design to architecting complex full-stack web products.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Unified Precision</h3>
-              <p className="small">
-                Responsive pixel-perfect builds · Figma to code · Shopify and
-                WordPress CMS · 2D/3D kinetic animation · high-converting landing
-                pages.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Global Engagements</h3>
-              <p className="small">
-                Partnering with startups, technology companies, and agencies
-                worldwide with flexible timezone overlap and dedicated attention.
-              </p>
-            </article>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">
+            {EDUCATION.map((edu) => (
+              <div
+                key={edu.degree}
+                className="bg-white border-1.5 border-[#E5E4DE] rounded-3xl p-8 shadow-sm"
+              >
+                <div className="text-xs font-mono font-bold text-[#848792] mb-2">
+                  {edu.period}
+                </div>
+                <h3 className="text-lg font-bold text-[#0F1117] mb-1.5">
+                  {edu.degree}
+                </h3>
+                <p className="text-sm text-[#575A65]">{edu.institution}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
 
-      <CtaSection />
-    </>
+        {/* Tools & Platforms */}
+        <div className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F1117] tracking-tight mb-3">
+              Tools &amp; Platforms
+            </h2>
+            <p className="text-base text-[#575A65]">
+              &ldquo;I choose the platform based on the project&apos;s needs rather than
+              forcing every project into the same stack.&rdquo;
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            {TOOLS_PLATFORMS.map((tp) => (
+              <span
+                key={tp.name}
+                className="px-5 py-2.5 rounded-full bg-white border-1.5 border-[#E5E4DE] text-sm font-bold text-[#0F1117] shadow-xs"
+              >
+                {tp.name}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <ContactCTA />
+    </div>
   );
 }
