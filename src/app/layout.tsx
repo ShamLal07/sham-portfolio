@@ -5,8 +5,16 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SITE_CONFIG } from "@/data/siteConfig";
 
+const siteBaseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : SITE_CONFIG.siteUrl);
+
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_CONFIG.siteUrl),
+  metadataBase: new URL(siteBaseUrl),
   title: {
     default: "Sham Lal — Web Designer & Frontend Developer",
     template: "%s — Sham Lal",
@@ -29,21 +37,22 @@ export const metadata: Metadata = {
     "Chandigarh Web Designer",
     "Mohali Frontend Developer",
   ],
-  authors: [{ name: SITE_CONFIG.name, url: SITE_CONFIG.siteUrl }],
+  authors: [{ name: SITE_CONFIG.name, url: siteBaseUrl }],
   creator: SITE_CONFIG.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: SITE_CONFIG.siteUrl,
+    url: siteBaseUrl,
     siteName: "Sham Lal Portfolio",
     title: "Sham Lal — Web Designer & Frontend Developer",
     description:
       "Sham Lal is a Web Designer and Frontend Developer specializing in modern websites, WordPress, Shopify, CMS and responsive frontend development.",
     images: [
       {
-        url: "/projects/hero-composition.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Sham Lal — Web Designer & Frontend Developer Portfolio",
       },
     ],
@@ -53,7 +62,16 @@ export const metadata: Metadata = {
     title: "Sham Lal — Web Designer & Frontend Developer",
     description:
       "Sham Lal is a Web Designer and Frontend Developer specializing in modern websites, WordPress, Shopify, CMS and responsive frontend development.",
-    images: ["/projects/hero-composition.jpg"],
+    images: ["/og-image.jpg"],
+  },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.svg", type: "image/svg+xml" },
+    ],
   },
   robots: {
     index: true,

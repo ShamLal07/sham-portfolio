@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
   email: "thakursammi1233@gmail.com",
   phone: "+91-7876525326",
   github: "https://github.com/ShamLal07",
-  linkedin: "https://www.linkedin.com/in/sham-4a34bb248/",
+  linkedin: "https://www.linkedin.com/in/sham-dev/",
   resumeUrl: "https://drive.google.com/file/d/1z0V5Ms3hnpMtQ2jbnFL_yHjpsgPBXtg8/view?usp=sharing",
   metaDescription: "Sham Lal is a Web Designer and Frontend Developer specializing in modern websites, WordPress, Shopify, CMS and responsive frontend development.",
   siteUrl: "https://shamlal.dev"
