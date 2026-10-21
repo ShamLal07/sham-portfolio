@@ -1,15 +1,10 @@
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+// Safe font definition avoiding @vercel/turbopack-next/internal/font/google resolution errors in Turbopack
+export const displayFont = {
+  variable: "font-roboto",
+  className: "font-roboto",
+};
 
-export const displayFont = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["600", "700", "800"],
-  display: "swap",
-});
-
-export const bodyFont = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
+export const bodyFont = {
+  variable: "font-manrope",
+  className: "font-manrope",
+};

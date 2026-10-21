@@ -1,46 +1,47 @@
 import React from "react";
 import { Hero } from "@/components/Hero";
 import { FeaturedWork } from "@/components/FeaturedWork";
-import { Testimonials } from "@/components/Testimonials";
-import { PlatformStrip } from "@/components/PlatformStrip";
+import { SkillsStack } from "@/components/SkillsStack";
 import { Services } from "@/components/Services";
+import { AiWorkflow } from "@/components/AiWorkflow";
 import { Process } from "@/components/Process";
-import { GlobalClients } from "@/components/GlobalClients";
 import { Experience } from "@/components/Experience";
-import { About } from "@/components/About";
+import { Testimonials } from "@/components/Testimonials";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export default function HomePage() {
   return (
     <main>
-      {/* 1. Hero Section */}
+      {/* 1. Hero with website mockups */}
       <Hero />
 
-      {/* 2. Selected Work / Projects (with interactive filter tabs) */}
+      {/* 2. Project filter tabs & Featured projects */}
       <FeaturedWork />
 
-      {/* 3. Client Testimonials */}
-      <Testimonials />
+      {/* 3. Skills and technology stack with original brand logos */}
+      <SkillsStack />
 
-      {/* 4. Tools & Platforms I Work With */}
-      <PlatformStrip />
-
-      {/* 5. Services (01 to 06) */}
+      {/* 4. Services & Expertise */}
       <Services />
 
-      {/* 6. My Process (5-step timeline) */}
+      {/* 5. AI Tools & Workflow */}
+      <AiWorkflow />
+
+      {/* 6. Tools & Platforms I Work With */}
+
+      {/* 7. My Process (5-step timeline) */}
       <Process />
 
-      {/* 7. Global Clients / Collaboration (Dark section) */}
-      <GlobalClients />
+      {/* 8. Global Clients / Collaboration */}
 
-      {/* 8. Professional Experience */}
+      {/* 9. Work History / Professional Experience */}
       <Experience />
 
-      {/* 9. About Section & Why Work With Me */}
-      <About />
+      {/* 10. Client Testimonials */}
+      <Testimonials />
 
-      {/* 10. Large Closing Contact CTA */}
+
+      {/* 12. Contact Section */}
       <ContactCTA />
     </main>
   );

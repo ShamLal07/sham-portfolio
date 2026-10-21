@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { displayFont, bodyFont } from "./fonts";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -10,8 +9,8 @@ const siteBaseUrl =
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : SITE_CONFIG.siteUrl);
+      ? `https://${process.env.VERCEL_URL}`
+      : SITE_CONFIG.siteUrl);
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteBaseUrl),
@@ -107,16 +106,73 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${displayFont.variable} ${bodyFont.variable}`}>
+    <html lang="en" className="scroll-smooth">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased min-h-screen flex flex-col bg-[#FAF9F7] text-[#0F1117]">
+      <body className="antialiased min-h-screen flex flex-col bg-[#0A0B0E] text-white selection:bg-[#F5781E] selection:text-white relative">
+        {/* Global Architectural Background Grid, 5-6 Vertical Guide Lines & Ambient Shade */}
+        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+          {/* Subtle Ambient Sunset Tone & Radial Glows */}
+          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1100px] h-[650px] bg-gradient-to-b from-amber-500/[0.09] via-orange-600/[0.04] to-transparent blur-[140px]" />
+          <div className="absolute top-1/3 -right-36 w-[600px] h-[600px] bg-amber-600/[0.04] blur-[160px]" />
+          <div className="absolute top-2/3 -left-36 w-[600px] h-[600px] bg-orange-600/[0.035] blur-[160px]" />
+          <div className="absolute -bottom-24 right-1/4 w-[700px] h-[500px] bg-amber-500/[0.05] blur-[150px]" />
+
+          {/* 1px Gray Grid (Rows & Columns Matrix) */}
+          <div
+            className="absolute inset-0 opacity-[0.22]"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
+              `,
+              backgroundSize: "52px 52px",
+              maskImage: "radial-gradient(ellipse 90% 90% at 50% 30%, #000 65%, transparent 100%)",
+              WebkitMaskImage: "radial-gradient(ellipse 90% 90% at 50% 30%, #000 65%, transparent 100%)",
+            }}
+          />
+
+          {/* 5-6 Architectural Vertical Guide Lines spanning the website container */}
+          <div className="absolute inset-0 flex justify-center">
+            <div className="w-full max-w-7xl h-full grid grid-cols-6 px-4 sm:px-6 lg:px-8 border-x border-white/[0.04]">
+              <div className="border-r border-white/[0.035] h-full" />
+              <div className="border-r border-white/[0.035] h-full" />
+              <div className="border-r border-white/[0.035] h-full" />
+              <div className="border-r border-white/[0.035] h-full" />
+              <div className="border-r border-white/[0.035] h-full" />
+            </div>
+          </div>
+
+          {/* Subtle vertical ribbed accent lines (matches Hero section aesthetic) */}
+          <div
+            className="absolute inset-0 opacity-[0.06]"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0px, rgba(255, 255, 255, 0.3) 1px, transparent 1px, transparent 24px)",
+              maskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%)",
+            }}
+          />
+        </div>
+
         <Navbar />
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 relative z-10">{children}</div>
         <Footer />
       </body>
     </html>
