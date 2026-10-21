@@ -40,7 +40,7 @@ export function ContactCTA() {
                     Contact Me
                   </span>
                   <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 text-amber-100 font-extrabold">
-                    Say Hello →
+                    Say Hello
                   </span>
                 </span>
                 <ArrowRight className="w-4 h-4 text-amber-200 transform transition-transform duration-300 group-hover:translate-x-1" />

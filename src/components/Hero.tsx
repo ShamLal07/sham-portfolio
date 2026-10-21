@@ -42,7 +42,7 @@ export function Hero() {
           <span className="text-amber-400">
             <Sparkles className="w-3.5 h-3.5 inline" />
           </span>
-          <span>Web Designer &amp; Frontend Developer</span>
+          <span>Web Developer — Creative Websites &amp; Web Apps</span>
         </div>
 
         {/* Impactful Centered Headline matching reference layout */}

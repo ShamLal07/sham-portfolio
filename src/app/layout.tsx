@@ -4,26 +4,22 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SITE_CONFIG } from "@/data/siteConfig";
 
-const siteBaseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : SITE_CONFIG.siteUrl);
+const siteBaseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shamdev.in";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteBaseUrl),
   title: {
-    default: "Sham Lal — Web Designer & Frontend Developer",
+    default: "Sham Lal — Web Developer | Build Creative Websites & Web Apps",
     template: "%s — Sham Lal",
   },
   description:
-    "Sham Lal is a Web Designer and Frontend Developer specializing in modern websites, WordPress, Shopify, CMS and responsive frontend development.",
+    "Sham Lal is a Web Developer building creative websites and web apps. Specialized in modern responsive websites, Next.js, WordPress, Shopify, and interactive digital experiences.",
   keywords: [
     "Sham Lal",
-    "Web Designer",
+    "Web Developer",
     "Frontend Developer",
+    "Build Creative Websites",
+    "Web Apps",
     "WordPress Developer",
     "Shopify Storefront",
     "CMS Development",
@@ -33,35 +29,33 @@ export const metadata: Metadata = {
     "Wix",
     "HubSpot CMS",
     "Responsive Web Design",
-    "Chandigarh Web Designer",
-    "Mohali Frontend Developer",
   ],
   authors: [{ name: SITE_CONFIG.name, url: siteBaseUrl }],
   creator: SITE_CONFIG.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteBaseUrl,
+    url: "https://shamdev.in",
     siteName: "Sham Lal Portfolio",
-    title: "Sham Lal — Web Designer & Frontend Developer",
+    title: "Sham Lal — Web Developer | Build Creative Websites & Web Apps",
     description:
-      "Sham Lal is a Web Designer and Frontend Developer specializing in modern websites, WordPress, Shopify, CMS and responsive frontend development.",
+      "Sham Lal — Web Developer. Build creative websites and web apps with modern design, Next.js, WordPress, and Shopify.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://shamdev.in/og-image.jpg",
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Sham Lal — Web Designer & Frontend Developer Portfolio",
+        alt: "Sham Lal — Web Developer | Build Creative Websites & Web Apps",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sham Lal — Web Designer & Frontend Developer",
+    title: "Sham Lal — Web Developer | Build Creative Websites & Web Apps",
     description:
-      "Sham Lal is a Web Designer and Frontend Developer specializing in modern websites, WordPress, Shopify, CMS and responsive frontend development.",
-    images: ["/og-image.jpg"],
+      "Sham Lal — Web Developer. Build creative websites and web apps with modern design, Next.js, WordPress, and Shopify.",
+    images: ["https://shamdev.in/og-image.jpg"],
   },
   icons: {
     icon: [
@@ -82,10 +76,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Sham Lal",
-  jobTitle: "Web Designer & Frontend Developer",
-  url: SITE_CONFIG.siteUrl,
+  jobTitle: "Web Developer",
+  url: "https://shamdev.in",
   sameAs: [SITE_CONFIG.github, SITE_CONFIG.linkedin],
   knowsAbout: [
+    "Web Development",
     "Web Design",
     "Frontend Development",
     "WordPress",
@@ -97,7 +92,7 @@ const jsonLd = {
     "HubSpot CMS",
   ],
   description:
-    "Sham Lal is a Web Designer and Frontend Developer specializing in modern websites, WordPress, Shopify, CMS and responsive frontend development.",
+    "Sham Lal is a Web Developer building creative websites and web apps. Specialized in modern responsive websites, Next.js, WordPress, Shopify, and interactive digital experiences.",
 };
 
 export default function RootLayout({
@@ -118,6 +113,14 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap"
           rel="stylesheet"
         />
+        {/* Explicit Social / WhatsApp / Telegram OpenGraph Meta Tags */}
+        <meta property="og:image" content="https://shamdev.in/og-image.jpg" />
+        <meta property="og:image:secure_url" content="https://shamdev.in/og-image.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Sham Lal — Web Developer | Build Creative Websites & Web Apps" />
+        <meta name="twitter:image" content="https://shamdev.in/og-image.jpg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

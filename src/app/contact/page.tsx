@@ -34,7 +34,7 @@ export default function ContactPage() {
     setErrorMessage("");
 
     try {
-      // Real email submission via FormSubmit to thakursammi1233@gmail.com
+      // Real email submission via FormSubmit to thakur@shamdev.in
       const response = await fetch(`https://formsubmit.co/ajax/${SITE_CONFIG.email}`, {
         method: "POST",
         headers: {

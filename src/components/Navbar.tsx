@@ -75,7 +75,7 @@ export function Navbar() {
                 isDark ? "text-white/50" : "text-slate-400"
               }`}
             >
-              Designer &amp; Developer
+              Web Developer
             </span>
           </div>
         </Link>
