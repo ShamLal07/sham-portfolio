@@ -2,102 +2,101 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowUpRight, Sparkles } from "lucide-react";
+import { HeroCanvasAnimation } from "./HeroCanvasAnimation";
 
 export function Hero() {
   return (
-    <section className="pt-12 pb-24 md:pt-20 md:pb-36 overflow-hidden relative">
-      <div className="site-container">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-center">
-          {/* Left Column: Headline & Messaging */}
-          <motion.div
-            className="lg:col-span-7 flex flex-col items-start"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    <section
+      id="home"
+      className="relative pt-16 pb-16 md:pt-24 md:pb-24 bg-[#0A0B0E] text-white overflow-hidden"
+    >
+      {/* Interactive Canvas Constellation Animation */}
+      <HeroCanvasAnimation />
+
+      {/* 1. Ambient Background: Warm Sunset/Amber Radiant Glow on Right Side */}
+      <div className="absolute right-0 top-0 bottom-0 w-full pointer-events-none z-0 overflow-hidden">
+        {/* Soft Radial Sunset Core */}
+        <div className="absolute -right-24 top-1/2 -translate-y-1/2 w-[550px] h-[550px] sm:w-[700px] sm:h-[700px] rounded-full bg-gradient-to-br from-amber-500/25 via-orange-600/20 to-transparent blur-[120px]" />
+
+        {/* Deep Orange Ambient Wash */}
+        <div className="absolute right-0 bottom-0 w-[450px] h-[450px] rounded-full bg-orange-600/15 blur-[140px]" />
+
+        {/* Fluted / Ribbed Vertical Texture Lines on Right (matches reference image) */}
+        <div
+          className="absolute inset-0 opacity-[0.14] pointer-events-none"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0.4) 1px, transparent 1px, transparent 20px)",
+            maskImage:
+              "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%)"
+          }}
+        />
+      </div>
+
+      {/* Subtle top subtle grid / glow */}
+      <div className="absolute top-0 left-1/4 w-[350px] h-[250px] bg-blue-600/5 blur-[100px] pointer-events-none" />
+
+      {/* 2. Main Hero Content Container */}
+      <div className="site-container relative z-10 text-center flex flex-col items-center">
+        {/* Eyebrow Capsule Pill */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/12 text-xs font-semibold text-white/90 backdrop-blur-md shadow-inner mb-6 sm:mb-8">
+          <span className="text-amber-400">
+            <Sparkles className="w-3.5 h-3.5 inline" />
+          </span>
+          <span>Web Designer &amp; Web Developer — Thoughtful UI/UX &amp; Modern Code</span>
+        </div>
+
+        {/* Impactful Centered Headline matching reference layout */}
+        <h1 className="max-w-4xl font-extrabold text-4xl sm:text-6xl lg:text-[4.25rem] tracking-tight text-white leading-[1.12] mb-6">
+          I Design. I Build. <br className="hidden sm:inline" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">
+            I Create Digital Experiences.
+          </span>
+        </h1>
+
+        {/* Subtitle Paragraph */}
+        <p className="max-w-2xl text-base sm:text-lg text-white/70 leading-relaxed mb-9">
+          I design and develop modern, responsive websites with thoughtful UI/UX and clean, reliable frontend experiences for businesses and brands.
+        </p>
+
+        {/* Unique Interactive CTA Buttons with Motion Text Roll & Meaningful Animated Icons */}
+        <div className="flex flex-wrap items-center justify-center mt-4 gap-4 mb-16 sm:mb-20">
+          {/* Primary CTA */}
+          <Link
+            href="/work"
+            className="group relative inline-flex items-center gap-3.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#F5781E] via-[#F59E0B] to-[#F5781E] bg-[length:200%_auto] text-white font-bold text-sm sm:text-base shadow-[0_10px_30px_-5px_rgba(245,120,30,0.5)] hover:shadow-[0_16px_40px_-5px_rgba(245,120,30,0.75)] hover:scale-[1.03] active:scale-95 transition-all duration-300 overflow-hidden"
           >
-            {/* Small Eyebrow above hero */}
-            <div className="eyebrow-tag mb-6 px-3.5 py-1.5 rounded-full bg-[#F1F0EC] border border-[#E5E4DE] text-[0.76rem] font-bold text-[#575A65]">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              WEB DESIGNER + FRONTEND DEVELOPER
+            {/* Shimmer light sweep reflection */}
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
+
+            <span className="tracking-wide">View Selected Work</span>
+
+            {/* Launch Vector with dual-sliding diagonal arrow */}
+            <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center relative overflow-hidden shrink-0 border border-white/30 shadow-inner">
+              <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
+              <ArrowUpRight className="w-4 h-4 text-amber-200 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
             </div>
+          </Link>
 
-            {/* Hero Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[4.2rem] font-extrabold tracking-[-0.035em] text-[#0F1117] leading-[1.08] max-w-[18ch] mb-7">
-              I design &amp; build websites that move businesses forward.
-            </h1>
-
-            {/* Supporting paragraph */}
-            <p className="text-base sm:text-lg lg:text-[1.12rem] text-[#575A65] max-w-[46ch] leading-relaxed mb-9">
-              Web design, frontend development, CMS and e-commerce solutions for
-              modern businesses and growing brands.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 mb-10">
-              <Link href="/work" className="btn-primary group">
-                <span>View Selected Work</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link href="/contact" className="btn-secondary">
-                Let&apos;s Work Together
-              </Link>
-            </div>
-
-            {/* Small Trust Statement */}
-            <div className="flex items-center gap-3 text-xs sm:text-[0.88rem] text-[#848792] font-medium tracking-tight border-t border-[#E5E4DE] pt-5 w-full max-w-[500px]">
-              <span className="text-[#0F1117] font-bold">Workflow:</span>
-              <span>Design → Frontend → CMS / E-commerce → Launch</span>
-            </div>
-          </motion.div>
-
-          {/* Right Column: Visual Composition of Website Mockups with Floating Animation */}
-          <motion.div
-            className="lg:col-span-5 relative"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          {/* Secondary CTA */}
+          <Link
+            href="/contact"
+            className="group relative inline-flex items-center gap-3.5 px-8 py-4 rounded-full bg-white/[0.07] border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/[0.14] hover:border-white/40 hover:scale-[1.03] active:scale-95 transition-all duration-300 backdrop-blur-md shadow-lg"
           >
-            {/* Annotation badge / note top-right */}
-            <div className="hidden sm:flex absolute -top-5 -right-3 z-20 items-center gap-2 bg-white/95 backdrop-blur-md border border-[#E5E4DE] px-4 py-2 rounded-full shadow-md text-xs text-[#575A65] font-semibold">
-              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-              <span>Modern websites. Real business impact.</span>
-            </div>
+            <span>Let&apos;s Work Together</span>
 
-            {/* Floating Composition Container */}
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-[#E5E4DE] bg-gradient-to-br from-[#FAF9F7] via-[#F4F3EE] to-[#EAE9E4] shadow-[0_24px_60px_-16px_rgba(15,17,23,0.14)] group animate-float">
-              <Image
-                src="/projects/hero-composition.jpg"
-                alt="Selected websites and user interfaces designed and built by Sham Lal"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-contain p-3 sm:p-4 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-              />
-
-              {/* Floating metadata badge bottom-left */}
-              <div className="absolute bottom-4 left-4 z-10 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-[#E5E4DE] shadow-md flex items-center gap-3">
-                <div className="flex -space-x-1.5">
-                  <span className="w-5 h-5 rounded-full bg-[#0F1117] text-white flex items-center justify-center text-[9px] font-bold">
-                    W
-                  </span>
-                  <span className="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[9px] font-bold">
-                    S
-                  </span>
-                  <span className="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[9px] font-bold">
-                    R
-                  </span>
-                </div>
-                <div className="text-xs leading-tight text-[#0F1117] font-bold">
-                  WordPress · Shopify · React · Webflow
-                </div>
-              </div>
+            {/* Launch Vector with dual-sliding diagonal arrow */}
+            <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center relative overflow-hidden shrink-0 border border-white/20">
+              <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
+              <ArrowUpRight className="w-4 h-4 text-amber-200 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
             </div>
-          </motion.div>
+          </Link>
         </div>
       </div>
     </section>
   );
 }
+
