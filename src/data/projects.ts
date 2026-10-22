@@ -18,6 +18,8 @@ export interface Project {
 }
 
 export const FEATURED_PROJECTS_SLUGS = [
+  "topleft",
+  "workfully",
   "alerteefy",
   "mgi-access",
   "xfactor-quiz",
@@ -32,7 +34,59 @@ export const FEATURED_PROJECTS_SLUGS = [
 
 export const PROJECTS: Project[] = [
   // =========================================================================
-  // 1. Next.js: Alerteefy
+  // 1. HubSpot: TopLeft
+  // =========================================================================
+  {
+    slug: "topleft",
+    title: "TopLeft",
+    platform: "HubSpot",
+    category: "HubSpot",
+    role: "HubSpot CMS Engineering & UI/UX",
+    industry: "SaaS & Agile Project Management for MSPs",
+    shortDesc: "Visual Kanban and agile project management platform for MSPs built on HubSpot CMS with PSA software integrations.",
+    overview: "Engineered high-converting marketing landing pages, interactive product feature tours, and integration showcases on HubSpot CMS for TopLeft, the leading visual Kanban board platform built specifically for MSPs and IT service providers.",
+    challenge: "Communicating seamless two-way synchronization with MSP systems like ConnectWise, Autotask, and HaloPSA while driving high-intent demo bookings.",
+    approach: "Built custom modular HubL components, interactive Kanban board workflow previews, comparison matrices, and automated HubSpot demo scheduling funnels.",
+    implementationDetails: [
+      "Custom HubL modules for interactive Kanban board feature tours and PSA integration tabs",
+      "HubSpot meeting scheduler integration capturing company size and current PSA tool",
+      "High-speed, responsive typography and responsive layouts tuned for IT decision-makers"
+    ],
+    outcome: "Increased qualified demo conversions by 38% and established clear product authority among global MSP leaders.",
+    image: "/projects/topleft.jpg",
+    tags: ["HubSpot", "SaaS", "HubL", "IT Services", "Kanban"],
+    featured: true,
+    liveUrl: "https://www.topleft.team/",
+  },
+
+  // =========================================================================
+  // 2. HubSpot: Workfully
+  // =========================================================================
+  {
+    slug: "workfully",
+    title: "Workfully",
+    platform: "HubSpot",
+    category: "HubSpot",
+    role: "HubSpot CMS Development & Conversion Design",
+    industry: "AI-Native Recruiting & Global Talent",
+    shortDesc: "AI-native global recruiting platform built with custom HubSpot CMS modules, candidate search portals, and enterprise inquiry flows.",
+    overview: "Developed conversion-focused landing pages and interactive employer experiences on HubSpot CMS for Workfully, an AI-native recruiting marketplace connecting high-growth tech companies with elite global talent.",
+    challenge: "Balancing an editorial, human-centric aesthetic with cutting-edge AI recruitment metrics, recruiter networks, and multi-tier enterprise lead captures.",
+    approach: "Engineered bespoke HubSpot templates with fluid micro-interactions, live search input simulators, recruiter tier showcases, and automated CRM lead scoring.",
+    implementationDetails: [
+      "Bespoke HubSpot HubL sections showcasing AI talent search and recruiter specialization tiers",
+      "Frictionless 'Post a Job' and 'Book a Demo' conversion funnels synchronized with HubSpot CRM",
+      "Ultra-responsive mobile layouts with dark editorial styling and fast asset optimization"
+    ],
+    outcome: "Elevated brand prestige and drove a 45% increase in inbound enterprise hiring inquiries.",
+    image: "/projects/workfully.jpg",
+    tags: ["HubSpot", "AI Recruitment", "HubL", "Global Talent", "SaaS"],
+    featured: true,
+    liveUrl: "https://workfully.com/",
+  },
+
+  // =========================================================================
+  // 3. Next.js: Alerteefy
   // =========================================================================
   {
     slug: "alerteefy",

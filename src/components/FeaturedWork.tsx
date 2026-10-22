@@ -51,7 +51,7 @@ export function FeaturedWork() {
                 View All Projects
               </span>
               <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 text-amber-300 font-bold">
-                Explore 24+ Works
+                Explore 26+ Works
               </span>
             </span>
             <ArrowUpRight className="w-3.5 h-3.5 text-amber-400 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
