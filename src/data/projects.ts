@@ -1,7 +1,7 @@
 export interface Project {
   slug: string;
   title: string;
-  platform: "WordPress" | "Shopify" | "React / Next.js" | "Wix" | "Webflow" | "HubSpot" | "HTML / Web" | "Other" | "Figma";
+  platform: "WordPress" | "Shopify" | "Next.js" | "React / Next.js" | "Wix" | "Webflow" | "HubSpot" | "HTML / Web" | "Other" | "Figma";
   category: string;
   role: string;
   industry: string;
@@ -18,16 +18,282 @@ export interface Project {
 }
 
 export const FEATURED_PROJECTS_SLUGS = [
-  "sensei-farms",
-  "summer-fridays",
-  "entiva-media",
-  "openenvoy",
-  "gc-photobooth",
-  "hungry-bite-pizza",
+  "alerteefy",
+  "mgi-access",
+  "xfactor-quiz",
+  "itsbot-ai-blog",
+  "aquoz",
+  "hyundai-heat-pumps",
+  "equity-pulse",
+  "aethrion-lindos",
+  "hopp-worldwide",
+  "magdent-med",
 ];
 
 export const PROJECTS: Project[] = [
-  // 1. WordPress: Entiva Media Labs
+  // =========================================================================
+  // 1. Next.js: Alerteefy
+  // =========================================================================
+  {
+    slug: "alerteefy",
+    title: "Alerteefy",
+    platform: "Next.js",
+    category: "Next.js",
+    role: "Frontend Engineering & Next.js",
+    industry: "Connected Vehicle Tech & IoT SaaS",
+    shortDesc: "Real-time smart vehicle safety and instant parking alert notification platform with QR vehicle safety tags.",
+    overview: "Engineered a high-performance Next.js marketing and driver onboarding platform for Alerteefy, an innovative vehicle safety ecosystem enabling drivers to stay notified of parking emergencies and vehicle safety issues.",
+    challenge: "Presenting complex QR vehicle safety workflows and dual-audience (drivers vs fleet operators) onboarding in an intuitive, tech-forward interface.",
+    approach: "Designed high-contrast dark mode ergonomics with neon accents, interactive feature walkthroughs, and fast responsive mobile layouts.",
+    implementationDetails: [
+      "Interactive QR safety tag workflow visualizer with instant notification previews",
+      "Next.js App Router architecture with responsive touch ergonomics and rapid load times",
+      "Conversion-optimized call-to-actions for individual vehicle owners and fleet partnerships"
+    ],
+    outcome: "Created an authoritative tech presence that significantly accelerated early driver registration and fleet inquiries.",
+    image: "/projects/alerteefy.jpg",
+    tags: ["Next.js", "React", "Vehicle Tech", "SaaS", "Tailwind CSS"],
+    featured: true,
+    liveUrl: "https://alerteefy.com/",
+  },
+
+  // =========================================================================
+  // 2. WordPress: MGI Access (Elementor)
+  // =========================================================================
+  {
+    slug: "mgi-access",
+    title: "MGI Access",
+    platform: "WordPress",
+    category: "WordPress",
+    role: "WordPress & Elementor Development",
+    industry: "Industrial Scaffolding & Height Safety",
+    shortDesc: "Industrial access, scaffolding, and commercial height safety engineering website engineered with custom Elementor templates.",
+    overview: "Constructed an authoritative, high-performance WordPress & Elementor website for MGI Access, a premier contractor for industrial scaffolding, facade access, and height safety engineering.",
+    challenge: "Organizing extensive technical equipment specs, Australian safety compliance certifications, and multi-sector project galleries into a streamlined commercial quote funnel.",
+    approach: "Developed bespoke Elementor sections with optimized CSS, interactive project portfolios, and multi-step safety quote request forms.",
+    implementationDetails: [
+      "Custom Elementor theme architecture tuned for sub-second mobile page loads",
+      "Modular scaffolding equipment matrices and Australian safety standards verification",
+      "Commercial quotation form with project location detectors and file attachment support"
+    ],
+    outcome: "A solid commercial digital presence consistently generating qualified construction contract tenders.",
+    image: "/projects/mgi-access.jpg",
+    tags: ["WordPress", "Elementor", "Construction", "B2B", "Responsive"],
+    featured: true,
+    liveUrl: "https://mgiaccess.com/",
+  },
+
+  // =========================================================================
+  // 3. WordPress: X-Factor Lab Quiz (Gutenberg)
+  // =========================================================================
+  {
+    slug: "xfactor-quiz",
+    title: "X-Factor Lab Quiz",
+    platform: "WordPress",
+    category: "WordPress",
+    role: "Gutenberg Development & Quiz Engine",
+    industry: "EdTech & Talent Diagnostics",
+    shortDesc: "Interactive diagnostic skills assessment and archetype quiz platform engineered with custom Gutenberg blocks.",
+    overview: "Engineered an interactive multi-step diagnostic assessment quiz application on WordPress using custom Gutenberg blocks for X-Factor Lab, testing candidates' creative strengths and leadership archetypes.",
+    challenge: "Delivering instantaneous multi-step quiz transitions, client-side score calculations, and personalized result generation without page reloads.",
+    approach: "Developed custom Gutenberg blocks with React, seamless step progression, animated progress indicators, and automated email score delivery.",
+    implementationDetails: [
+      "Custom React Gutenberg blocks for interactive questions and instant validation",
+      "Dynamic scoring algorithm calculating percentile feedback upon quiz completion",
+      "Automated result reporting and CRM webhook dispatch for lead nurturing"
+    ],
+    outcome: "Achieved an 82% quiz completion rate with high social shareability and qualified candidate lead capture.",
+    image: "/projects/xfactor-quiz.jpg",
+    tags: ["WordPress", "Gutenberg", "Interactive Quiz", "React", "EdTech"],
+    featured: true,
+    liveUrl: "https://quiz.x-factor-lab.com/",
+  },
+
+  // =========================================================================
+  // 4. WordPress: ItsBot AI Blog (Custom Blog Site)
+  // =========================================================================
+  {
+    slug: "itsbot-ai-blog",
+    title: "ItsBot AI Editorial",
+    platform: "WordPress",
+    category: "WordPress",
+    role: "Custom WordPress Blog Architecture",
+    industry: "Artificial Intelligence & SaaS",
+    shortDesc: "High-speed custom WordPress publication and knowledge hub engineered for a conversational AI platform.",
+    overview: "Architected and deployed a custom WordPress editorial blog platform for ItsBot AI, delivering in-depth articles on conversational AI, automation workflows, and customer experience technology.",
+    challenge: "Creating a clean, modern Medium-style reading experience with newsletter captures, related post recommendations, and lightning-fast SEO delivery.",
+    approach: "Built lightweight custom WordPress templates, estimated reading time counters, sticky social sharing, and structured schema markup.",
+    implementationDetails: [
+      "Custom editorial WordPress layout optimized for reader retention and readability",
+      "Automated reading time calculation, author bios, and category filtering",
+      "Integrated email newsletter lead captures and related AI insights"
+    ],
+    outcome: "Substantially increased organic search traffic and reader time-on-page across core AI topics.",
+    image: "/projects/itsbot-ai-blog.jpg",
+    tags: ["WordPress", "Custom Blog", "AI & SaaS", "Editorial", "SEO"],
+    featured: true,
+    liveUrl: "https://itsbot.ai/blog/",
+  },
+
+  // =========================================================================
+  // 5. Next.js: Aquoz Australia
+  // =========================================================================
+  {
+    slug: "aquoz",
+    title: "Aquoz Australia",
+    platform: "Next.js",
+    category: "Next.js",
+    role: "Full-Stack / Next.js Web Development",
+    industry: "Clean Tech & Hydration Systems",
+    shortDesc: "Australian premium whole-house water filtration and commercial hydration systems platform with quote builders.",
+    overview: "Developed a modern, clean digital storefront and commercial quote platform for Aquoz Australia, providing sustainable filtered drinking water solutions for homes and businesses across Australia.",
+    challenge: "Showcasing multi-tier filtration technology (Whole House vs Undersink RO) and Australian certification standards with intuitive inquiry funnels.",
+    approach: "Designed clean aquatic-inspired aesthetics, interactive product specification sheets, and fast quote request forms.",
+    implementationDetails: [
+      "Interactive water filtration equipment selector and commercial quote generator",
+      "Fast static-generation architecture with responsive touch ergonomics",
+      "Australian WaterMark and NSF compliance documentation integration"
+    ],
+    outcome: "Delivered an informative commercial platform driving steady inbound consumer and B2B quote inquiries.",
+    image: "/projects/aquoz.jpg",
+    tags: ["Next.js", "Clean Tech", "Australia", "B2B Solutions", "E-Commerce"],
+    featured: true,
+    liveUrl: "https://www.aquoz.com.au/",
+  },
+
+  // =========================================================================
+  // 6. Next.js: Hyundai Heat Pumps
+  // =========================================================================
+  {
+    slug: "hyundai-heat-pumps",
+    title: "Hyundai Heat Pumps",
+    platform: "Next.js",
+    category: "Next.js",
+    role: "Frontend Engineering & Next.js",
+    industry: "Renewable Energy & Climate Solutions",
+    shortDesc: "Official Indian digital platform for Hyundai commercial and residential eco-friendly heat pump water heating systems.",
+    overview: "Developed the authoritative web presence for Hyundai Heat Pumps India, presenting energy-efficient heat pump solutions for luxury villas, hotels, hospitals, and industrial facilities.",
+    challenge: "Explaining heat pump thermodynamics, energy-saving metrics, and product sizing recommendations in a simple, persuasive visual format.",
+    approach: "Created technical specification matrices, power-saving comparison sliders, and quick dealer/distributor inquiry mechanisms.",
+    implementationDetails: [
+      "Energy savings calculator comparing heat pumps against traditional water heaters",
+      "Comprehensive product series breakdown (Domestic, Commercial, Swimming Pool)",
+      "Nationwide dealership and institutional project inquiry pipeline"
+    ],
+    outcome: "Established a trusted, high-impact digital presence driving major residential and commercial energy project leads.",
+    image: "/projects/hyundai-heat-pumps.jpg",
+    tags: ["Next.js", "Clean Energy", "HVAC", "Enterprise", "React"],
+    featured: true,
+    liveUrl: "https://hyundaiheatpumps.co.in/",
+  },
+
+  // =========================================================================
+  // 7. Next.js: Equity Pulse Australia
+  // =========================================================================
+  {
+    slug: "equity-pulse",
+    title: "Equity Pulse",
+    platform: "Next.js",
+    category: "Next.js",
+    role: "Fintech Web Design & Next.js Development",
+    industry: "Property Investment & Equity Analytics",
+    shortDesc: "Australian property market analytics platform empowering homeowners and investors to track real equity and suburb growth.",
+    overview: "Built a modern financial technology platform for Equity Pulse Australia, delivering real-time property market insights, equity calculators, and suburb trend indicators for property owners.",
+    challenge: "Displaying data-heavy property market indices and suburb growth metrics without overwhelming the user experience.",
+    approach: "Engineered high-clarity data dashboards, interactive equity estimation tools, and mobile-friendly investment reports.",
+    implementationDetails: [
+      "Interactive home equity and market growth calculation engine",
+      "Dynamic suburb analytics cards with live market movement indicators",
+      "High-security lead capture with instant investment report generation"
+    ],
+    outcome: "Empowered Australian homeowners to uncover hidden property equity and take informed investment actions.",
+    image: "/projects/equity-pulse.jpg",
+    tags: ["Next.js", "Fintech", "Property Tech", "Australia", "Analytics"],
+    featured: true,
+    liveUrl: "https://equitypulse.com.au/",
+  },
+
+  // =========================================================================
+  // 8. Next.js: Aethrion Lindos
+  // =========================================================================
+  {
+    slug: "aethrion-lindos",
+    title: "Aethrion Lindos",
+    platform: "Next.js",
+    category: "Next.js",
+    role: "Luxury Web Design & Development",
+    industry: "Luxury Hospitality & Boutique Villa",
+    shortDesc: "Boutique Mediterranean luxury villa website in Rhodes, Greece featuring direct booking and immersive photo galleries.",
+    overview: "Designed an exquisite, Mediterranean-inspired hospitality website for Aethrion Lindos, a luxury boutique residence nestled in the historic village of Lindos, Rhodes.",
+    challenge: "Capturing the authentic Greek island sunlight, architectural heritage, and tranquil luxury through digital storytelling while driving direct bookings.",
+    approach: "Crafted editorial visual compositions, seamless multilingual layout support, full-bleed imagery, and integrated booking engine triggers.",
+    implementationDetails: [
+      "Immersive gallery showcase highlighting Aegean architecture and panoramic views",
+      "Direct reservation engine integration bypassing third-party OTA commission fees",
+      "Localized Rhodes travel guide and concierge amenity showcase"
+    ],
+    outcome: "Substantially increased direct guest reservations and elevated the property's worldwide boutique prestige.",
+    image: "/projects/aethrion-lindos.jpg",
+    tags: ["Next.js", "Luxury Hospitality", "Boutique Hotel", "Greece", "UI/UX"],
+    featured: true,
+    liveUrl: "https://www.aethrionlindos.com/",
+  },
+
+  // =========================================================================
+  // 9. Next.js: Hopp Worldwide
+  // =========================================================================
+  {
+    slug: "hopp-worldwide",
+    title: "Hopp Worldwide",
+    platform: "Next.js",
+    category: "Next.js",
+    role: "Global Mobility Web Platform",
+    industry: "Global Chauffeur & Corporate Travel",
+    shortDesc: "Worldwide premium chauffeur and executive airport transfer service platform operating in 500+ cities globally.",
+    overview: "Architected an international corporate travel and luxury chauffeur booking platform for Hopp Worldwide, serving executive clients, private aviation passengers, and corporate travel managers globally.",
+    challenge: "Facilitating multi-currency executive bookings, fleet category selection (First Class, Business Van, EV), and global airport concierge options.",
+    approach: "Built an intuitive 3-step booking flow, live fleet tier visualizer, corporate account inquiry systems, and multilingual readiness.",
+    implementationDetails: [
+      "Global airport transfer and point-to-point chauffeur reservation flow",
+      "Executive fleet showcase detailing passenger capacity and luggage specifications",
+      "Corporate partnership portal with automated SLA tracking and support"
+    ],
+    outcome: "Streamlined global reservation management across 500+ metropolitan destinations.",
+    image: "/projects/hopp-worldwide.jpg",
+    tags: ["Next.js", "Mobility", "Corporate Travel", "Global Logistics"],
+    featured: true,
+    liveUrl: "https://www.hoppworldwide.com/",
+  },
+
+  // =========================================================================
+  // 10. Next.js: Magdent Med
+  // =========================================================================
+  {
+    slug: "magdent-med",
+    title: "Magdent Med",
+    platform: "Next.js",
+    category: "Next.js",
+    role: "MedTech Web Design & Development",
+    industry: "Medical Technology & Dental Implants",
+    shortDesc: "Patented electromagnetic dental implant healing technology website with clinical study archives and doctor portals.",
+    overview: "Engineered a state-of-the-art MedTech platform for Magdent Med, introducing revolutionary Pulsed Electromagnetic Field (PEMF) technology designed to accelerate bone formation around dental implants.",
+    challenge: "Bridging rigorous clinical science, peer-reviewed medical publications, and dental practitioner procurement in a clean, trustworthy interface.",
+    approach: "Designed 3D medical device visualizers, interactive clinical study repositories, and straightforward dental clinic sample request workflows.",
+    implementationDetails: [
+      "Interactive 3D dental healing device simulation and mechanism of action",
+      "Filterable clinical trial library and peer-reviewed dental research papers",
+      "Global distributor and oral surgeon inquiry portal"
+    ],
+    outcome: "Elevated international scientific credibility and accelerated adoption among dental implant surgeons worldwide.",
+    image: "/projects/magdent-med.jpg",
+    tags: ["Next.js", "MedTech", "Biotech", "Clinical Science"],
+    featured: true,
+    liveUrl: "https://magdentmed.com/",
+  },
+
+  // =========================================================================
+  // 11. WordPress: Entiva Media Labs
+  // =========================================================================
   {
     slug: "entiva-media",
     title: "Entiva Media Labs",
@@ -47,11 +313,13 @@ export const PROJECTS: Project[] = [
     outcome: "A sleek, high-performing corporate presence generating qualified inbound client leads.",
     image: "/projects/entiva-media.jpg",
     tags: ["WordPress", "Web Design", "Elementor", "Responsive"],
-    featured: true,
+    featured: false,
     liveUrl: "https://entivamedialabs.com/",
   },
 
-  // 2. WordPress: Uvaacha Studio
+  // =========================================================================
+  // 12. WordPress: Uvaacha Studio
+  // =========================================================================
   {
     slug: "uvaacha-studio",
     title: "Uvaacha Studio",
@@ -71,11 +339,13 @@ export const PROJECTS: Project[] = [
     outcome: "A refined visual showcase establishing strong brand authority in contemporary architectural design.",
     image: "/projects/uvaacha-studio.jpg",
     tags: ["WordPress", "Architecture", "Minimalist", "Portfolio"],
-    featured: true,
+    featured: false,
     liveUrl: "https://uvaachastudio.com/",
   },
 
-  // 3. WordPress: Capital Claims Australia
+  // =========================================================================
+  // 13. WordPress: Capital Claims Australia
+  // =========================================================================
   {
     slug: "capital-claims",
     title: "Capital Claims Australia",
@@ -99,7 +369,9 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://www.capitalclaims.com.au/",
   },
 
-  // 4. WordPress: Drehpunkt Pflege
+  // =========================================================================
+  // 14. WordPress: Drehpunkt Pflege
+  // =========================================================================
   {
     slug: "drehpunkt-pflege",
     title: "Drehpunkt Pflege",
@@ -123,7 +395,9 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://drehpunkt-pflege.at/",
   },
 
-  // 5. HTML / Web Design: Hungry Bite Pizza (Menu Card Design Website HTML)
+  // =========================================================================
+  // 15. HTML / Web: Hungry Bite Pizza
+  // =========================================================================
   {
     slug: "hungry-bite-pizza",
     title: "Hungry Bite Pizza",
@@ -143,11 +417,39 @@ export const PROJECTS: Project[] = [
     outcome: "Boosted takeout order volume with a fast, mouth-watering digital menu experience.",
     image: "/projects/hungry-bite-pizza.jpg",
     tags: ["HTML / Web", "Menu Card Design", "CSS3", "Restaurant"],
-    featured: true,
+    featured: false,
     liveUrl: "https://www.hungrybitepizza.ca/",
   },
 
-  // 6. Shopify: Genie.pk
+  // =========================================================================
+  // 16. Shopify: Summer Fridays
+  // =========================================================================
+  {
+    slug: "summer-fridays",
+    title: "Summer Fridays",
+    platform: "Shopify",
+    category: "Shopify",
+    role: "Shopify Storefront Development",
+    industry: "Beauty & Luxury Skincare",
+    shortDesc: "Iconic luxury skincare storefront with custom bundle builders, shade finders, and seamless mobile commerce.",
+    overview: "Implemented bespoke Shopify storefront features for Summer Fridays, the globally celebrated clean skincare and beauty brand founded by Marianna Hewitt & Lauren Ireland.",
+    challenge: "Delivering a clean, editorial beauty aesthetic while maintaining fast mobile page speeds across global traffic spikes.",
+    approach: "Architected custom Liquid sections, interactive skincare routine builders, micro-interactions, and subscription replenishment workflows.",
+    implementationDetails: [
+      "Interactive routine builder and custom skincare bundle engine",
+      "Sticky mobile add-to-bag with shade variant selectors",
+      "Seamless loyalty rewards integration and Klaviyo customer journey hooks"
+    ],
+    outcome: "An effortless, luxury shopping experience that scales flawlessly across worldwide product launches.",
+    image: "/projects/summer-fridays.jpg",
+    tags: ["Shopify", "Luxury Beauty", "Liquid", "E-Commerce"],
+    featured: false,
+    liveUrl: "https://summerfridays.com/",
+  },
+
+  // =========================================================================
+  // 17. Shopify: Genie.pk
+  // =========================================================================
   {
     slug: "genie-pk",
     title: "Genie.pk",
@@ -171,31 +473,9 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://genie.pk/",
   },
 
-  // 7. Shopify: Summer Fridays
-  {
-    slug: "summer-fridays",
-    title: "Summer Fridays",
-    platform: "Shopify",
-    category: "Shopify",
-    role: "Shopify Storefront Development",
-    industry: "Beauty & Luxury Skincare",
-    shortDesc: "Iconic luxury skincare storefront with custom bundle builders, shade finders, and seamless mobile commerce.",
-    overview: "Implemented bespoke Shopify storefront features for Summer Fridays, the globally celebrated clean skincare and beauty brand founded by Marianna Hewitt & Lauren Ireland.",
-    challenge: "Delivering a clean, editorial beauty aesthetic while maintaining fast mobile page speeds across global traffic spikes.",
-    approach: "Architected custom Liquid sections, interactive skincare routine builders, micro-interactions, and subscription replenishment workflows.",
-    implementationDetails: [
-      "Interactive routine builder and custom skincare bundle engine",
-      "Sticky mobile add-to-bag with shade variant selectors",
-      "Seamless loyalty rewards integration and Klaviyo customer journey hooks"
-    ],
-    outcome: "An effortless, luxury shopping experience that scales flawlessly across worldwide product launches.",
-    image: "/projects/summer-fridays.jpg",
-    tags: ["Shopify", "Luxury Beauty", "Liquid", "E-Commerce"],
-    featured: true,
-    liveUrl: "https://summerfridays.com/",
-  },
-
-  // 8. Shopify: Baikal Tea
+  // =========================================================================
+  // 18. Shopify: Baikal Tea
+  // =========================================================================
   {
     slug: "baikal-tea",
     title: "Baikal Tea",
@@ -219,7 +499,9 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://baikaltea.com/",
   },
 
-  // 9. Wix: GC Photo Booth
+  // =========================================================================
+  // 19. Wix: GC Photo Booth
+  // =========================================================================
   {
     slug: "gc-photobooth",
     title: "GC Photo Booth",
@@ -239,11 +521,13 @@ export const PROJECTS: Project[] = [
     outcome: "Converted website visitors into high-value scheduled event bookings with zero booking friction.",
     image: "/projects/gc-photobooth.jpg",
     tags: ["Wix", "UI/UX Design", "Events", "Booking"],
-    featured: true,
+    featured: false,
     liveUrl: "https://www.gcphotobooth.com/",
   },
 
-  // 10. Wix: Shop Eluxurie
+  // =========================================================================
+  // 20. Wix: Shop Eluxurie
+  // =========================================================================
   {
     slug: "shope-luxurie",
     title: "Shop Eluxurie",
@@ -267,7 +551,9 @@ export const PROJECTS: Project[] = [
     liveUrl: "http://shopeluxurie.com/",
   },
 
-  // 11. HubSpot: OpenEnvoy
+  // =========================================================================
+  // 21. HubSpot: OpenEnvoy
+  // =========================================================================
   {
     slug: "openenvoy",
     title: "OpenEnvoy",
@@ -287,11 +573,13 @@ export const PROJECTS: Project[] = [
     outcome: "Empowered the marketing team to deploy high-converting campaign pages in minutes while boosting enterprise demo requests.",
     image: "/projects/openenvoy.jpg",
     tags: ["HubSpot", "Fintech", "SaaS", "HubL"],
-    featured: true,
+    featured: false,
     liveUrl: "https://www.openenvoy.com/",
   },
 
-  // 12. HubSpot: Pinwheel Phones
+  // =========================================================================
+  // 22. HubSpot: Pinwheel Phones
+  // =========================================================================
   {
     slug: "pinwheel",
     title: "Pinwheel Phones",
@@ -315,7 +603,9 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://www.pinwheel.com/",
   },
 
-  // 13. HubSpot: Funded.club
+  // =========================================================================
+  // 23. HubSpot: Funded.club
+  // =========================================================================
   {
     slug: "funded-club",
     title: "Funded.club",
@@ -339,7 +629,9 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://funded.club/",
   },
 
-  // 14. Webflow: Sensei Farms
+  // =========================================================================
+  // 24. Webflow: Sensei Farms
+  // =========================================================================
   {
     slug: "sensei-farms",
     title: "Sensei Farms",
@@ -359,7 +651,7 @@ export const PROJECTS: Project[] = [
     outcome: "Created a captivating brand experience that elevated Sensei Farms’ retail footprint across major markets.",
     image: "/projects/sensei-farms.jpg",
     tags: ["Webflow", "AgTech", "Interactive Design", "Sustainability"],
-    featured: true,
+    featured: false,
     liveUrl: "https://www.senseifarms.com/",
   },
 ];
@@ -367,6 +659,7 @@ export const PROJECTS: Project[] = [
 export const FILTER_CATEGORIES = [
   "All",
   "WordPress",
+  "Next.js",
   "Shopify",
   "Webflow",
   "Wix",

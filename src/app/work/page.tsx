@@ -21,6 +21,14 @@ export default function WorkPage() {
           p.tags?.some((t) => t.toLowerCase().includes("html") || t.toLowerCase().includes("web"))
       );
     }
+    if (activeFilter === "Next.js") {
+      return PROJECTS.filter(
+        (p) =>
+          p.platform.includes("Next") ||
+          p.category.includes("Next") ||
+          p.tags?.some((t) => t.toLowerCase().includes("next"))
+      );
+    }
     return PROJECTS.filter(
       (p) =>
         p.platform === activeFilter ||
@@ -59,6 +67,13 @@ export default function WorkPage() {
                         p.platform.includes("HTML") ||
                         p.category.includes("HTML") ||
                         p.tags?.some((t) => t.toLowerCase().includes("html") || t.toLowerCase().includes("web"))
+                      );
+                    }
+                    if (category === "Next.js") {
+                      return (
+                        p.platform.includes("Next") ||
+                        p.category.includes("Next") ||
+                        p.tags?.some((t) => t.toLowerCase().includes("next"))
                       );
                     }
                     return (
