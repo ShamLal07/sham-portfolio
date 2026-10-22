@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { Project } from "@/data/projects";
 
 interface ProjectCardProps {
@@ -75,7 +75,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                 className="w-8 h-8 rounded-full bg-white/10 text-white/70 group-hover:bg-gradient-to-r group-hover:from-amber-500 group-hover:to-orange-500 group-hover:text-white flex items-center justify-center transition-all shrink-0"
                 title="View Case Study"
               >
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
           </div>

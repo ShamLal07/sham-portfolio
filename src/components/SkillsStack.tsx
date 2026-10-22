@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 /* ==========================================================================
    Authentic Brand Vector Logos
@@ -221,7 +221,7 @@ export function SkillsStack() {
 
           <div className="hidden sm:inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-white/60 shrink-0">
             <span>Designing. Developing. Delivering.</span>
-            <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-amber-400" />
           </div>
         </div>
 

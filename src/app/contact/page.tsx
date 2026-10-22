@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Mail, Phone, CheckCircle2, Send, Clock, Globe, Loader2, ArrowRight, Sparkles, ChevronDown } from "lucide-react";
+import { Mail, Phone, CheckCircle2, Send, Clock, Globe, Loader2, ArrowUpRight, Sparkles, ChevronDown } from "lucide-react";
 import { LinkedInIcon, GitHubIcon, WhatsAppIcon } from "@/components/SocialIcons";
 import { SITE_CONFIG } from "@/data/siteConfig";
 
@@ -148,10 +148,10 @@ export default function ContactPage() {
                       href="https://mail.google.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-sm shadow-md inline-flex items-center gap-2"
+                      className="group px-6 py-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-sm shadow-md inline-flex items-center gap-2"
                     >
                       <span>Open Gmail Inbox</span>
-                      <ArrowRight className="w-4 h-4 text-white" />
+                      <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </a>
                     <button
                       type="button"
@@ -272,7 +272,7 @@ export default function ContactPage() {
                     >
                       <WhatsAppIcon className="w-4 h-4 text-white" />
                       <span>Instant Chat on WhatsApp</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-white transition-transform group-hover:translate-x-1" />
+                      <ArrowUpRight className="w-3.5 h-3.5 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </a>
 
                     <Link
@@ -535,10 +535,10 @@ export default function ContactPage() {
                     href="https://wa.me/917876525326?text=Hi%20Sham,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm sm:text-base font-bold text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1.5"
+                    className="group text-sm sm:text-base font-bold text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1.5"
                   >
                     <span>+91-7876525326</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowUpRight className="w-3.5 h-3.5 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
               </div>

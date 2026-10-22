@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { LinkedInIcon } from "./SocialIcons";
 import { SITE_CONFIG } from "@/data/siteConfig";
 
@@ -43,7 +43,7 @@ export function ContactCTA() {
                     Say Hello
                   </span>
                 </span>
-                <ArrowRight className="w-4 h-4 text-amber-200 transform transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowUpRight className="w-4 h-4 text-amber-200 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>
           </div>

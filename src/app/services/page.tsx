@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { SERVICES, PROCESS_STEPS } from "@/data/services";
 import { ContactCTA } from "@/components/ContactCTA";
 
@@ -112,7 +112,7 @@ export default function ServicesPage() {
                       Start Project Consultation
                     </span>
                   </span>
-                  <ArrowRight className="w-4 h-4 text-white transform transition-transform duration-300 group-hover/btn:translate-x-1 shrink-0" />
+                  <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 shrink-0" />
                 </Link>
               </div>
 

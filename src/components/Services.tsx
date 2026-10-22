@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import {
-  ArrowRight,
+  ArrowUpRight,
   Mail,
   ShieldCheck,
   Zap,
@@ -651,7 +651,7 @@ export function Services() {
                     aria-label={`Get started with ${service.title}`}
                     className="w-8 h-8 rounded-full bg-white/10 text-white/70 flex items-center justify-center border border-white/10 shadow-sm group-hover:bg-amber-500 group-hover:text-white group-hover:border-amber-500 group-hover:scale-105 transition-all duration-200"
                   >
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                    <ArrowUpRight className="w-3.5 h-3.5 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 </div>
               </div>
@@ -676,8 +676,8 @@ export function Services() {
               </span>
             </span>
             <div className="w-7 h-7 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center relative overflow-hidden shrink-0 border border-white/30">
-              <ArrowRight className="w-3.5 h-3.5 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-4" />
-              <ArrowRight className="w-3.5 h-3.5 text-amber-200 absolute transform -translate-x-4 transition-transform duration-300 ease-out group-hover:translate-x-0" />
+              <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
+              <ArrowUpRight className="w-4 h-4 text-amber-200 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
             </div>
           </Link>
 

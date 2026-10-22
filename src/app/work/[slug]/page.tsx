@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
   ArrowLeft,
-  ArrowRight,
+  ArrowUpRight,
   ExternalLink,
   CheckCircle2,
 } from "lucide-react";
@@ -247,8 +247,8 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               </p>
             </div>
 
-            <div className="w-14 h-14 rounded-full border border-white/15 bg-white/[0.05] flex items-center justify-center text-white group-hover:bg-gradient-to-r group-hover:from-amber-500 group-hover:to-orange-500 group-hover:text-white group-hover:translate-x-1.5 transition-all flex-shrink-0 shadow-lg">
-              <ArrowRight className="w-5 h-5" />
+            <div className="w-14 h-14 rounded-full border border-white/15 bg-white/[0.05] flex items-center justify-center text-white group-hover:bg-gradient-to-r group-hover:from-amber-500 group-hover:to-orange-500 group-hover:text-white transition-all flex-shrink-0 shadow-lg">
+              <ArrowUpRight className="w-5 h-5 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </div>
           </Link>
         </div>

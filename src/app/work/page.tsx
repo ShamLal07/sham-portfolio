@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PROJECTS, FILTER_CATEGORIES } from "@/data/projects";
 import { ContactCTA } from "@/components/ContactCTA";
@@ -158,7 +158,7 @@ export default function WorkPage() {
                           Explore Project
                         </span>
                       </span>
-                      <ArrowRight className="w-3.5 h-3.5 text-amber-400 transition-transform group-hover/link:translate-x-1" />
+                      <ArrowUpRight className="w-3.5 h-3.5 text-amber-400 transform transition-transform duration-300 ease-out group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                     </Link>
 
                     <span className="text-xs text-white/40 font-semibold">

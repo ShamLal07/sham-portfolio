@@ -12,7 +12,7 @@ import {
   CheckCircle2,
   Route,
   Terminal,
-  ArrowRight,
+  ArrowUpRight,
   Palette,
   Lightbulb,
   Rocket,
@@ -912,7 +912,7 @@ export function AiWorkflow() {
                   Start Your Project
                 </span>
               </span>
-              <ArrowRight className="w-3.5 h-3.5 text-amber-200 transform transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-amber-200 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>
         </footer>

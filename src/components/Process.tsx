@@ -6,7 +6,7 @@ import {
   Code2,
   Gauge,
   Rocket,
-  ArrowRight
+  ArrowUpRight
 } from "lucide-react";
 
 interface StepItem {
@@ -89,7 +89,7 @@ export function Process() {
                 Let&apos;s Build Together
               </span>
             </div>
-            <ArrowRight className="w-4 h-4 text-amber-200 transform transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowUpRight className="w-4 h-4 text-amber-200 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
 

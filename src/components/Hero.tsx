@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Sparkles, Send } from "lucide-react";
+import { ArrowUpRight, Sparkles, Send } from "lucide-react";
 
 export function Hero() {
   return (
@@ -11,7 +11,7 @@ export function Hero() {
       className="relative pt-16 pb-16 md:pt-24 md:pb-24 bg-[#0A0B0E] text-white overflow-hidden"
     >
       {/* 1. Ambient Background: Warm Sunset/Amber Radiant Glow on Right Side */}
-      <div className="absolute right-0 top-0 bottom-0 w-full sm:w-2/3 pointer-events-none z-0 overflow-hidden">
+      <div className="absolute right-0 top-0 bottom-0 w-full pointer-events-none z-0 overflow-hidden">
         {/* Soft Radial Sunset Core */}
         <div className="absolute -right-24 top-1/2 -translate-y-1/2 w-[550px] h-[550px] sm:w-[700px] sm:h-[700px] rounded-full bg-gradient-to-br from-amber-500/25 via-orange-600/20 to-transparent blur-[120px]" />
 
