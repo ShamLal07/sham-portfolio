@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -115,6 +116,13 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap"
           rel="stylesheet"
         />
+        {/* Calendly Widget Styles & Instant Loading Preconnects */}
+        <link rel="preconnect" href="https://assets.calendly.com" />
+        <link rel="preconnect" href="https://calendly.com" crossOrigin="anonymous" />
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
         {/* Explicit Social / WhatsApp / Telegram OpenGraph Meta Tags */}
         <meta property="og:image" content="https://shamdev.in/og-image.jpg" />
         <meta property="og:image:secure_url" content="https://shamdev.in/og-image.jpg" />
@@ -181,6 +189,10 @@ export default function RootLayout({
         <Footer />
         <FloatingSocialBar />
         <SubscriptionPopup />
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

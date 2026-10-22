@@ -13,7 +13,7 @@ export const SITE_CONFIG = {
   phone: "+91-7876525326",
   github: "https://github.com/ShamLal07",
   linkedin: "https://www.linkedin.com/in/sham-dev/",
-  twitter: "https://x.com/ShamLal07",
+  twitter: "https://x.com/SammiThakur19",
   dribbble: "https://dribbble.com/ShamLal07",
   upwork: "https://www.upwork.com/freelancers/~01b696f86641ebbf8b",
   resumeUrl: "https://drive.google.com/file/d/1z0V5Ms3hnpMtQ2jbnFL_yHjpsgPBXtg8/view?usp=sharing",

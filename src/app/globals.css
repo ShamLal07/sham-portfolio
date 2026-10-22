@@ -505,3 +505,83 @@ header.sticky-nav:not(.scrolled) {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+/* ==========================================================================
+   Calendly Modal & Popup Enhancements (Scroll-free on desktop, dark luxury UI)
+   ========================================================================== */
+.calendly-overlay {
+  background: rgba(6, 7, 10, 0.88) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  z-index: 999999 !important;
+}
+
+.calendly-overlay .calendly-popup {
+  box-sizing: border-box !important;
+  width: 95% !important;
+  max-width: 1040px !important;
+  height: 92vh !important;
+  max-height: 820px !important;
+  min-height: 720px !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(245, 120, 30, 0.38) !important;
+  box-shadow: 0 35px 80px -20px rgba(0, 0, 0, 0.95), 0 0 45px rgba(245, 120, 30, 0.25) !important;
+  background: #0A0B0E !important;
+  overflow: hidden !important;
+}
+
+.calendly-overlay .calendly-popup .calendly-popup-content {
+  height: 100% !important;
+  border-radius: 24px !important;
+  background: #0A0B0E !important;
+  overflow: hidden !important;
+}
+
+/* Remove ugly white scrollbar on desktop and hide iframe scrollbars */
+.calendly-overlay .calendly-popup .calendly-popup-content iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  border-radius: 24px !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.calendly-overlay .calendly-popup .calendly-popup-content iframe::-webkit-scrollbar,
+.calendly-overlay .calendly-popup::-webkit-scrollbar,
+.calendly-overlay .calendly-popup-content::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Modern circular close button matching amber theme */
+.calendly-overlay .calendly-close-overlay {
+  top: 16px !important;
+  right: 16px !important;
+  width: 36px !important;
+  height: 36px !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.calendly-overlay .calendly-close-overlay:hover {
+  background: #f5781e !important;
+  border-color: #f5781e !important;
+  transform: rotate(90deg) scale(1.1) !important;
+  box-shadow: 0 0 22px rgba(245, 120, 30, 0.6) !important;
+}
+
+@media (max-width: 900px) {
+  .calendly-overlay .calendly-popup {
+    width: 96% !important;
+    height: 94vh !important;
+    max-height: 94vh !important;
+    min-height: auto !important;
+  }
+}

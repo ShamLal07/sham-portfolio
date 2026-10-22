@@ -343,7 +343,7 @@ export function SubscriptionPopup() {
 
               {/* X / Twitter */}
               <a
-                href={SITE_CONFIG.twitter || "https://x.com/ShamLal07"}
+                href={SITE_CONFIG.twitter || "https://x.com/SammiThakur19"}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="X / Twitter"

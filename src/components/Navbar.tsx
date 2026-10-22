@@ -3,7 +3,16 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Menu, X, Sparkles } from "lucide-react";
+import { ArrowUpRight, Menu, X, Sparkles, Calendar } from "lucide-react";
+
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (options: { url: string }) => void;
+      closePopupWidget?: () => void;
+    };
+  }
+}
 
 const NAV_LINKS = [
   { href: "/work", label: "Work" },
@@ -29,6 +38,42 @@ export function Navbar() {
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
+
+  const openCalendly = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    const url =
+      "https://calendly.com/thakursammi1233/30min?hide_gdpr_banner=1&background_color=0a0b0e&text_color=ffffff&primary_color=f5781e";
+
+    if (typeof window !== "undefined" && window.Calendly) {
+      window.Calendly.initPopupWidget({ url });
+      return;
+    }
+
+    if (typeof window !== "undefined") {
+      let script = document.querySelector(
+        'script[src*="calendly.com/assets/external/widget.js"]'
+      ) as HTMLScriptElement | null;
+
+      if (!script) {
+        script = document.createElement("script");
+        script.src = "https://assets.calendly.com/assets/external/widget.js";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+
+      script.onload = () => {
+        if (window.Calendly) {
+          window.Calendly.initPopupWidget({ url });
+        } else {
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+      };
+
+      script.onerror = () => {
+        window.open(url, "_blank", "noopener,noreferrer");
+      };
+    }
+  };
 
   const isDark = true;
 
@@ -112,11 +157,26 @@ export function Navbar() {
         </nav>
 
         {/* Right: CTA Button & Mobile Trigger */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          {/* Calendly Meeting Button */}
+          <button
+            type="button"
+            onClick={openCalendly}
+            className="relative group inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full text-xs sm:text-[0.84rem] font-semibold text-white transition-all duration-300 border border-amber-500/35 bg-white/[0.04] hover:bg-amber-500/15 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(245,120,30,0.35)] hover:scale-105 active:scale-95 cursor-pointer overflow-hidden"
+            aria-label="Schedule a meeting with Sham Lal on Calendly"
+          >
+            {/* Shimmer sweep animation */}
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out pointer-events-none" />
+            <Calendar className="w-3.5 h-3.5 text-amber-400 group-hover:scale-110 transition-transform shrink-0" />
+            <span className="tracking-tight text-white/95 group-hover:text-amber-200 transition-colors font-bold whitespace-nowrap">
+              Book Meeting
+            </span>
+          </button>
+
           {/* AI Hire Me Button */}
           <Link
             href="/contact"
-            className="relative group inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full text-xs sm:text-[0.84rem] font-semibold text-white transition-all duration-300 border border-amber-500/40 bg-gradient-to-r from-amber-500/15 via-orange-500/20 to-amber-500/15 hover:border-amber-400 hover:shadow-[0_0_22px_rgba(245,120,30,0.45)] hover:scale-105 active:scale-95 overflow-hidden"
+            className="relative group hidden sm:inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full text-xs sm:text-[0.84rem] font-semibold text-white transition-all duration-300 border border-amber-500/40 bg-gradient-to-r from-amber-500/15 via-orange-500/20 to-amber-500/15 hover:border-amber-400 hover:shadow-[0_0_22px_rgba(245,120,30,0.45)] hover:scale-105 active:scale-95 overflow-hidden"
             aria-label="Hire Sham Lal with AI Assisted Match"
           >
             {/* Shimmer sweep animation */}
@@ -140,7 +200,7 @@ export function Navbar() {
           {/* Let's Talk Button */}
           <Link
             href="/contact"
-            className={`group hidden sm:inline-flex items-center gap-2.5 px-3 py-2 rounded-full text-[0.88rem] font-semibold transition-all active:translate-y-0 overflow-hidden ${isDark
+            className={`group hidden lg:inline-flex items-center gap-2.5 px-3 py-2 rounded-full text-[0.88rem] font-semibold transition-all active:translate-y-0 overflow-hidden ${isDark
               ? "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white shadow-md shadow-orange-500/20 hover:scale-105"
               : "bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-xs hover:shadow-md hover:-translate-y-0.5"
               }`}
@@ -185,11 +245,11 @@ export function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-sm font-semibold py-1.5 transition-colors ${isDark
                     ? isActive
-                      ? "text-amber-400"
-                      : "text-white/80 hover:text-white"
+                    ? "text-amber-400"
+                    : "text-white/80 hover:text-white"
                     : isActive
-                      ? "text-[#2563EB]"
-                      : "text-slate-700 hover:text-[#2563EB]"
+                    ? "text-[#2563EB]"
+                    : "text-slate-700 hover:text-[#2563EB]"
                     }`}
                 >
                   {link.label}
@@ -197,6 +257,18 @@ export function Navbar() {
               );
             })}
             <div className="flex flex-col gap-2.5 pt-2">
+              {/* Calendly Meeting Mobile Button */}
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openCalendly();
+                }}
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 shadow-md shadow-orange-500/20 cursor-pointer active:scale-95 transition-all"
+              >
+                <Calendar className="w-4 h-4 text-white" />
+                <span>Book a Meeting</span>
+              </button>
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
@@ -209,7 +281,7 @@ export function Navbar() {
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className={`inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold transition-colors group ${isDark
-                  ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white"
+                  ? "bg-white/10 hover:bg-white/15 text-white border border-white/15"
                   : "bg-[#2563EB] hover:bg-[#1D4ED8] text-white"
                   }`}
               >
