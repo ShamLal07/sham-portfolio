@@ -120,14 +120,7 @@ export function Navbar() {
               : "bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-xs hover:shadow-md hover:-translate-y-0.5"
               }`}
           >
-            <span className="inline-grid grid-cols-1 grid-rows-1 overflow-hidden h-5 select-none items-center justify-center">
-              <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out group-hover:-translate-y-[140%]">
-                Let&apos;s Talk
-              </span>
-              <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 font-bold text-amber-100">
-                Hire Sham
-              </span>
-            </span>
+            <span>Let&apos;s Talk</span>
             <ArrowUpRight className="w-3.5 h-3.5 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
           </Link>
 

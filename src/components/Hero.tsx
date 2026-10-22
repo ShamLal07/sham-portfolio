@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Sparkles, Send } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 
 export function Hero() {
   return (
@@ -62,7 +62,7 @@ export function Hero() {
 
         {/* Unique Interactive CTA Buttons with Motion Text Roll & Meaningful Animated Icons */}
         <div className="flex flex-wrap items-center justify-center mt-4 gap-4 mb-16 sm:mb-20">
-          {/* Primary CTA (Sunset Amber Gradient + Dual-Text Slide + Diagonal Trajectory Arrow) */}
+          {/* Primary CTA */}
           <Link
             href="/work"
             className="group relative inline-flex items-center gap-3.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#F5781E] via-[#F59E0B] to-[#F5781E] bg-[length:200%_auto] text-white font-bold text-sm sm:text-base shadow-[0_10px_30px_-5px_rgba(245,120,30,0.5)] hover:shadow-[0_16px_40px_-5px_rgba(245,120,30,0.75)] hover:scale-[1.03] active:scale-95 transition-all duration-300 overflow-hidden"
@@ -70,53 +70,26 @@ export function Hero() {
             {/* Shimmer light sweep reflection */}
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
 
-            {/* Rolling dual-text animation: old slides up/out, new slides in from bottom */}
-            <span className="inline-grid grid-cols-1 grid-rows-1 overflow-hidden h-6 select-none items-center justify-center">
-              <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none tracking-wide transition-transform duration-300 ease-out group-hover:-translate-y-[140%]">
-                View Selected Work
-              </span>
-              <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none tracking-wide transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 text-amber-100 font-extrabold">
-                Explore Case Studies
-              </span>
-            </span>
+            <span className="tracking-wide">View Selected Work</span>
 
-            {/* Meaningful Icon Badge: Launch Vector with dual-sliding diagonal arrow */}
+            {/* Launch Vector with dual-sliding diagonal arrow */}
             <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center relative overflow-hidden shrink-0 border border-white/30 shadow-inner">
-              {/* Outgoing arrow on hover */}
               <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
-              {/* Incoming arrow from opposite corner */}
               <ArrowUpRight className="w-4 h-4 text-amber-200 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
             </div>
           </Link>
 
-          {/* Secondary CTA (Dark Glassmorphism + Dual-Text Slide + Live Availability Pulse & Sparkle) */}
+          {/* Secondary CTA */}
           <Link
             href="/contact"
-            className="group relative inline-flex items-center gap-3.5 px-8 py-4 rounded-full bg-white/[0.07] border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/[0.14] hover:border-white/40 hover:scale-[1.03] active:scale-95 transition-all duration-300 overflow-hidden backdrop-blur-md shadow-lg"
+            className="group relative inline-flex items-center gap-3.5 px-8 py-4 rounded-full bg-white/[0.07] border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/[0.14] hover:border-white/40 hover:scale-[1.03] active:scale-95 transition-all duration-300 backdrop-blur-md shadow-lg"
           >
-            {/* Soft inner glow highlight */}
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <span>Let&apos;s Work Together</span>
 
-            {/* Rolling dual-text animation: old slides up/out, new slides in from bottom */}
-            <span className="inline-grid grid-cols-1 grid-rows-1 overflow-hidden h-6 select-none items-center justify-center">
-              <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out group-hover:-translate-y-[140%] text-white/90">
-                Let&apos;s Talk
-              </span>
-              <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 text-emerald-300 font-bold">
-                Start Your Project
-              </span>
-            </span>
-
-            {/* Meaningful Icon Badge: Live Availability Radar Beacon that morphs into Send icon */}
-            <div className="w-8 h-8 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center relative overflow-hidden shrink-0 shadow-inner">
-              {/* Live Status Beacon (Pulsing green radar) */}
-              <div className="relative flex items-center justify-center group-hover:scale-0 group-hover:opacity-0 transition-all duration-300">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                <span className="absolute w-3.5 h-3.5 rounded-full bg-emerald-400/40 animate-ping" />
-              </div>
-
-              {/* Action-ready Send Icon swooping in on hover */}
-              <Send className="w-3.5 h-3.5 text-emerald-300 absolute transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
+            {/* Launch Vector with dual-sliding diagonal arrow */}
+            <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center relative overflow-hidden shrink-0 border border-white/20">
+              <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
+              <ArrowUpRight className="w-4 h-4 text-amber-200 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
             </div>
           </Link>
         </div>
