@@ -137,7 +137,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
             fill
             priority
             sizes="(max-width: 1240px) 100vw, 1240px"
-            className="object-cover"
+            className="object-cover object-top"
           />
         </div>
 

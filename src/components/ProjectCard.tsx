@@ -39,7 +39,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#12131A] via-transparent to-transparent opacity-60 pointer-events-none" />
       </Link>

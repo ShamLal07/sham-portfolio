@@ -120,32 +120,6 @@ export function Hero() {
             </div>
           </Link>
         </div>
-
-        {/* 3. Infinite Marquee Loop with Bigger Authentic Real-Color Brand Logos */}
-        <div className="w-full pt-8 border-t border-white/10 flex flex-col items-center">
-          <p className="text-xs uppercase tracking-widest text-white/50 font-semibold mb-6">
-            Technologies, Tools &amp; Platforms I Build With
-          </p>
-
-          {/* Infinite Marquee Track with Fade Mask */}
-          <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-            <div className="flex w-max gap-5 sm:gap-6 animate-marquee pause-on-hover py-2">
-              {[...ALL_TECH_TOOLS, ...ALL_TECH_TOOLS].map((tool, idx) => (
-                <div
-                  key={`${tool.name}-${idx}`}
-                  className="flex items-center gap-3.5 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-white/[0.06] border border-white/10 hover:border-amber-400/50 hover:bg-white/[0.12] hover:scale-105 transition-all shadow-md shrink-0 cursor-default"
-                >
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 flex items-center justify-center">
-                    {tool.icon}
-                  </div>
-                  <span className="text-sm sm:text-base font-bold text-white tracking-wide">
-                    {tool.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
