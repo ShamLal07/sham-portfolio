@@ -26,7 +26,7 @@ export function FeaturedWork() {
   }, [activeFilter]);
 
   return (
-    <section id="work" className="py-14 sm:py-20 md:py-24 bg-transparent text-white border-t border-white/10">
+    <section id="work" className="py-14 sm:py-20 md:py-24 bg-[#0D0F18]/85 text-white border-t border-white/10 relative">
       <div className="site-container">
         {/* Header: Title on Left, View All Projects CTA on Right */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-4">

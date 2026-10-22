@@ -63,7 +63,7 @@ const STEPS: StepItem[] = [
 
 export function Process() {
   return (
-    <section className="py-20 md:py-32 bg-transparent text-white border-t border-white/10 relative overflow-hidden" id="process">
+    <section className="py-20 md:py-32 bg-[#0D0F18]/85 text-white border-t border-white/10 relative overflow-hidden" id="process">
       <div className="site-container relative z-10">
         {/* Centered Header matching reference image */}
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">

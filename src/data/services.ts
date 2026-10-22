@@ -82,9 +82,9 @@ export const SERVICES: ServiceItem[] = [
       "Core Web Vitals & 90+ PageSpeed",
       "Mobile & Responsive Fixes",
       "Conversion Rate Optimization (CRO)",
-      "Technical SEO & Clean Code Refactor"
+      "Clean Code Refactor & Standards"
     ],
-    platforms: ["PageSpeed", "SEO Audit", "Core Web Vitals", "Cross-Browser", "Analytics"]
+    platforms: ["PageSpeed", "Lighthouse", "Core Web Vitals", "Cross-Browser", "Analytics"]
   }
 ];
 

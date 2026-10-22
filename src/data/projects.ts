@@ -175,7 +175,7 @@ export const PROJECTS: Project[] = [
     industry: "Artificial Intelligence & SaaS",
     shortDesc: "High-speed custom WordPress publication and knowledge hub engineered for a conversational AI platform.",
     overview: "Architected and deployed a custom WordPress editorial blog platform for ItsBot AI, delivering in-depth articles on conversational AI, automation workflows, and customer experience technology.",
-    challenge: "Creating a clean, modern Medium-style reading experience with newsletter captures, related post recommendations, and lightning-fast SEO delivery.",
+    challenge: "Creating a clean, modern Medium-style reading experience with newsletter captures, related post recommendations, and lightning-fast page delivery.",
     approach: "Built lightweight custom WordPress templates, estimated reading time counters, sticky social sharing, and structured schema markup.",
     implementationDetails: [
       "Custom editorial WordPress layout optimized for reader retention and readability",
@@ -184,7 +184,7 @@ export const PROJECTS: Project[] = [
     ],
     outcome: "Substantially increased organic search traffic and reader time-on-page across core AI topics.",
     image: "/projects/itsbot-ai-blog.jpg",
-    tags: ["WordPress", "Custom Blog", "AI & SaaS", "Editorial", "SEO"],
+    tags: ["WordPress", "Custom Blog", "AI & SaaS", "Editorial", "Clean Code"],
     featured: true,
     liveUrl: "https://itsbot.ai/blog/",
   },
@@ -414,7 +414,7 @@ export const PROJECTS: Project[] = [
     implementationDetails: [
       "Custom property depreciation quote estimation calculator",
       "ACF-powered landing pages for residential and commercial property investors",
-      "Fast-loading, SEO-optimized structure adhering to Australian financial compliance"
+      "Fast-loading, high-performance structure adhering to Australian financial compliance"
     ],
     outcome: "Significantly streamlined investor quote submissions and increased mobile conversion rates.",
     image: "/projects/capital-claims.jpg",

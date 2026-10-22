@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X, Sparkles } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "/work", label: "Work" },
@@ -112,7 +112,32 @@ export function Navbar() {
         </nav>
 
         {/* Right: CTA Button & Mobile Trigger */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* AI Hire Me Button */}
+          <Link
+            href="/contact"
+            className="relative group inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full text-xs sm:text-[0.84rem] font-semibold text-white transition-all duration-300 border border-amber-500/40 bg-gradient-to-r from-amber-500/15 via-orange-500/20 to-amber-500/15 hover:border-amber-400 hover:shadow-[0_0_22px_rgba(245,120,30,0.45)] hover:scale-105 active:scale-95 overflow-hidden"
+            aria-label="Hire Sham Lal with AI Assisted Match"
+          >
+            {/* Shimmer sweep animation */}
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out pointer-events-none" />
+
+            {/* Glowing radar dot */}
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_#10B981]" />
+            </span>
+
+            <Sparkles className="w-3.5 h-3.5 text-amber-400 group-hover:rotate-12 transition-transform duration-300 shrink-0" />
+            <span className="tracking-tight text-white group-hover:text-amber-200 transition-colors font-bold">
+              Hire Me
+            </span>
+            <span className="inline-flex text-[9px] uppercase font-extrabold tracking-wider px-1.5 py-0.5 rounded-full bg-amber-500/25 text-amber-300 border border-amber-500/35">
+              AI
+            </span>
+          </Link>
+
+          {/* Let's Talk Button */}
           <Link
             href="/contact"
             className={`group hidden sm:inline-flex items-center gap-2.5 px-3 py-2 rounded-full text-[0.88rem] font-semibold transition-all active:translate-y-0 overflow-hidden ${isDark
@@ -171,17 +196,27 @@ export function Navbar() {
                 </Link>
               );
             })}
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold transition-colors group ${isDark
-                ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white"
-                : "bg-[#2563EB] hover:bg-[#1D4ED8] text-white"
-                }`}
-            >
-              <span>Let&apos;s Talk</span>
-              <ArrowUpRight className="w-4 h-4 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            <div className="flex flex-col gap-2.5 pt-2">
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold text-white border border-amber-500/40 bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:border-amber-400 shadow-md shadow-orange-500/10"
+              >
+                <Sparkles className="w-4 h-4 text-amber-400" />
+                <span>Hire Me • AI Match</span>
+              </Link>
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold transition-colors group ${isDark
+                  ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white"
+                  : "bg-[#2563EB] hover:bg-[#1D4ED8] text-white"
+                  }`}
+              >
+                <span>Let&apos;s Talk</span>
+                <ArrowUpRight className="w-4 h-4 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </div>
           </nav>
         </div>
       )}

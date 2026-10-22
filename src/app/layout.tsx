@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { FloatingSocialBar } from "@/components/FloatingSocialBar";
 import { SITE_CONFIG } from "@/data/siteConfig";
 
 const siteBaseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shamdev.in";
@@ -177,6 +178,7 @@ export default function RootLayout({
         <Navbar />
         <div className="flex-1 relative z-10">{children}</div>
         <Footer />
+        <FloatingSocialBar />
       </body>
     </html>
   );

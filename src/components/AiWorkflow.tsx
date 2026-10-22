@@ -474,7 +474,7 @@ const WORKFLOW_STEPS: WorkflowStep[] = [
   {
     num: "5",
     title: "Automate & Optimize",
-    tools: "SEO, Web Vitals, Custom Scripts",
+    tools: "Web Vitals, Lighthouse, Custom Scripts",
     desc: "Self-generating documentation, PR summaries, performance monitoring, and ongoing speed tuning.",
     icon: TrendingUp,
   },
@@ -523,7 +523,7 @@ export function AiWorkflow() {
   return (
     <section
       id="ai-workflow"
-      className="relative py-20 sm:py-28 lg:py-32 bg-transparent border-t border-white/10 text-white overflow-hidden"
+      className="relative py-20 sm:py-28 lg:py-32 bg-[#0B0C12] border-t border-white/10 text-white overflow-hidden"
     >
       <div className="site-container relative z-10 max-w-6xl mx-auto space-y-6">
         {/* Top Hero Header */}

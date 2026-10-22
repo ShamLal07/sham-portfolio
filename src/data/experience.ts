@@ -31,7 +31,7 @@ export const EXPERIENCES: ExperienceItem[] = [
       "Built responsive websites using HTML, CSS, JavaScript, and WordPress (ACF)",
       "Created visual designs in Figma and translated approved mockups into code",
       "Worked with Webflow and HubSpot for dynamic page builds and campaign landing pages",
-      "Applied on-page SEO basics, image optimization, and responsive testing"
+      "Applied performance optimization, image compression, and responsive testing"
     ]
   },
   {

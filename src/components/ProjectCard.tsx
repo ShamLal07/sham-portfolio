@@ -25,6 +25,7 @@ function ProjectBrandIcon({ title }: { title: string }) {
 
 export function ProjectCard({ project, priority = false }: ProjectCardProps) {
   const tags = project.tags || [project.platform, project.category];
+  const [imgSrc, setImgSrc] = React.useState(project.image);
 
   return (
     <article className="group relative bg-[#12131A] border border-white/10 rounded-2xl overflow-hidden shadow-lg hover:border-amber-400/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
@@ -34,12 +35,17 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
         className="block relative w-full aspect-[16/10] bg-[#0A0B0E] overflow-hidden"
       >
         <Image
-          src={project.image}
+          src={imgSrc}
           alt={`${project.title} website preview`}
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+          onError={() => {
+            if (project.slug === "xfactor-quiz") {
+              setImgSrc("/projects/xfactor-quiz.png");
+            }
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#12131A] via-transparent to-transparent opacity-60 pointer-events-none" />
       </Link>

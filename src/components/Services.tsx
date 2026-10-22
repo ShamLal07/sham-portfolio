@@ -537,7 +537,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative py-24 sm:py-28 lg:py-36 bg-transparent border-t border-white/10 text-white overflow-hidden"
+      className="relative py-24 sm:py-28 lg:py-36 bg-[#0E101C]/85 border-t border-white/10 text-white overflow-hidden"
     >
       {/* Subtle Ambient Studio Lighting */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-amber-500/5 via-transparent to-transparent pointer-events-none" />

@@ -1,32 +1,32 @@
 import React from "react";
 import type { Metadata } from "next";
 import { ServicesExplorer } from "@/components/ServicesExplorer";
+import { ALL_SERVICES_CATALOG } from "@/data/servicesCatalog";
 
 export const metadata: Metadata = {
-  title: "Services & Expertise — Sham Lal | Full-Stack & CMS Developer",
+  title: "Services & Expertise — Sham Lal | Web Designer & Web Developer",
   description:
-    "Explore professional freelance web development, custom WordPress, Shopify stores, Technical & On-Page SEO, Off-Page backlinks, Next.js web applications, and ongoing website maintenance by Sham Lal.",
+    "Explore professional web design, UI/UX, custom WordPress development, Shopify storefronts, Next.js web applications, and ongoing website maintenance by Sham Lal.",
   keywords: [
     "Sham Lal Services",
+    "Web Designer",
+    "Web Developer",
     "WordPress Developer Freelance",
     "Shopify Store Expert",
-    "Technical SEO Specialist",
-    "On-Page SEO Services",
-    "Off-Page SEO Backlinks",
     "Next.js Developer India",
     "Full-Stack Web Development",
     "UI/UX Design Figma",
     "Website Maintenance & Speed Optimization"
   ],
   openGraph: {
-    title: "Innovative Digital Services For Business Growth — Sham Lal",
+    title: "Innovative Web Design & Development Services — Sham Lal",
     description:
-      "Expert-led web development, SEO, WordPress, Shopify, and full-stack solutions designed to scale your brand and maximize ROI.",
+      "Expert-led web design, UI/UX, WordPress, Shopify, and frontend web development solutions designed to scale your brand.",
     type: "website",
   },
 };
 
-// Rich SEO JSON-LD Schema for personal branding & search engines
+// Rich JSON-LD Schema for personal branding & search engines
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -35,65 +35,23 @@ const jsonLd = {
   "founder": {
     "@type": "Person",
     "name": "Sham Lal",
-    "jobTitle": "Full Stack & CMS Web Developer",
+    "jobTitle": "Web Designer & Web Developer",
     "email": "thakur@shamdev.in",
   },
-  "description": "High-performance web development, custom WordPress & Shopify, technical and off-page SEO, and modern Next.js solutions.",
+  "description": "High-performance web design, UI/UX, custom WordPress & Shopify development, and modern Next.js web solutions.",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Digital Web Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Custom WordPress Development"
-        }
+    "itemListElement": ALL_SERVICES_CATALOG.map((s) => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": s.title,
+        "url": `https://shamlal.com/services/${s.slug}`,
+        "description": s.shortDesc,
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "E-Commerce & Shopify Store Builds"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Technical & On-Page SEO Optimization"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Off-Page SEO & Authority Backlinks"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Full-Stack React & Next.js Web Apps"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "UI/UX Design & Prototyping"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Ongoing Website Maintenance & Support"
-        }
-      }
-    ]
-  }
+    })),
+  },
 };
 
 export default function ServicesPage() {
