@@ -220,23 +220,88 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           </div>
 
           {/* Companion Mobile Smartphone Mockup docked on right */}
-          <div className="hidden md:block absolute -right-2 lg:-right-4 -bottom-6 sm:-bottom-8 w-40 lg:w-52 aspect-[9/18.5] rounded-[2.25rem] bg-[#17181F] border-4 border-[#282A36] p-2 shadow-2xl z-20 overflow-hidden">
+          <div className="hidden md:block absolute -right-2 lg:-right-4 -bottom-6 sm:-bottom-8 w-44 lg:w-56 aspect-[9/18.5] rounded-[2.25rem] bg-[#17181F] border-4 border-[#282A36] p-2 shadow-2xl z-20 overflow-hidden">
             {/* Speaker & Dynamic Notch */}
-            <div className="w-16 h-3 bg-black rounded-full mx-auto mb-2 flex items-center justify-center z-30 relative">
+            <div className="w-16 h-3 bg-black rounded-full mx-auto mb-2 flex items-center justify-center z-30 relative shrink-0">
               <div className="w-1.5 h-1.5 rounded-full bg-[#1F222E] mr-1.5" />
               <div className="w-2 h-2 rounded-full bg-[#12131A]" />
             </div>
+
             {/* Mobile Viewport Screen */}
-            <div className="relative w-full h-[calc(100%-20px)] rounded-[1.75rem] overflow-hidden bg-black">
-              <Image
-                src={project.image}
-                alt={`${project.title} Mobile Responsive View`}
-                fill
-                sizes="250px"
-                className="object-cover object-top scale-105"
-              />
-              <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-black/80 backdrop-blur-md text-[9px] font-bold text-amber-300 border border-white/10">
-                Mobile UI
+            <div className="relative w-full h-[calc(100%-20px)] rounded-[1.75rem] overflow-hidden bg-[#0A0B0E] flex flex-col justify-between border border-white/10">
+              {/* 1. Mobile Header with Brand Logo & Hamburger Menu Toggle */}
+              <div className="relative z-20 flex items-center justify-between px-3.5 py-2.5 bg-[#0D0E14]/90 backdrop-blur-md border-b border-white/10 shrink-0">
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <div className="w-4 h-4 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-[8px] font-black text-white shrink-0">
+                    {project.title.slice(0, 1)}
+                  </div>
+                  <span className="font-extrabold text-[11px] text-white tracking-tight truncate">
+                    {project.title}
+                  </span>
+                </div>
+
+                {/* Hamburger Toggle Bar */}
+                <div className="flex flex-col items-end justify-center gap-1 shrink-0 p-0.5">
+                  <span className="w-3.5 h-0.5 bg-white rounded-full" />
+                  <span className="w-2.5 h-0.5 bg-amber-400 rounded-full" />
+                  <span className="w-3 h-0.5 bg-white/80 rounded-full" />
+                </div>
+              </div>
+
+              {/* 2. Responsive Mobile Banner Area */}
+              <div className="relative flex-1 p-3 flex flex-col justify-between overflow-hidden">
+                {/* Background Banner with Dark Gradient Overlay */}
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} Responsive Banner`}
+                    fill
+                    sizes="250px"
+                    className="object-cover object-top opacity-30"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#0A0B0E]/60 via-[#0A0B0E]/80 to-[#0A0B0E] pointer-events-none" />
+                </div>
+
+                {/* Centered Mobile Content Stack */}
+                <div className="relative z-10 text-center my-auto space-y-2 py-1">
+                  <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/25 text-amber-300 text-[8px] font-bold tracking-wider uppercase">
+                    <span className="w-1 h-1 rounded-full bg-amber-400 animate-pulse" />
+                    <span>Mobile Responsive</span>
+                  </div>
+
+                  <h4 className="text-xs lg:text-[13px] font-extrabold text-white leading-tight tracking-tight line-clamp-2 px-1">
+                    {project.title}
+                  </h4>
+
+                  <p className="text-[9px] text-white/60 leading-tight line-clamp-2 px-2 font-normal">
+                    {project.shortDesc}
+                  </p>
+
+                  <div className="pt-0.5">
+                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-[8.5px] shadow-sm">
+                      <span>View Live</span>
+                      <ArrowUpRight className="w-2.5 h-2.5" />
+                    </span>
+                  </div>
+                </div>
+
+                {/* Simulated Mobile Feature Card */}
+                <div className="relative z-10 w-full p-2 rounded-xl bg-white/[0.06] border border-white/10 backdrop-blur-md shadow-sm shrink-0">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span className="text-[9px] font-bold text-white truncate">
+                      {project.platform} Powered
+                    </span>
+                  </div>
+                  <p className="text-[8px] text-white/55 leading-tight line-clamp-2">
+                    Fluid touch navigation, fast mobile load, and adaptive UI components.
+                  </p>
+                </div>
+              </div>
+
+              {/* 3. iOS Home Indicator Bar */}
+              <div className="relative z-20 py-1 bg-[#0A0B0E] flex items-center justify-center shrink-0">
+                <div className="w-14 h-1 bg-white/30 rounded-full" />
               </div>
             </div>
           </div>
