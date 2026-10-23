@@ -22,18 +22,6 @@ export function FloatingSocialBar() {
       ),
     },
     {
-      name: "Upwork",
-      url: SITE_CONFIG.upwork,
-      label: "Upwork • Top Rated Developer",
-      bgColor: "bg-[#14A800] hover:bg-[#18C200] text-white border-[#14A800]/60 hover:border-emerald-300",
-      shadowGlow: "hover:shadow-[0_0_24px_rgba(20,168,0,0.65)]",
-      icon: (
-        <svg className="w-5 h-5 fill-current transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c0 1.506-1.22 2.727-2.728 2.727a2.73 2.73 0 0 1-2.727-2.727V3.492H0v7.112c0 2.973 2.417 5.391 5.4 5.391 2.984 0 5.4-2.418 5.4-5.391v-1.09c.477 1.214 1.103 2.457 1.864 3.655l-2.008 9.34h2.775l1.45-6.706c1.17.75 2.53 1.192 3.98 1.192 3.886 0 7.04-3.154 7.04-7.04 0-3.885-3.154-7.04-7.04-7.04z" />
-        </svg>
-      ),
-    },
-    {
       name: "LinkedIn",
       url: SITE_CONFIG.linkedin,
       label: "LinkedIn • Sham Lal",
