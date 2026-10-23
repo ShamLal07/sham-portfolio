@@ -644,14 +644,16 @@ export function Services() {
                   </ul>
                 </div>
 
-                {/* Bottom-Right Circular Arrow Button */}
-                <div className="flex justify-end pt-2">
+                {/* Bottom Row Action Link with Descriptive Text */}
+                <div className="flex items-center justify-between pt-3 border-t border-white/5 mt-2">
                   <Link
                     href="/contact"
-                    aria-label={`Get started with ${service.title}`}
-                    className="w-8 h-8 rounded-full bg-white/10 text-white/70 flex items-center justify-center border border-white/10 shadow-sm group-hover:bg-amber-500 group-hover:text-white group-hover:border-amber-500 group-hover:scale-105 transition-all duration-200"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-white/70 group-hover:text-amber-300 transition-colors"
                   >
-                    <ArrowUpRight className="w-3.5 h-3.5 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <span>Discuss {service.title}</span>
+                    <span className="w-7 h-7 rounded-full bg-white/10 text-white/70 flex items-center justify-center border border-white/10 shadow-sm group-hover:bg-amber-500 group-hover:text-white group-hover:border-amber-500 group-hover:scale-105 transition-all duration-200">
+                      <ArrowUpRight className="w-3.5 h-3.5 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
                   </Link>
                 </div>
               </div>

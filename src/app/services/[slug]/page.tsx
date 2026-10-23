@@ -21,6 +21,7 @@ import { ALL_SERVICES_CATALOG, getServiceBySlug } from "@/data/servicesCatalog";
 import { PROJECTS } from "@/data/projects";
 import { ServiceBrandIcon } from "@/components/ServiceBrandIcon";
 import { ServiceFaqAccordion } from "@/components/ServiceFaqAccordion";
+import { JsonLd } from "@/components/JsonLd";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -32,25 +33,45 @@ export async function generateStaticParams() {
   }));
 }
 
+import { SITE_URL } from "@/data/siteConfig";
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
 
   if (!service) {
-    return { title: "Service Not Found — Sham Lal" };
+    return { title: "Service Not Found | Sham Lal" };
   }
 
+  const pageTitle = `${service.title} | Sham Lal`;
+  const pageUrl = `${SITE_URL}/services/${service.slug}`;
+
   return {
-    title: `${service.title} | Sham Lal — Web Designer & Web Developer`,
+    title: pageTitle,
     description: service.shortDesc,
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
-      title: `${service.title} | Sham Lal Services`,
+      title: pageTitle,
       description: service.shortDesc,
       type: "website",
-      url: `https://shamdev.in/services/${service.slug}`,
+      locale: "en_US",
+      url: pageUrl,
+      images: [
+        {
+          url: `${SITE_URL}/og-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: service.title,
+        },
+      ],
     },
-    alternates: {
-      canonical: `https://shamdev.in/services/${service.slug}`,
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description: service.shortDesc,
+      images: [`${SITE_URL}/og-image.jpg`],
     },
   };
 }
@@ -87,14 +108,14 @@ export default async function SingleServicePage({ params }: PageProps) {
     "@graph": [
       {
         "@type": "Service",
-        "@id": `https://shamdev.in/services/${service.slug}#service`,
+        "@id": `${SITE_URL}/services/${service.slug}#service`,
         name: service.title,
         description: service.shortDesc,
         provider: {
           "@type": "Person",
           name: "Sham Lal",
           jobTitle: "Web Designer & Web Developer",
-          url: "https://shamdev.in",
+          url: SITE_URL,
         },
         serviceType: service.categoryLabel,
         offers: {
@@ -110,19 +131,19 @@ export default async function SingleServicePage({ params }: PageProps) {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://shamlal.com",
+            item: SITE_URL,
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Services",
-            item: "https://shamlal.com/services",
+            item: `${SITE_URL}/services`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: service.title,
-            item: `https://shamlal.com/services/${service.slug}`,
+            item: `${SITE_URL}/services/${service.slug}`,
           },
         ],
       },
@@ -142,10 +163,7 @@ export default async function SingleServicePage({ params }: PageProps) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
 
       <main className="min-h-screen bg-[#0A0A0E] text-white pt-24 sm:pt-28 pb-24 overflow-x-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -409,7 +427,7 @@ export default async function SingleServicePage({ params }: PageProps) {
                     <div className="relative aspect-video w-full bg-[#181A24] overflow-hidden">
                       <Image
                         src={proj.image}
-                        alt={proj.title}
+                        alt={`${proj.title} homepage screenshot`}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />

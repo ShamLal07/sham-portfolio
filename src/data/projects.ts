@@ -15,6 +15,7 @@ export interface Project {
   tags?: string[];
   featured?: boolean;
   liveUrl?: string;
+  updatedAt?: string;
 }
 
 export const FEATURED_PROJECTS_SLUGS = [
@@ -60,6 +61,7 @@ export const PROJECTS: Project[] = [
     tags: ["HubSpot", "SaaS", "HubL", "IT Services", "Kanban"],
     featured: true,
     liveUrl: "https://www.topleft.team/",
+    updatedAt: "2026-09-15",
   },
 
   // =========================================================================
@@ -86,6 +88,7 @@ export const PROJECTS: Project[] = [
     tags: ["HubSpot", "AI Recruitment", "HubL", "Global Talent", "SaaS"],
     featured: true,
     liveUrl: "https://workfully.com/",
+    updatedAt: "2026-09-10",
   },
 
   // =========================================================================
@@ -112,6 +115,7 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js", "React", "Vehicle Tech", "SaaS", "Tailwind CSS"],
     featured: true,
     liveUrl: "https://alerteefy.com/",
+    updatedAt: "2026-08-28",
   },
 
   // =========================================================================
@@ -138,6 +142,7 @@ export const PROJECTS: Project[] = [
     tags: ["WordPress", "Elementor", "Construction", "B2B", "Responsive"],
     featured: true,
     liveUrl: "https://mgiaccess.com/",
+    updatedAt: "2026-08-15",
   },
 
   // =========================================================================
@@ -164,6 +169,7 @@ export const PROJECTS: Project[] = [
     tags: ["WordPress", "Gutenberg", "Interactive Quiz", "React", "EdTech"],
     featured: true,
     liveUrl: "https://quiz.x-factor-lab.com/",
+    updatedAt: "2026-08-01",
   },
 
   // =========================================================================
@@ -190,6 +196,7 @@ export const PROJECTS: Project[] = [
     tags: ["WordPress", "Custom Blog", "AI & SaaS", "Editorial", "Clean Code"],
     featured: true,
     liveUrl: "https://itsbot.ai/blog/",
+    updatedAt: "2026-07-20",
   },
 
   // =========================================================================
@@ -216,6 +223,7 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js", "Clean Tech", "Australia", "B2B Solutions", "E-Commerce"],
     featured: true,
     liveUrl: "https://www.aquoz.com.au/",
+    updatedAt: "2026-07-10",
   },
 
   // =========================================================================
@@ -242,6 +250,7 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js", "Clean Energy", "HVAC", "Enterprise", "React"],
     featured: true,
     liveUrl: "https://hyundaiheatpumps.co.in/",
+    updatedAt: "2026-06-25",
   },
 
   // =========================================================================
@@ -268,6 +277,7 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js", "Fintech", "Property Tech", "Australia", "Analytics"],
     featured: true,
     liveUrl: "https://equitypulse.com.au/",
+    updatedAt: "2026-06-12",
   },
 
   // =========================================================================
@@ -294,6 +304,7 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js", "Luxury Hospitality", "Boutique Hotel", "Greece", "UI/UX"],
     featured: true,
     liveUrl: "https://www.aethrionlindos.com/",
+    updatedAt: "2026-05-30",
   },
 
   // =========================================================================
@@ -320,6 +331,7 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js", "Mobility", "Corporate Travel", "Global Logistics"],
     featured: true,
     liveUrl: "https://www.hoppworldwide.com/",
+    updatedAt: "2026-05-18",
   },
 
   // =========================================================================
@@ -346,6 +358,7 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js", "MedTech", "Biotech", "Clinical Science"],
     featured: true,
     liveUrl: "https://magdentmed.com/",
+    updatedAt: "2026-05-02",
   },
 
   // =========================================================================
@@ -398,6 +411,7 @@ export const PROJECTS: Project[] = [
     tags: ["WordPress", "Architecture", "Minimalist", "Portfolio"],
     featured: false,
     liveUrl: "https://uvaachastudio.com/",
+    updatedAt: "2026-04-20",
   },
 
   // =========================================================================
@@ -424,6 +438,7 @@ export const PROJECTS: Project[] = [
     tags: ["WordPress", "Fintech", "ACF", "Australia"],
     featured: false,
     liveUrl: "https://www.capitalclaims.com.au/",
+    updatedAt: "2026-04-05",
   },
 
   // =========================================================================
@@ -450,6 +465,7 @@ export const PROJECTS: Project[] = [
     tags: ["WordPress", "Healthcare", "Accessibility", "Austria"],
     featured: false,
     liveUrl: "https://drehpunkt-pflege.at/",
+    updatedAt: "2026-03-22",
   },
 
   // =========================================================================
@@ -476,6 +492,7 @@ export const PROJECTS: Project[] = [
     tags: ["HTML / Web", "Menu Card Design", "CSS3", "Restaurant"],
     featured: false,
     liveUrl: "https://www.hungrybitepizza.ca/",
+    updatedAt: "2026-03-10",
   },
 
   // =========================================================================
@@ -502,6 +519,7 @@ export const PROJECTS: Project[] = [
     tags: ["Shopify", "Luxury Beauty", "Liquid", "E-Commerce"],
     featured: false,
     liveUrl: "https://summerfridays.com/",
+    updatedAt: "2026-02-25",
   },
 
   // =========================================================================
@@ -528,6 +546,7 @@ export const PROJECTS: Project[] = [
     tags: ["Shopify", "E-Commerce", "Liquid", "Electronics"],
     featured: false,
     liveUrl: "https://genie.pk/",
+    updatedAt: "2026-02-14",
   },
 
   // =========================================================================
@@ -554,6 +573,7 @@ export const PROJECTS: Project[] = [
     tags: ["Shopify", "Organic Wellness", "Subscriptions", "E-Commerce"],
     featured: false,
     liveUrl: "https://baikaltea.com/",
+    updatedAt: "2026-01-30",
   },
 
   // =========================================================================
@@ -580,6 +600,7 @@ export const PROJECTS: Project[] = [
     tags: ["Wix", "UI/UX Design", "Events", "Booking"],
     featured: false,
     liveUrl: "https://www.gcphotobooth.com/",
+    updatedAt: "2026-01-15",
   },
 
   // =========================================================================
@@ -632,6 +653,7 @@ export const PROJECTS: Project[] = [
     tags: ["HubSpot", "Fintech", "SaaS", "HubL"],
     featured: false,
     liveUrl: "https://www.openenvoy.com/",
+    updatedAt: "2025-11-05",
   },
 
   // =========================================================================
@@ -658,6 +680,7 @@ export const PROJECTS: Project[] = [
     tags: ["HubSpot", "Parental Tech", "Mobile", "CRO"],
     featured: false,
     liveUrl: "https://www.pinwheel.com/",
+    updatedAt: "2025-11-20",
   },
 
   // =========================================================================
@@ -684,6 +707,7 @@ export const PROJECTS: Project[] = [
     tags: ["HubSpot", "Recruitment", "Startups", "Pricing Calculator"],
     featured: false,
     liveUrl: "https://funded.club/",
+    updatedAt: "2025-10-18",
   },
 
   // =========================================================================
@@ -710,6 +734,7 @@ export const PROJECTS: Project[] = [
     tags: ["Webflow", "AgTech", "Interactive Design", "Sustainability"],
     featured: false,
     liveUrl: "https://www.senseifarms.com/",
+    updatedAt: "2025-09-25",
   },
 
   // =========================================================================
@@ -737,6 +762,7 @@ export const PROJECTS: Project[] = [
     tags: ["WordPress", "Custom Theme", "HVAC", "Manufacturing", "ACF", "Canada"],
     featured: true,
     liveUrl: "https://benjaminheating.com/",
+    updatedAt: "2026-10-23",
   },
 
   // =========================================================================
@@ -764,6 +790,7 @@ export const PROJECTS: Project[] = [
     tags: ["Shopify", "Custom Liquid", "Fitness", "Athletic Apparel", "E-Commerce"],
     featured: true,
     liveUrl: "https://josh-bridges.com/",
+    updatedAt: "2026-10-23",
   },
 
   // =========================================================================
@@ -791,6 +818,7 @@ export const PROJECTS: Project[] = [
     tags: ["Shopify", "HealthTech", "Liquid", "Wearables", "Studio Franchise"],
     featured: true,
     liveUrl: "https://ohmfitness.com/",
+    updatedAt: "2026-10-23",
   },
 ];
 

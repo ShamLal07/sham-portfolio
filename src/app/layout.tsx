@@ -1,49 +1,48 @@
 import type { Metadata } from "next";
+import { Manrope, Roboto } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingSocialBar } from "@/components/FloatingSocialBar";
-import { SITE_CONFIG } from "@/data/siteConfig";
+import { JsonLd } from "@/components/JsonLd";
+import { SITE_CONFIG, SITE_URL } from "@/data/siteConfig";
 
-const siteBaseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shamdev.in";
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteBaseUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Sham Lal — Web Developer | Build Creative Websites & Web Apps",
-    template: "%s — Sham Lal",
+    template: "%s | Sham Lal",
   },
-  description:
-    "Sham Lal is a Web Developer building creative websites and web apps. Specialized in modern responsive websites, Next.js, WordPress, Shopify, and interactive digital experiences.",
-  keywords: [
-    "Sham Lal",
-    "Web Developer",
-    "Frontend Developer",
-    "Build Creative Websites",
-    "Web Apps",
-    "WordPress Developer",
-    "Shopify Storefront",
-    "CMS Development",
-    "React",
-    "Next.js",
-    "Webflow",
-    "Wix",
-    "HubSpot CMS",
-    "Responsive Web Design",
-  ],
-  authors: [{ name: SITE_CONFIG.name, url: siteBaseUrl }],
+  description: SITE_CONFIG.metaDescription,
+  authors: [{ name: SITE_CONFIG.name, url: SITE_URL }],
   creator: SITE_CONFIG.name,
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://shamdev.in",
+    url: SITE_URL,
     siteName: "Sham Lal Portfolio",
     title: "Sham Lal — Web Developer | Build Creative Websites & Web Apps",
-    description:
-      "Sham Lal — Web Developer. Build creative websites and web apps with modern design, Next.js, WordPress, and Shopify.",
+    description: SITE_CONFIG.metaDescription,
     images: [
       {
-        url: "https://shamdev.in/og-image.jpg",
+        url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -54,47 +53,68 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Sham Lal — Web Developer | Build Creative Websites & Web Apps",
-    description:
-      "Sham Lal — Web Developer. Build creative websites and web apps with modern design, Next.js, WordPress, and Shopify.",
-    images: ["https://shamdev.in/og-image.jpg"],
+    description: SITE_CONFIG.metaDescription,
+    images: [`${SITE_URL}/og-image.jpg`],
   },
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
-    apple: [
-      { url: "/apple-icon.svg", type: "image/svg+xml" },
-    ],
+    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "2vJgtBfQq3hJS0FB1ioR577I_esmZPPODBy3-kdx8v0",
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Sham Lal",
-  jobTitle: "Web Developer",
-  url: "https://shamdev.in",
-  sameAs: [SITE_CONFIG.github, SITE_CONFIG.linkedin],
-  knowsAbout: [
-    "Web Development",
-    "Web Design",
-    "Frontend Development",
-    "WordPress",
-    "Shopify",
-    "React",
-    "Next.js",
-    "Webflow",
-    "Wix",
-    "HubSpot CMS",
-  ],
-  description:
-    "Sham Lal is a Web Developer building creative websites and web apps. Specialized in modern responsive websites, Next.js, WordPress, Shopify, and interactive digital experiences.",
-};
+const rootStructuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE_URL}/#person`,
+    name: SITE_CONFIG.name,
+    jobTitle: SITE_CONFIG.role,
+    url: SITE_URL,
+    email: `mailto:${SITE_CONFIG.email}`,
+    sameAs: [SITE_CONFIG.github, SITE_CONFIG.linkedin, SITE_CONFIG.upwork],
+    knowsAbout: [
+      "Next.js",
+      "React",
+      "WordPress",
+      "Shopify",
+      "HubSpot CMS",
+      "Webflow",
+      "Wix",
+      "Frontend Development",
+      "UI/UX Design",
+      "Tailwind CSS",
+    ],
+    description: SITE_CONFIG.metaDescription,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    name: "Sham Lal Portfolio",
+    url: SITE_URL,
+    publisher: {
+      "@id": `${SITE_URL}/#person`,
+    },
+    inLanguage: "en-US",
+  },
+];
 
 export default function RootLayout({
   children,
@@ -102,30 +122,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${manrope.variable} ${roboto.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap"
-          rel="stylesheet"
-        />
-        {/* Explicit Social / WhatsApp / Telegram OpenGraph Meta Tags */}
-        <meta property="og:image" content="https://shamdev.in/og-image.jpg" />
-        <meta property="og:image:secure_url" content="https://shamdev.in/og-image.jpg" />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Sham Lal — Web Developer | Build Creative Websites & Web Apps" />
-        <meta name="twitter:image" content="https://shamdev.in/og-image.jpg" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={rootStructuredData} />
       </head>
       <body className="antialiased min-h-screen flex flex-col bg-[#0A0B0E] text-white selection:bg-[#F5781E] selection:text-white relative">
         {/* Global Architectural Background Grid, 5-6 Vertical Guide Lines & Ambient Shade */}

@@ -13,6 +13,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { PROJECTS, Project } from "@/data/projects";
+import { SITE_URL } from "@/data/siteConfig";
+import { JsonLd } from "@/components/JsonLd";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -24,21 +26,85 @@ export async function generateStaticParams() {
   }));
 }
 
+function getCaseStudyTitle(project: Project): string {
+  const suffix = " | Sham Lal";
+  const maxContentLength = 60 - suffix.length; // 48 chars max
+
+  // Try "{Project} — {Platform} Build" or compact role
+  let whatIBuilt = project.role
+    .replace(/Development|Engineering/g, "Dev")
+    .replace(/Storefront/g, "Store");
+  let candidate = `${project.title} — ${whatIBuilt}`;
+
+  if (candidate.length > maxContentLength) {
+    candidate = `${project.title} — ${project.platform} Build`;
+  }
+  if (candidate.length > maxContentLength) {
+    candidate = `${project.title} — ${project.platform}`;
+  }
+  if (candidate.length > maxContentLength) {
+    candidate = candidate.slice(0, maxContentLength).trim();
+  }
+  return `${candidate}${suffix}`;
+}
+
+function getCaseStudyDescription(project: Project): string {
+  let desc = project.shortDesc || project.overview;
+  if (desc.length > 155) {
+    const trimmed = desc.slice(0, 152);
+    desc = trimmed.slice(0, trimmed.lastIndexOf(" ")) + "...";
+  } else if (desc.length < 120) {
+    desc = `${desc} Designed and developed by Sham Lal with custom UI/UX.`;
+    if (desc.length > 155) {
+      const trimmed = desc.slice(0, 152);
+      desc = trimmed.slice(0, trimmed.lastIndexOf(" ")) + "...";
+    }
+  }
+  return desc;
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = PROJECTS.find((p) => p.slug === slug);
 
   if (!project) {
-    return { title: "Project Not Found — Sham Lal" };
+    return { title: "Project Not Found | Sham Lal" };
   }
 
+  const pageTitle = getCaseStudyTitle(project);
+  const pageDesc = getCaseStudyDescription(project);
+  const pageUrl = `${SITE_URL}/work/${project.slug}`;
+  const ogImage = project.image.startsWith("http")
+    ? project.image
+    : `${SITE_URL}${project.image}`;
+
   return {
-    title: `${project.title} — ${project.role} (${project.platform})`,
-    description: project.shortDesc,
+    title: pageTitle,
+    description: pageDesc,
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
-      title: `${project.title} | Sham Lal Portfolio`,
-      description: project.shortDesc,
-      images: [project.image],
+      type: "article",
+      locale: "en_US",
+      url: pageUrl,
+      siteName: "Sham Lal Portfolio",
+      title: pageTitle,
+      description: pageDesc,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} homepage screenshot`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description: pageDesc,
+      images: [ogImage],
     },
   };
 }
@@ -254,8 +320,35 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
   const brandTheme = getBrandTheme(project);
   const domain = getDomain(project.liveUrl);
 
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": `${SITE_URL}/work/${project.slug}#creativework`,
+    name: project.title,
+    headline: project.title,
+    description: project.shortDesc,
+    url: `${SITE_URL}/work/${project.slug}`,
+    image: project.image.startsWith("http")
+      ? project.image
+      : `${SITE_URL}${project.image}`,
+    dateModified: project.updatedAt || "2026-10-23",
+    creator: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Sham Lal",
+      url: SITE_URL,
+    },
+    author: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Sham Lal",
+      url: SITE_URL,
+    },
+  };
+
   return (
     <div className="pt-10 pb-28 md:pt-16 md:pb-36 bg-transparent text-white min-h-screen">
+      <JsonLd data={projectSchema} />
       <div className="site-container">
         {/* Back navigation */}
         <div className="mb-8">
@@ -633,7 +726,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               <div className="relative w-36 sm:w-44 aspect-[16/10] rounded-xl overflow-hidden border border-white/15 bg-black shadow-lg shrink-0">
                 <Image
                   src={nextProject.image}
-                  alt={nextProject.title}
+                  alt={`${nextProject.title} project screenshot`}
                   fill
                   sizes="200px"
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-500"

@@ -3,26 +3,40 @@ import type { Metadata } from "next";
 import { ServicesExplorer } from "@/components/ServicesExplorer";
 import { ALL_SERVICES_CATALOG } from "@/data/servicesCatalog";
 
+import { SITE_CONFIG, SITE_URL } from "@/data/siteConfig";
+import { JsonLd } from "@/components/JsonLd";
+
 export const metadata: Metadata = {
-  title: "Services & Expertise — Sham Lal | Web Designer & Web Developer",
+  title: "Web Design & Development Services | Sham Lal",
   description:
-    "Explore professional web design, UI/UX, custom WordPress development, Shopify storefronts, Next.js web applications, and ongoing website maintenance by Sham Lal.",
-  keywords: [
-    "Sham Lal Services",
-    "Web Designer",
-    "Web Developer",
-    "WordPress Developer Freelance",
-    "Shopify Store Expert",
-    "Next.js Developer India",
-    "Full-Stack Web Development",
-    "UI/UX Design Figma",
-    "Website Maintenance & Speed Optimization"
-  ],
+    "Professional web design, custom WordPress, Shopify storefronts, Next.js web applications, and UI/UX design by full-stack developer Sham Lal.",
+  alternates: {
+    canonical: `${SITE_URL}/services`,
+  },
   openGraph: {
-    title: "Innovative Web Design & Development Services — Sham Lal",
-    description:
-      "Expert-led web design, UI/UX, WordPress, Shopify, and frontend web development solutions designed to scale your brand.",
     type: "website",
+    locale: "en_US",
+    url: `${SITE_URL}/services`,
+    siteName: "Sham Lal Portfolio",
+    title: "Web Design & Development Services | Sham Lal",
+    description:
+      "Professional web design, custom WordPress, Shopify storefronts, Next.js web applications, and UI/UX design by full-stack developer Sham Lal.",
+    images: [
+      {
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "Services & Expertise by Sham Lal",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Design & Development Services | Sham Lal",
+    description:
+      "Professional web design, custom WordPress, Shopify storefronts, Next.js web applications, and UI/UX design by full-stack developer Sham Lal.",
+    images: [`${SITE_URL}/og-image.jpg`],
   },
 };
 
@@ -30,25 +44,26 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Sham Lal — Web Design & Development Services",
-  "url": "https://shamdev.in/services",
-  "founder": {
+  name: "Sham Lal — Web Design & Development Services",
+  url: `${SITE_URL}/services`,
+  founder: {
     "@type": "Person",
-    "name": "Sham Lal",
-    "jobTitle": "Web Designer & Web Developer",
-    "email": "thakur@shamdev.in",
+    name: SITE_CONFIG.name,
+    jobTitle: SITE_CONFIG.role,
+    email: `mailto:${SITE_CONFIG.email}`,
   },
-  "description": "High-performance web design, UI/UX, custom WordPress & Shopify development, and modern Next.js web solutions.",
-  "hasOfferCatalog": {
+  description:
+    "Professional web design, custom WordPress, Shopify storefronts, Next.js web applications, and UI/UX design by full-stack developer Sham Lal.",
+  hasOfferCatalog: {
     "@type": "OfferCatalog",
-    "name": "Digital Web Services",
-    "itemListElement": ALL_SERVICES_CATALOG.map((s) => ({
+    name: "Digital Web Services",
+    itemListElement: ALL_SERVICES_CATALOG.map((s) => ({
       "@type": "Offer",
-      "itemOffered": {
+      itemOffered: {
         "@type": "Service",
-        "name": s.title,
-        "url": `https://shamlal.com/services/${s.slug}`,
-        "description": s.shortDesc,
+        name: s.title,
+        url: `${SITE_URL}/services/${s.slug}`,
+        description: s.shortDesc,
       },
     })),
   },
@@ -61,10 +76,7 @@ export default function ServicesPage() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
       {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
 
       <div className="site-container relative z-10">
         <ServicesExplorer />

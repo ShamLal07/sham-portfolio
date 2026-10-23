@@ -172,8 +172,8 @@ export function Process() {
           })}
         </div>
 
-        {/* MOBILE & TABLET FALLBACK (< lg screens) */}
-        <div className="lg:hidden relative">
+        {/* MOBILE & TABLET FALLBACK (< lg screens) - aria-hidden to prevent duplicate headings in crawler tree */}
+        <div className="lg:hidden relative" aria-hidden="true">
           {/* Vertical Connecting Line */}
           <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-white/10 pointer-events-none" />
 

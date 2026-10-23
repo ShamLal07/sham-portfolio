@@ -21,14 +21,43 @@ import {
 } from "lucide-react";
 import { EXPERIENCES, EDUCATION, RESUME_URL } from "@/data/experience";
 import { PROJECTS } from "@/data/projects";
-import { SITE_CONFIG } from "@/data/siteConfig";
+import { SITE_CONFIG, SITE_URL } from "@/data/siteConfig";
 import { LinkedInIcon, GitHubIcon, UpworkIcon } from "@/components/SocialIcons";
 
 export const metadata: Metadata = {
-  title: "About — Sham Lal | Web Designer & Web Developer",
+  title: "About Sham Lal — Web Developer & UI Designer",
   description:
-    "I’m Sham, a Web Designer and Web Developer focused on creating thoughtful user experiences, responsive websites, and practical digital solutions for businesses.",
+    "Sham Lal is a Web Developer & UI Designer building high-performance websites, Next.js apps, WordPress platforms, and Shopify stores for global brands.",
+  alternates: {
+    canonical: `${SITE_URL}/about`,
+  },
+  openGraph: {
+    type: "profile",
+    locale: "en_US",
+    url: `${SITE_URL}/about`,
+    siteName: "Sham Lal Portfolio",
+    title: "About Sham Lal — Web Developer & UI Designer",
+    description:
+      "Sham Lal is a Web Developer & UI Designer building high-performance websites, Next.js apps, WordPress platforms, and Shopify stores for global brands.",
+    images: [
+      {
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "About Sham Lal — Web Developer & UI Designer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Sham Lal — Web Developer & UI Designer",
+    description:
+      "Sham Lal is a Web Developer & UI Designer building high-performance websites, Next.js apps, WordPress platforms, and Shopify stores for global brands.",
+    images: [`${SITE_URL}/og-image.jpg`],
+  },
 };
+
 
 // Selected featured projects showcasing diverse CMS, frontend, and design capability
 const SELECTED_PROJECT_SLUGS = ["topleft", "alerteefy", "mgi-access", "workfully"];
@@ -687,7 +716,7 @@ export default function AboutPage() {
                   >
                     <Image
                       src={project.image}
-                      alt={`${project.title} portfolio preview`}
+                      alt={`${project.title} homepage screenshot`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
