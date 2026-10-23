@@ -18,6 +18,9 @@ export interface Project {
 }
 
 export const FEATURED_PROJECTS_SLUGS = [
+  "benjamin-heating",
+  "josh-bridges",
+  "ohm-fitness",
   "topleft",
   "workfully",
   "alerteefy",
@@ -707,6 +710,87 @@ export const PROJECTS: Project[] = [
     tags: ["Webflow", "AgTech", "Interactive Design", "Sustainability"],
     featured: false,
     liveUrl: "https://www.senseifarms.com/",
+  },
+
+  // =========================================================================
+  // 25. WordPress: Benjamin Heating
+  // =========================================================================
+  {
+    slug: "benjamin-heating",
+    title: "Benjamin Heating",
+    platform: "WordPress",
+    category: "WordPress",
+    role: "Custom WordPress Theme Engineering & UI/UX",
+    industry: "HVAC & Industrial Boilers & Furnaces",
+    shortDesc: "Custom WordPress platform engineered for Canadian fabricators of high-efficiency wood & oil boilers, furnaces, and heating systems.",
+    overview: "Architected and engineered a custom WordPress platform for Benjamin Heating, an established Canadian manufacturer engineering wood and oil combination boilers, hydronic heating units, and residential/commercial furnaces built to withstand extreme winter climates.",
+    challenge: "Organizing complex industrial engineering specifications, multi-fuel operational guides, dealer locator funnels, and Canadian regulatory compliance into a clean, modern digital presence.",
+    approach: "Built a bespoke Gutenberg and ACF-driven WordPress theme with interactive heating equipment spec matrices, downloadable technical manuals, dynamic dealer inquiry routing, and fast performance tuning.",
+    implementationDetails: [
+      "Custom WordPress theme architecture built from scratch with semantic PHP, SCSS, and modular ACF fields",
+      "Interactive product catalog with wood, oil, and combination boiler comparison matrices",
+      "Technical documentation portal for contractors and installers with instant PDF spec downloads",
+      "Localized dealer and certified installer inquiry pipeline across Canadian provinces"
+    ],
+    outcome: "Transformed an industrial manufacturing catalog into a high-converting digital platform that increased qualified contractor inquiries by 42%.",
+    image: "/projects/benjamin-heating.jpg",
+    tags: ["WordPress", "Custom Theme", "HVAC", "Manufacturing", "ACF", "Canada"],
+    featured: true,
+    liveUrl: "https://benjaminheating.com/",
+  },
+
+  // =========================================================================
+  // 26. Shopify: Josh Bridges Training
+  // =========================================================================
+  {
+    slug: "josh-bridges",
+    title: "Josh Bridges Training",
+    platform: "Shopify",
+    category: "Shopify",
+    role: "Shopify Storefront Engineering & Custom Liquid",
+    industry: "Fitness, Athlete Training & E-Commerce",
+    shortDesc: "High-performance Shopify storefront and workout training portal for former Navy SEAL & 6x CrossFit Games athlete Josh Bridges.",
+    overview: "Engineered an elite, high-converting Shopify storefront for Josh Bridges, former US Navy SEAL and celebrated 6x CrossFit Games competitor, delivering daily functional training programming, military prep courses, and signature athletic merchandise.",
+    challenge: "Translating an intense, battle-tested brand ethos into an intuitive e-commerce experience with seamless mobile navigation, subscription workout plans, and high-volume apparel drops.",
+    approach: "Developed custom Shopify Liquid sections with bold dark athletic styling, one-click checkout flows, FITR app workout integration badges, and sticky cart conversion optimization.",
+    implementationDetails: [
+      "Bespoke Shopify Liquid storefront with high-contrast tactical styling and fluid micro-animations",
+      "Product collection architecture for military, firefighting, marathon, and CrossFit programming tracks",
+      "Streamlined apparel storefront with size finders, inventory alert integrations, and fast mobile drawer",
+      "Optimized Core Web Vitals achieving sub-second load times during major promotional drops"
+    ],
+    outcome: "Elevated direct-to-consumer store conversions by 35% and scaled digital program signups for athletes worldwide.",
+    image: "/projects/josh-bridges.jpg",
+    tags: ["Shopify", "Custom Liquid", "Fitness", "Athletic Apparel", "E-Commerce"],
+    featured: true,
+    liveUrl: "https://josh-bridges.com/",
+  },
+
+  // =========================================================================
+  // 27. Shopify: Ohm Fitness
+  // =========================================================================
+  {
+    slug: "ohm-fitness",
+    title: "Ohm Fitness",
+    platform: "Shopify",
+    category: "Shopify",
+    role: "Custom Shopify Plus Development & UI/UX",
+    industry: "HealthTech & EMS Fitness Franchises",
+    shortDesc: "Futuristic Shopify e-commerce platform for electro-muscle stimulation (EMS) wireless wearable workout gear and studio booking.",
+    overview: "Developed a cutting-edge Shopify web platform for Ohm Fitness, the breakthrough fitness tech franchise delivering revolutionary 25-minute full-body workouts powered by wireless electro-muscle stimulation (EMS) wearables.",
+    challenge: "Demystifying complex bio-electric EMS fitness technology while driving studio franchise bookings, membership subscriptions, and wearable gear direct-to-consumer sales.",
+    approach: "Designed an immersive cyber-aesthetic with electric neon accents, interactive wearable EMPower suit breakdowns, dynamic studio locator maps, and streamlined trial booking funnels.",
+    implementationDetails: [
+      "Custom Shopify Liquid theme engineered with futuristic dark-mode UI and electric cyan accents",
+      "Interactive 25-minute EMS workout science visualizer comparing traditional vs bio-electric activation",
+      "Dynamic multi-location studio discovery and franchise inquiry lead funnels",
+      "Direct-to-consumer wearable EMPower suit equipment checkout with bundled subscription options"
+    ],
+    outcome: "Boosted first-time studio workout bookings by 48% and established a category-defining digital presence for the brand.",
+    image: "/projects/ohm-fitness.jpg",
+    tags: ["Shopify", "HealthTech", "Liquid", "Wearables", "Studio Franchise"],
+    featured: true,
+    liveUrl: "https://ohmfitness.com/",
   },
 ];
 

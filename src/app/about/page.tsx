@@ -778,7 +778,7 @@ export default function AboutPage() {
               href="/work"
               className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white/[0.06] border border-white/15 text-white font-semibold text-sm hover:border-amber-400/40 hover:bg-white/[0.12] transition-all shadow-md"
             >
-              <span>Explore All 26+ Client Projects</span>
+              <span>Explore All {PROJECTS.length}+ Client Projects</span>
               <ArrowUpRight className="w-4 h-4 text-amber-400" />
             </Link>
           </div>
