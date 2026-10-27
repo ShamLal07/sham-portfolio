@@ -28,22 +28,19 @@ export function Navbar() {
 
   useEffect(() => {
     setMobileMenuOpen(false);
-  }, [pathname]);
+  }, [pathname]); 
 
   const isDark = true;
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${isDark
-        ? scrolled
-          ? "bg-[#0A0B0E]/95 backdrop-blur-md border-b border-white/10 shadow-lg py-1"
-          : "bg-[#0A0B0E] border-b border-white/10 py-2 sm:py-3"
-        : scrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs py-1"
-          : "bg-white border-b border-slate-100 py-2 sm:py-3"
-        }`}
+      className={`fixed top-3 sm:top-4 md:top-5 left-0 right-0 z-50 mx-auto w-[calc(100%-1.5rem)] sm:w-[calc(100%-2.5rem)] md:w-[calc(100%-3.5rem)] max-w-7xl rounded-[20px] border transition-all duration-300 ${
+        scrolled
+          ? "bg-[#0A0B0E]/95 backdrop-blur-2xl border-white/20 shadow-[0_14px_40px_rgba(0,0,0,0.65)] py-2 sm:py-2.5"
+          : "bg-[#0A0B0E]/80 backdrop-blur-xl border-white/12 shadow-[0_8px_32px_rgba(0,0,0,0.36)] py-2.5 sm:py-3.5"
+      } ${mobileMenuOpen ? "rounded-[20px] bg-[#0A0B0E]/98" : ""}`}
     >
-      <div className="site-container flex items-center justify-between">
+      <div className="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Left: Logo */}
         <Link
           href="/"
@@ -167,10 +164,7 @@ export function Navbar() {
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
         <div
-          className={`md:hidden px-6 py-4 shadow-lg animate-in slide-in-from-top-2 duration-200 border-b ${isDark
-            ? "bg-[#0A0B0E] border-white/10 text-white"
-            : "bg-white border-slate-200"
-            }`}
+          className="md:hidden px-4 sm:px-6 pt-3 pb-4 animate-in slide-in-from-top-2 duration-200 border-t border-white/10 text-white"
         >
           <nav className="flex flex-col gap-3">
             {NAV_LINKS.map((link) => {

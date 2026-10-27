@@ -72,7 +72,7 @@ export default function AboutPage() {
       {/* =========================================================================
           1. Hero Section: Strong Personal Introduction
           ========================================================================= */}
-      <section className="relative pt-16 pb-18 sm:pt-20 sm:pb-24 border-b border-white/10 overflow-hidden">
+      <section className="relative pt-28 pb-18 sm:pt-32 md:pt-36 sm:pb-24 border-b border-white/10 overflow-hidden">
         {/* Ambient Warm Sunset Background Glow */}
         <div className="absolute right-0 top-0 bottom-0 w-full pointer-events-none z-0 overflow-hidden">
           <div className="absolute -right-24 top-1/3 -translate-y-1/2 w-[500px] h-[500px] sm:w-[650px] sm:h-[650px] rounded-full bg-gradient-to-br from-amber-500/20 via-orange-600/15 to-transparent blur-[120px]" />

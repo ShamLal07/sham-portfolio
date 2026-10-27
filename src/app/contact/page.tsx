@@ -93,7 +93,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-14 pb-28 md:pt-20 md:pb-36 bg-transparent text-white min-h-screen relative overflow-hidden">
+    <div className="pt-28 pb-28 sm:pt-32 md:pt-36 md:pb-36 bg-transparent text-white min-h-screen relative overflow-hidden">
       {/* Background Subtle Grid Texture */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 

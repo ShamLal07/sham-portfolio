@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <div className="py-28 md:py-36 text-center bg-[#0A0B0E] text-white min-h-[75vh] flex items-center justify-center">
+    <div className="pt-32 pb-28 md:pt-40 md:pb-36 text-center bg-[#0A0B0E] text-white min-h-[75vh] flex items-center justify-center">
       <div className="site-container max-w-lg">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-mono font-bold text-amber-400 mb-5">
           404 ERROR

@@ -10,7 +10,7 @@ export interface ExperienceItem {
 export const EXPERIENCES: ExperienceItem[] = [
   {
     company: "Eminence Technology",
-    role: "Shopify Frontend Developer",
+    role: "Sr. Web Designer & Developer",
     period: "Aug 2025 – Aug 2026",
     location: "Mohali, India",
     description: "Built and maintained responsive Shopify storefronts and custom web interfaces.",

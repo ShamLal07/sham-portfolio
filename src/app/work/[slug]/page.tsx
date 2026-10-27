@@ -347,7 +347,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
   };
 
   return (
-    <div className="pt-10 pb-28 md:pt-16 md:pb-36 bg-transparent text-white min-h-screen">
+    <div className="pt-24 pb-28 sm:pt-28 md:pt-32 md:pb-36 bg-transparent text-white min-h-screen">
       <JsonLd data={projectSchema} />
       <div className="site-container">
         {/* Back navigation */}

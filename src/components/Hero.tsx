@@ -3,17 +3,13 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
-import { HeroCanvasAnimation } from "./HeroCanvasAnimation";
 
 export function Hero() {
   return (
     <section
       id="home"
-      className="relative pt-16 pb-16 md:pt-24 md:pb-24 bg-[#0A0B0E] text-white overflow-hidden"
+      className="relative pt-28 pb-16 sm:pt-32 md:pt-36 md:pb-24 bg-[#0A0B0E] text-white overflow-hidden"
     >
-      {/* Interactive Canvas Constellation Animation */}
-      <HeroCanvasAnimation />
-
       {/* 1. Ambient Background: Warm Sunset/Amber Radiant Glow on Right Side */}
       <div className="absolute right-0 top-0 bottom-0 w-full pointer-events-none z-0 overflow-hidden">
         {/* Soft Radial Sunset Core */}
@@ -46,28 +42,30 @@ export function Hero() {
           <span className="text-amber-400">
             <Sparkles className="w-3.5 h-3.5 inline" />
           </span>
-          <span>Web Designer &amp; Web Developer — Thoughtful UI/UX &amp; Modern Code</span>
+          <span>Web Developer — Creative Websites &amp; Web Apps</span>
         </div>
 
-        {/* Impactful Centered Headline matching reference layout */}
+        {/* Impactful Centered Headline */}
         <h1 className="max-w-4xl font-extrabold text-4xl sm:text-6xl lg:text-[4.25rem] tracking-tight text-white leading-[1.12] mb-6">
-          I Design. I Build. <br className="hidden sm:inline" />
+          Write High-Converting <br className="hidden sm:inline" />
+          Websites &amp; Brands{" "} <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">
-            I Create Digital Experiences.
+            With Code
           </span>
         </h1>
 
         {/* Subtitle Paragraph */}
         <p className="max-w-2xl text-base sm:text-lg text-white/70 leading-relaxed mb-9">
-          I design and develop modern, responsive websites with thoughtful UI/UX and clean, reliable frontend experiences for businesses and brands.
+          I design and develop responsive, high-performance websites across WordPress,
+          Shopify, Webflow, and modern React — turning visitors into loyal clients.
         </p>
 
-        {/* Unique Interactive CTA Buttons with Motion Text Roll & Meaningful Animated Icons */}
+        {/* Unique Interactive CTA Buttons with Compact Height */}
         <div className="flex flex-wrap items-center justify-center mt-4 gap-4 mb-16 sm:mb-20">
           {/* Primary CTA */}
           <Link
             href="/work"
-            className="group relative inline-flex items-center gap-3.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#F5781E] via-[#F59E0B] to-[#F5781E] bg-[length:200%_auto] text-white font-bold text-sm sm:text-base shadow-[0_10px_30px_-5px_rgba(245,120,30,0.5)] hover:shadow-[0_16px_40px_-5px_rgba(245,120,30,0.75)] hover:scale-[1.03] active:scale-95 transition-all duration-300 overflow-hidden"
+            className="group relative inline-flex items-center gap-3 px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-gradient-to-r from-[#F5781E] via-[#F59E0B] to-[#F5781E] bg-[length:200%_auto] text-white font-semibold text-sm shadow-[0_10px_30px_-5px_rgba(245,120,30,0.5)] hover:shadow-[0_16px_40px_-5px_rgba(245,120,30,0.75)] hover:scale-[1.03] active:scale-95 transition-all duration-300 overflow-hidden"
           >
             {/* Shimmer light sweep reflection */}
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
@@ -75,23 +73,23 @@ export function Hero() {
             <span className="tracking-wide">View Selected Work</span>
 
             {/* Launch Vector with dual-sliding diagonal arrow */}
-            <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center relative overflow-hidden shrink-0 border border-white/30 shadow-inner">
-              <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
-              <ArrowUpRight className="w-4 h-4 text-amber-200 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
+            <div className="w-7 h-7 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center relative overflow-hidden shrink-0 border border-white/30 shadow-inner">
+              <ArrowUpRight className="w-3.5 h-3.5 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-amber-200 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
             </div>
           </Link>
 
           {/* Secondary CTA */}
           <Link
             href="/contact"
-            className="group relative inline-flex items-center gap-3.5 px-8 py-4 rounded-full bg-white/[0.07] border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/[0.14] hover:border-white/40 hover:scale-[1.03] active:scale-95 transition-all duration-300 backdrop-blur-md shadow-lg"
+            className="group relative inline-flex items-center gap-3 px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-white/[0.07] border border-white/20 text-white font-semibold text-sm hover:bg-white/[0.14] hover:border-white/40 hover:scale-[1.03] active:scale-95 transition-all duration-300 backdrop-blur-md shadow-lg"
           >
             <span>Let&apos;s Work Together</span>
 
             {/* Launch Vector with dual-sliding diagonal arrow */}
-            <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center relative overflow-hidden shrink-0 border border-white/20">
-              <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
-              <ArrowUpRight className="w-4 h-4 text-amber-200 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
+            <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center relative overflow-hidden shrink-0 border border-white/20">
+              <ArrowUpRight className="w-3.5 h-3.5 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-amber-200 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
             </div>
           </Link>
         </div>
@@ -99,4 +97,3 @@ export function Hero() {
     </section>
   );
 }
-

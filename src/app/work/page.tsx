@@ -38,7 +38,7 @@ export default function WorkPage() {
   }, [activeFilter]);
 
   return (
-    <div className="pt-14 pb-28 md:pt-20 md:pb-36 bg-transparent text-white min-h-screen">
+    <div className="pt-28 pb-28 sm:pt-32 md:pt-36 md:pb-36 bg-transparent text-white min-h-screen">
       <div className="site-container">
         {/* Page Header */}
         <div className="max-w-3xl mb-16">

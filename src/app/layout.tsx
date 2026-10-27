@@ -126,7 +126,7 @@ export default function RootLayout({
       <head>
         <JsonLd data={rootStructuredData} />
       </head>
-      <body className="antialiased min-h-screen flex flex-col bg-[#0A0B0E] text-white selection:bg-[#F5781E] selection:text-white relative">
+      <body className="antialiased min-h-screen flex flex-col   selection:text-white relative">
         {/* Global Architectural Background Grid, 5-6 Vertical Guide Lines & Ambient Shade */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
           {/* Subtle Ambient Sunset Tone & Radial Glows */}

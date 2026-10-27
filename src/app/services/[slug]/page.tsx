@@ -165,7 +165,7 @@ export default async function SingleServicePage({ params }: PageProps) {
     <>
       <JsonLd data={jsonLd} />
 
-      <main className="min-h-screen bg-[#0A0A0E] text-white pt-24 sm:pt-28 pb-24 overflow-x-hidden">
+      <main className="min-h-screen bg-[#0A0A0E] text-white pt-28 sm:pt-32 md:pt-36 pb-24 overflow-x-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 text-xs text-white/50 mb-8 sm:mb-12 font-medium">
