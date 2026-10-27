@@ -28,7 +28,7 @@ export function HeroCanvasAnimation() {
     let width = 0;
     let height = 0;
 
-    const colors = ["#F5781E", "#F59E0B", "#FBBF24", "#38BDF8", "#FFFFFF"];
+    const colors = ["#F5781E", "#EA580C", "#D97706", "#0284C7", "#6366F1", "#475569"];
 
     // Mouse coordinates with smooth easing
     const mouse = { x: -2000, y: -2000, targetX: -2000, targetY: -2000, radius: 180, active: false };
