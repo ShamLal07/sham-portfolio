@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Sparkles, Code2, TrendingUp, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, Sparkles, CheckCircle2 } from "lucide-react";
 import { HeroCanvasAnimation } from "./HeroCanvasAnimation";
 import { ServiceBrandIcon } from "./ServiceBrandIcon";
 
@@ -37,69 +37,6 @@ export function Hero() {
         />
       </div>
 
-      {/* =========================================================================
-          Floating Side Badges & CMS Stickers (Desktop Only, Responsive)
-          ========================================================================= */}
-
-      {/* Left Upper Floating: Tech Stack Card */}
-      <div className="hidden xl:flex absolute left-4 2xl:left-12 top-[38%] -translate-y-1/2 items-center gap-3 p-3.5 rounded-2xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_12px_32px_-8px_rgba(15,23,42,0.1)] hover:-translate-y-[52%] transition-all duration-300 z-10">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-sm shrink-0">
-          <Code2 className="w-5 h-5" />
-        </div>
-        <div className="flex flex-col text-left">
-          <div className="flex items-center gap-1.5">
-            <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Tech Stack</span>
-            <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-          </div>
-          <span className="text-xs font-bold text-slate-900">Next.js · React · UI/UX</span>
-          <span className="text-[10px] text-slate-500 font-medium">Clean, Scalable Code</span>
-        </div>
-      </div>
-
-      {/* Left Lower Floating: WordPress CMS Developer Sticker */}
-      <div className="hidden xl:flex absolute left-6 2xl:left-16 top-[62%] -translate-y-1/2 items-center gap-3 p-3 rounded-2xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_14px_35px_-8px_rgba(33,117,155,0.18)] hover:rotate-0 rotate-[-2deg] hover:scale-105 transition-all duration-300 z-10 group cursor-default">
-        <div className="w-10 h-10 rounded-xl bg-[#21759B]/10 border border-[#21759B]/20 flex items-center justify-center p-2 shadow-xs shrink-0">
-          <ServiceBrandIcon id="wordpress" className="w-6 h-6" />
-        </div>
-        <div className="flex flex-col text-left">
-          <div className="flex items-center gap-1.5">
-            <span className="text-[10px] uppercase font-extrabold tracking-wider text-[#21759B]">CMS Developer</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[9px] font-extrabold bg-[#21759B]/10 text-[#21759B]">Custom</span>
-          </div>
-          <span className="text-xs font-bold text-slate-900">WordPress &amp; ACF Pro</span>
-          <span className="text-[10px] text-slate-500 font-medium">Theme Dev &amp; Speed Optimized</span>
-        </div>
-      </div>
-
-      {/* Right Upper Floating: Business Growth Card */}
-      <div className="hidden xl:flex absolute right-4 2xl:right-12 top-[38%] -translate-y-1/2 items-center gap-3 p-3.5 rounded-2xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_12px_32px_-8px_rgba(15,23,42,0.1)] hover:-translate-y-[52%] transition-all duration-300 z-10">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 flex items-center justify-center text-white shadow-sm shrink-0">
-          <TrendingUp className="w-5 h-5" />
-        </div>
-        <div className="flex flex-col text-left">
-          <div className="flex items-center gap-1.5">
-            <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Business Growth</span>
-            <span className="px-1.5 py-0.5 rounded-full text-[9px] font-extrabold bg-emerald-50 text-emerald-600 border border-emerald-200">+140%</span>
-          </div>
-          <span className="text-xs font-bold text-slate-900">High-Converting Websites</span>
-          <span className="text-[10px] text-slate-500 font-medium">Engineered for Revenue</span>
-        </div>
-      </div>
-
-      {/* Right Lower Floating: Shopify E-Commerce Developer Sticker */}
-      <div className="hidden xl:flex absolute right-6 2xl:right-16 top-[62%] -translate-y-1/2 items-center gap-3 p-3 rounded-2xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_14px_35px_-8px_rgba(149,191,71,0.22)] hover:rotate-0 rotate-[2deg] hover:scale-105 transition-all duration-300 z-10 group cursor-default">
-        <div className="w-10 h-10 rounded-xl bg-[#95BF47]/15 border border-[#95BF47]/30 flex items-center justify-center p-2 shadow-xs shrink-0">
-          <ServiceBrandIcon id="shopify" className="w-6 h-6" />
-        </div>
-        <div className="flex flex-col text-left">
-          <div className="flex items-center gap-1.5">
-            <span className="text-[10px] uppercase font-extrabold tracking-wider text-[#5E8E3E]">E-Commerce</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[9px] font-extrabold bg-emerald-50 text-emerald-700 border border-emerald-200">High ROAS</span>
-          </div>
-          <span className="text-xs font-bold text-slate-900">Shopify 2.0 Storefronts</span>
-          <span className="text-[10px] text-slate-500 font-medium">Custom Liquid &amp; Fast Checkout</span>
-        </div>
-      </div>
 
       {/* 2. Main Hero Content Container */}
       <div className="site-container relative z-10 text-center flex flex-col items-center">
