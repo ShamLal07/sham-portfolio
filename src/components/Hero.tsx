@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
+import { HeroCanvasAnimation } from "./HeroCanvasAnimation";
 
 export function Hero() {
   return (
@@ -10,6 +11,9 @@ export function Hero() {
       id="home"
       className="relative pt-28 pb-16 sm:pt-32 md:pt-36 md:pb-24 bg-[#0A0B0E] text-white overflow-hidden"
     >
+      {/* Interactive Antigravity Canvas Animation */}
+      <HeroCanvasAnimation />
+
       {/* 1. Ambient Background: Warm Sunset/Amber Radiant Glow on Right Side */}
       <div className="absolute right-0 top-0 bottom-0 w-full pointer-events-none z-0 overflow-hidden">
         {/* Soft Radial Sunset Core */}
@@ -42,22 +46,20 @@ export function Hero() {
           <span className="text-amber-400">
             <Sparkles className="w-3.5 h-3.5 inline" />
           </span>
-          <span>Web Developer — Creative Websites &amp; Web Apps</span>
+          <span>Web Designer &amp; Developer — Design, Build &amp; Scale Businesses Online</span>
         </div>
 
-        {/* Impactful Centered Headline */}
+        {/* Impactful Centered Headline with user requested keywords */}
         <h1 className="max-w-4xl font-extrabold text-4xl sm:text-6xl lg:text-[4.25rem] tracking-tight text-white leading-[1.12] mb-6">
-          Write High-Converting <br className="hidden sm:inline" />
-          Websites &amp; Brands{" "} <br />
+          I Design. I Build. I Develop. <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">
-            With Code
+            Helping Businesses Grow Online.
           </span>
         </h1>
 
         {/* Subtitle Paragraph */}
         <p className="max-w-2xl text-base sm:text-lg text-white/70 leading-relaxed mb-9">
-          I design and develop responsive, high-performance websites across WordPress,
-          Shopify, Webflow, and modern React — turning visitors into loyal clients.
+          I design and develop modern, high-converting websites and digital experiences that strengthen your brand and help your business grow online.
         </p>
 
         {/* Unique Interactive CTA Buttons with Compact Height */}
