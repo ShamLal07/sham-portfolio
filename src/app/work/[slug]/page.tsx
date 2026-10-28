@@ -122,6 +122,45 @@ function getDomain(url?: string): string {
 function getBrandTheme(project: Project) {
   const slug = project.slug;
 
+  if (slug === "envision-horizons") {
+    return {
+      name: "Envision Horizons",
+      bgGradient: "from-emerald-700/20 to-teal-600/20",
+      btnGradient: "bg-gradient-to-r from-[#0E4D3E] via-[#10B981] to-[#0E4D3E] text-white shadow-[0_8px_25px_-5px_rgba(16,185,129,0.6)] hover:shadow-[0_12px_30px_-5px_rgba(16,185,129,0.8)]",
+      badgeBg: "bg-emerald-500/15 border-emerald-500/30 text-emerald-300",
+      glow: "from-emerald-600/25 via-teal-500/30 to-emerald-600/25",
+      accentBg: "bg-emerald-500",
+      accentText: "text-emerald-400",
+      metricGradient: "from-white via-white to-emerald-200",
+    };
+  }
+
+  if (slug === "todemy") {
+    return {
+      name: "Todemy",
+      bgGradient: "from-rose-500/20 to-amber-500/20",
+      btnGradient: "bg-gradient-to-r from-[#F7416B] via-[#FB7185] to-[#F7416B] text-white shadow-[0_8px_25px_-5px_rgba(247,65,107,0.6)] hover:shadow-[0_12px_30px_-5px_rgba(247,65,107,0.8)]",
+      badgeBg: "bg-rose-500/15 border-rose-500/30 text-rose-300",
+      glow: "from-rose-500/25 via-amber-400/30 to-rose-500/25",
+      accentBg: "bg-rose-500",
+      accentText: "text-rose-400",
+      metricGradient: "from-white via-white to-rose-200",
+    };
+  }
+
+  if (slug === "eminence-technology") {
+    return {
+      name: "Eminence Technology",
+      bgGradient: "from-blue-600/20 to-slate-500/20",
+      btnGradient: "bg-gradient-to-r from-[#1D1D1D] via-[#3B82F6] to-[#1D1D1D] text-white shadow-[0_8px_25px_-5px_rgba(59,130,246,0.6)] hover:shadow-[0_12px_30px_-5px_rgba(59,130,246,0.8)]",
+      badgeBg: "bg-blue-500/15 border-blue-500/30 text-blue-300",
+      glow: "from-blue-600/25 via-indigo-500/30 to-blue-600/25",
+      accentBg: "bg-blue-500",
+      accentText: "text-blue-400",
+      metricGradient: "from-white via-white to-blue-200",
+    };
+  }
+
   if (slug === "topleft") {
     return {
       name: "TopLeft",
@@ -241,6 +280,34 @@ function getBrandTheme(project: Project) {
 
 // Tailored metrics for each case study matching the modern bento design
 function getProjectMetrics(project: Project) {
+  if (project.slug === "envision-horizons") {
+    return [
+      { value: "+44%", label: "Audit Requests", sub: "Enterprise Brand Growth" },
+      { value: "5.8x", label: "Client Ad ROAS", sub: "Optimized Multi-Channel Spend" },
+      { value: "+38%", label: "Lead Funnel Velocity", sub: "WPBakery & Elementor Pro" },
+    ];
+  }
+  if (project.slug === "itsbot-ai-chat") {
+    return [
+      { value: "99.9%", label: "Uptime Reliability", sub: "High-Availability Chat Infrastructure" },
+      { value: "<250ms", label: "Latency", sub: "Instant AI Response Pipeline" },
+      { value: "+56%", label: "Visitor Conversion", sub: "Conversations to Pipeline" },
+    ];
+  }
+  if (project.slug === "todemy") {
+    return [
+      { value: "+52%", label: "Early Signups", sub: "Launch Month Mobile Conversions" },
+      { value: "98/100", label: "Performance Score", sub: "Next.js Core Web Vitals" },
+      { value: "100%", label: "Privacy Compliance", sub: "COPPA & GDPR Child Safety" },
+    ];
+  }
+  if (project.slug === "eminence-technology") {
+    return [
+      { value: "+46%", label: "Faster Load Times", sub: "Optimized Laravel & WebP" },
+      { value: "+37%", label: "Enterprise Inquiries", sub: "Software Product Solutions" },
+      { value: "100%", label: "ISO-Certified Quality", sub: "Enterprise Grade Standards" },
+    ];
+  }
   if (project.slug === "workfully") {
     return [
       { value: "+45%", label: "Inbound Inquiries", sub: "Enterprise Candidate Inflow" },

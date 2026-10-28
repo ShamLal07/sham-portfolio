@@ -19,6 +19,9 @@ export interface Project {
 }
 
 export const FEATURED_PROJECTS_SLUGS = [
+  "envision-horizons",
+  "todemy",
+  "eminence-technology",
   "benjamin-heating",
   "josh-bridges",
   "ohm-fitness",
@@ -38,7 +41,91 @@ export const FEATURED_PROJECTS_SLUGS = [
 
 export const PROJECTS: Project[] = [
   // =========================================================================
-  // 1. HubSpot: TopLeft
+  // 1. WordPress: Envision Horizons
+  // =========================================================================
+  {
+    slug: "envision-horizons",
+    title: "Envision Horizons",
+    platform: "WordPress",
+    category: "WordPress",
+    role: "WordPress CMS & Elementor / WPBakery Architecture",
+    industry: "Full-Service Amazon & Multichannel eCommerce Agency",
+    shortDesc: "Full-service Amazon and multichannel eCommerce agency website engineered with custom WordPress, Elementor Pro, and WPBakery page architecture.",
+    overview: "Architected and engineered custom responsive WordPress layouts, WPBakery / Elementor Pro modules, and conversion-optimized service hubs for Envision Horizons, a top-tier eCommerce agency scaling brands across Amazon, Walmart, TikTok Shop, and beyond.",
+    challenge: "Presenting an extensive suite of enterprise Amazon and multichannel services (advertising, creative, strategy, retail operations) with clean visual storytelling and fast load speeds.",
+    approach: "Developed modular WordPress templates combining WPBakery and Elementor Pro flexibility, dynamic case study showcases, interactive audit inquiry funnels, and optimized asset delivery.",
+    implementationDetails: [
+      "Custom WordPress child theme engineering leveraging Elementor Pro and WPBakery visual builders",
+      "High-converting B2B lead capture funnels for Amazon brand audits and client onboarding",
+      "Interactive agency capabilities showcase spanning Amazon Ads, DSP, TikTok Shop, and Walmart",
+      "Performance tuning, responsive typography, and mobile-first layout optimizations"
+    ],
+    outcome: "Enhanced brand positioning as an elite Amazon partner agency and boosted qualified inbound audit requests by 44%.",
+    image: "/projects/envision-horizons.jpg",
+    tags: ["WordPress", "WPBakery", "Elementor Pro", "eCommerce", "Amazon Agency", "B2B"],
+    featured: true,
+    liveUrl: "https://www.envisionhorizons.com/",
+    updatedAt: "2026-10-28",
+  },
+
+  // =========================================================================
+  // 2. Next.js: Todemy
+  // =========================================================================
+  {
+    slug: "todemy",
+    title: "Todemy",
+    platform: "Next.js",
+    category: "Next.js",
+    role: "Next.js Full-Stack Web Development & UI/UX",
+    industry: "EdTech & Early Childhood Development",
+    shortDesc: "Next.js web platform for Todemy, a psychologist-designed character-building and emotional intelligence app for kids aged 2–6.",
+    overview: "Architected and developed the high-performance Next.js web application for Todemy, introducing 'Uncle Boopi' and the 5 Senses development program fostering early childhood empathy, life skills, and academic foundations.",
+    challenge: "Balancing playful, warm illustrations and rich typography with COPPA/GDPR privacy compliance, multi-device app download funnels, and high Core Web Vitals performance.",
+    approach: "Engineered bespoke Next.js layout with modern CSS animation marquee, dynamic child milestone visualizers, parent portal authentication, and conversion-optimized app store deep links.",
+    implementationDetails: [
+      "High-performance Next.js architecture with Turbopack and optimized Avif/SVG graphics",
+      "Interactive 'Four Shapers' and '5 Senses' development breakdown sections",
+      "COPPA, GDPR, CASA, and SOC 2 Type II trust & compliance privacy marquee",
+      "Cross-platform app download routing for Google Play, iOS App Store, and TV"
+    ],
+    outcome: "Achieved a 98+ PageSpeed rating and drove over 52% higher early-access signups during launch month.",
+    image: "/projects/todemy.jpg",
+    tags: ["Next.js", "React", "EdTech", "Tailwind CSS", "Mobile App Launch", "Early Childhood"],
+    featured: true,
+    liveUrl: "https://todemy.com/",
+    updatedAt: "2026-10-28",
+  },
+
+  // =========================================================================
+  // 4. HTML / Web: Eminence Technology
+  // =========================================================================
+  {
+    slug: "eminence-technology",
+    title: "Eminence Technology",
+    platform: "HTML / Web",
+    category: "HTML / Web",
+    role: "Full-Stack Web Development (Laravel, HTML5, CSS3, JavaScript)",
+    industry: "Software Engineering & Digital Product Solutions",
+    shortDesc: "Enterprise product development and IT solutions website built with Laravel backend, semantic HTML5, modern CSS3, and dynamic JavaScript.",
+    overview: "Developed and optimized the corporate web platform for Eminence Technology, an innovative software product development company delivering cutting-edge enterprise applications, AI integrations, and digital transformation services.",
+    challenge: "Structuring complex software service offerings, case studies, technology stacks, and ISO-certified credentials into a fast-loading, highly professional B2B portal.",
+    approach: "Engineered clean MVC architecture with Laravel, responsive CSS3 grids, interactive video showcases, dynamic lead capture pipelines, and rigorous asset compression.",
+    implementationDetails: [
+      "Robust Laravel MVC framework integration with blade components and custom routing",
+      "Modern semantic HTML5 and CSS3 styling with responsive grid layouts and subtle animations",
+      "Interactive technology stack visualizers and custom consultation inquiry forms",
+      "Performance-tuned asset delivery with WebP graphics and deferred analytics tracking"
+    ],
+    outcome: "Reduced page load times by 46% and generated a 37% increase in global enterprise product inquiry leads.",
+    image: "/projects/eminence-technology.jpg",
+    tags: ["Laravel", "PHP", "HTML5", "CSS3", "JavaScript", "Software Development", "B2B"],
+    featured: true,
+    liveUrl: "https://eminencetechnology.com/",
+    updatedAt: "2026-10-28",
+  },
+
+  // =========================================================================
+  // 5. HubSpot: TopLeft
   // =========================================================================
   {
     slug: "topleft",
