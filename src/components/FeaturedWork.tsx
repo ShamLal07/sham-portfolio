@@ -78,8 +78,8 @@ export function FeaturedWork() {
           })}
         </div>
 
-        {/* Projects 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+        {/* Projects 3-Column Grid with generous responsive spacing */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
           {displayedProjects.map((project, idx) => (
             <ProjectCard key={project.slug} project={project} priority={idx === 0} />
           ))}

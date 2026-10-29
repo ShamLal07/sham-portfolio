@@ -287,13 +287,6 @@ function getProjectMetrics(project: Project) {
       { value: "+38%", label: "Lead Funnel Velocity", sub: "WPBakery & Elementor Pro" },
     ];
   }
-  if (project.slug === "itsbot-ai-chat") {
-    return [
-      { value: "99.9%", label: "Uptime Reliability", sub: "High-Availability Chat Infrastructure" },
-      { value: "<250ms", label: "Latency", sub: "Instant AI Response Pipeline" },
-      { value: "+56%", label: "Visitor Conversion", sub: "Conversations to Pipeline" },
-    ];
-  }
   if (project.slug === "todemy") {
     return [
       { value: "+52%", label: "Early Signups", sub: "Launch Month Mobile Conversions" },
