@@ -593,75 +593,175 @@ export function AiWorkflow() {
           </div>
         </header>
 
-
-
-        {/* Bottom Floating Bar */}
-        <footer className="bg-[#12131A] border border-white/10 rounded-2xl px-5 py-4 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Left Info */}
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20 text-amber-400">
-              <Terminal className="w-5 h-5" />
-            </div>
+        {/* Middle 1: Interactive 5-Step AI-Accelerated Workflow */}
+        <div className="bg-[#12131A] rounded-2xl p-6 md:p-8 border border-white/10 shadow-xl">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
             <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
-                  Full Stack &amp; CMS Developer
-                </span>
-                <span className="text-white/40 text-xs">• Production Ready</span>
+              <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                My Production Pipeline
+              </span>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight mt-1">
+                How I Deliver In Record Time
+              </h3>
+            </div>
+            <p className="text-xs text-white/50 max-w-sm">
+              Click any stage to see the exact AI agents, frameworks, and deployment engines in action.
+            </p>
+          </div>
+
+          {/* 5 Step Selectors */}
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 mb-6">
+            {WORKFLOW_STEPS.map((step, idx) => {
+              const Icon = step.icon;
+              const isActive = activeStepIndex === idx;
+              return (
+                <button
+                  key={step.num}
+                  type="button"
+                  onClick={() => {
+                    setActiveStepIndex(idx);
+                    setIsPaused(true);
+                  }}
+                  className={`relative p-3.5 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
+                    isActive
+                      ? "bg-amber-500/15 border-amber-400/60 shadow-lg shadow-amber-500/10 text-white"
+                      : "bg-white/[0.03] border-white/10 hover:border-white/20 text-white/70 hover:text-white"
+                  }`}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className={`text-[11px] font-mono font-bold ${isActive ? "text-amber-400" : "text-white/40"}`}>
+                      0{step.num}
+                    </span>
+                    <Icon className={`w-4 h-4 ${isActive ? "text-amber-400" : "text-white/40"}`} />
+                  </div>
+                  <span className="text-xs font-bold tracking-tight line-clamp-1">
+                    {step.title}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active Step Spotlight Card */}
+          <div className="p-5 sm:p-6 rounded-xl bg-[#0B0C12] border border-amber-400/25 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-amber-500/[0.06] blur-3xl pointer-events-none" />
+            <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30">
+                    STAGE 0{WORKFLOW_STEPS[activeStepIndex].num}
+                  </span>
+                  <h4 className="text-base sm:text-lg font-bold text-white">
+                    {WORKFLOW_STEPS[activeStepIndex].title}
+                  </h4>
+                </div>
+                <p className="text-xs sm:text-sm text-white/70 leading-relaxed max-w-2xl mt-1">
+                  {WORKFLOW_STEPS[activeStepIndex].desc}
+                </p>
               </div>
-              <p className="text-sm font-semibold text-white/90">
-                Next.js · React · Shopify · WordPress · AI Powered
-              </p>
+
+              <div className="shrink-0 bg-white/[0.04] px-4 py-2.5 rounded-xl border border-white/10">
+                <span className="text-[10px] uppercase font-bold text-white/40 tracking-wider block mb-1">
+                  Key Tooling
+                </span>
+                <span className="text-xs font-semibold text-amber-300">
+                  {WORKFLOW_STEPS[activeStepIndex].tools}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Middle 2: Interactive Marquee of Tools with Category Filter */}
+        <div className="bg-[#12131A] rounded-2xl p-6 md:p-7 border border-white/10 shadow-xl overflow-hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                Full Tech Arsenal
+              </span>
+              <h3 className="text-xl font-extrabold text-white tracking-tight mt-0.5">
+                Every Technology I Master
+              </h3>
+            </div>
+
+            {/* Category Filter Pills */}
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+              {CATEGORIES.map((cat) => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setCategory(cat.id)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap cursor-pointer ${
+                    category === cat.id
+                      ? "bg-amber-500 text-white shadow-sm"
+                      : "bg-white/[0.04] text-white/60 hover:text-white hover:bg-white/[0.08]"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Center Tool Quick Stack Dots with Real Brand Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-2 bg-white/[0.04] py-1.5 px-3 rounded-xl border border-white/10">
-            <span className="text-[11px] text-white/40 mr-1 hidden sm:inline">Active Stack:</span>
-            <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
-              <ChatGptLogo className="w-3 h-3" />
-              ChatGPT
-            </span>
-            <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-amber-500/20 text-amber-300 border border-amber-500/30 flex items-center gap-1">
-              <ClaudeLogo className="w-3 h-3" />
-              Claude
-            </span>
-            <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-sky-500/20 text-sky-300 border border-sky-500/30 flex items-center gap-1">
-              <ReactLogo className="w-3 h-3" />
-              Next.js / React
-            </span>
-            <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
-              <ShopifyLogo className="w-3 h-3" />
-              Shopify
-            </span>
-            <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-blue-500/20 text-blue-300 border border-blue-500/30 flex items-center gap-1">
-              <WordPressLogo className="w-3 h-3" />
-              WordPress
-            </span>
-            <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
-              <SupabaseLogo className="w-3 h-3" />
-              Supabase
-            </span>
-          </div>
+          {/* Dual Seamless Marquee Rows */}
+          <div
+            className="space-y-3.5 relative overflow-hidden"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {/* Edge fade gradients */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#12131A] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#12131A] to-transparent z-10 pointer-events-none" />
 
-          {/* Right Action Button with Rolling Dual-Text Motion */}
-          <div className="flex items-center gap-3">
-            <Link
-              href="/contact"
-              className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#F5781E] via-[#F59E0B] to-[#F5781E] text-white text-xs font-semibold shadow-md shadow-orange-500/25 transition-all overflow-hidden hover:scale-[1.03] active:scale-95 shrink-0"
-            >
-              <span className="inline-grid grid-cols-1 grid-rows-1 overflow-hidden h-5 select-none items-center justify-center">
-                <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out group-hover:-translate-y-[140%]">
-                  Let&apos;s Build Something Great
-                </span>
-                <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 text-amber-100 font-bold">
-                  Start Your Project
-                </span>
-              </span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-amber-200 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            {/* Row 1: Forward Marquee */}
+            <div className="flex gap-3.5 animate-marquee hover:[animation-play-state:paused] w-max">
+              {row1Items.map((tool, idx) => {
+                const Icon = tool.icon;
+                return (
+                  <div
+                    key={`${tool.id}-r1-${idx}`}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-amber-400/50 hover:bg-white/[0.07] transition-all min-w-[210px] shrink-0 group cursor-default"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-white/[0.06] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-white group-hover:text-amber-300 transition-colors">
+                        {tool.name}
+                      </p>
+                      <p className="text-[10px] text-white/50">{tool.tag}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Row 2: Reverse Marquee */}
+            <div className="flex gap-3.5 animate-marquee-reverse hover:[animation-play-state:paused] w-max">
+              {row2Items.map((tool, idx) => {
+                const Icon = tool.icon;
+                return (
+                  <div
+                    key={`${tool.id}-r2-${idx}`}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-amber-400/50 hover:bg-white/[0.07] transition-all min-w-[210px] shrink-0 group cursor-default"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-white/[0.06] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-white group-hover:text-amber-300 transition-colors">
+                        {tool.name}
+                      </p>
+                      <p className="text-[10px] text-white/50">{tool.tag}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </footer>
+        </div>
+
+        {/* Bottom Bar Removed */}
       </div>
     </section>
   );

@@ -25,7 +25,7 @@ export function ServiceFaqAccordion({ faqs, serviceTitle }: ServiceFaqAccordionP
             key={idx}
             className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
               isOpen
-                ? "bg-[#161822] border-amber-500/40 shadow-lg shadow-amber-500/5"
+                ? "bg-[#161822] border-blue-500/40 shadow-lg shadow-blue-500/5"
                 : "bg-[#12131A] border-white/10 hover:border-white/20"
             }`}
           >
@@ -41,7 +41,7 @@ export function ServiceFaqAccordion({ faqs, serviceTitle }: ServiceFaqAccordionP
               <div
                 className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
                   isOpen
-                    ? "bg-amber-500 text-white rotate-180"
+                    ? "bg-blue-500 text-white rotate-180"
                     : "bg-white/10 text-white/70"
                 }`}
               >

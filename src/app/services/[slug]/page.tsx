@@ -169,15 +169,15 @@ export default async function SingleServicePage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 text-xs text-white/50 mb-8 sm:mb-12 font-medium">
-            <Link href="/" className="hover:text-amber-400 transition-colors">
+            <Link href="/" className="hover:text-blue-400 transition-colors">
               Home
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <Link href="/services" className="hover:text-amber-400 transition-colors">
+            <Link href="/services" className="hover:text-blue-400 transition-colors">
               Services
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-amber-400 font-semibold truncate max-w-[200px] sm:max-w-none">
+            <span className="text-blue-400 font-semibold truncate max-w-[200px] sm:max-w-none">
               {service.title}
             </span>
           </nav>
@@ -213,7 +213,7 @@ export default async function SingleServicePage({ params }: PageProps) {
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 leading-[1.12]">
                 {service.title}
               </h1>
-              <p className="text-lg sm:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400 mb-6">
+              <p className="text-lg sm:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-6">
                 {service.tagline}
               </p>
 
@@ -225,7 +225,7 @@ export default async function SingleServicePage({ params }: PageProps) {
               {/* Key Metrics Bar */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8 pt-6 border-t border-white/10">
                 <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/5">
-                  <div className="flex items-center gap-2 text-amber-400 text-xs font-bold mb-1">
+                  <div className="flex items-center gap-2 text-blue-400 text-xs font-bold mb-1">
                     <Clock className="w-3.5 h-3.5" />
                     <span>TIMEFRAME</span>
                   </div>
@@ -235,7 +235,7 @@ export default async function SingleServicePage({ params }: PageProps) {
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/5">
-                  <div className="flex items-center gap-2 text-amber-400 text-xs font-bold mb-1">
+                  <div className="flex items-center gap-2 text-blue-400 text-xs font-bold mb-1">
                     <ShieldCheck className="w-3.5 h-3.5" />
                     <span>GUARANTEE</span>
                   </div>
@@ -245,7 +245,7 @@ export default async function SingleServicePage({ params }: PageProps) {
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/5">
-                  <div className="flex items-center gap-2 text-amber-400 text-xs font-bold mb-1">
+                  <div className="flex items-center gap-2 text-blue-400 text-xs font-bold mb-1">
                     <Zap className="w-3.5 h-3.5" />
                     <span>SPEED AUDIT</span>
                   </div>
@@ -255,7 +255,7 @@ export default async function SingleServicePage({ params }: PageProps) {
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/5">
-                  <div className="flex items-center gap-2 text-amber-400 text-xs font-bold mb-1">
+                  <div className="flex items-center gap-2 text-blue-400 text-xs font-bold mb-1">
                     <Award className="w-3.5 h-3.5" />
                     <span>DELIVERY</span>
                   </div>
@@ -269,7 +269,7 @@ export default async function SingleServicePage({ params }: PageProps) {
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   href={`/contact?service=${service.slug}`}
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 text-white font-bold text-sm shadow-[0_10px_30px_-5px_rgba(245,120,30,0.5)] hover:shadow-[0_16px_40px_-5px_rgba(245,120,30,0.7)] hover:scale-[1.02] active:scale-95 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white font-bold text-sm shadow-[0_10px_30px_-5px_rgba(37,99,235,0.45)] hover:shadow-[0_16px_40px_-5px_rgba(37,99,235,0.7)] hover:scale-[1.02] active:scale-95 transition-all duration-300"
                 >
                   <span>Book This Service</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -290,7 +290,7 @@ export default async function SingleServicePage({ params }: PageProps) {
           {/* ================================================================= */}
           <section id="capabilities" className="mb-20 sm:mb-24 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">
                 <Sparkles className="w-3 h-3" />
                 <span>WHAT&apos;S INCLUDED</span>
               </div>
@@ -306,13 +306,13 @@ export default async function SingleServicePage({ params }: PageProps) {
               {service.capabilities.map((cap, idx) => (
                 <div
                   key={idx}
-                  className="rounded-2xl bg-[#12131A] border border-white/10 p-6 sm:p-7 hover:border-amber-400/40 transition-all duration-300 flex flex-col justify-between group shadow-lg"
+                  className="rounded-2xl bg-[#12131A] border border-white/10 p-6 sm:p-7 hover:border-blue-400/40 transition-all duration-300 flex flex-col justify-between group shadow-lg"
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-amber-400 font-bold text-sm mb-4 group-hover:bg-amber-500/10 group-hover:border-amber-400/40 transition-all">
+                    <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-blue-400 font-bold text-sm mb-4 group-hover:bg-blue-500/10 group-hover:border-blue-400/40 transition-all">
                       0{idx + 1}
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2.5 group-hover:text-amber-400 transition-colors">
+                    <h3 className="text-lg font-bold text-white mb-2.5 group-hover:text-blue-400 transition-colors">
                       {cap.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-white/65 leading-relaxed mb-5">
@@ -323,7 +323,7 @@ export default async function SingleServicePage({ params }: PageProps) {
                   <ul className="space-y-2 pt-4 border-t border-white/5">
                     {cap.points.map((pt, pIdx) => (
                       <li key={pIdx} className="flex items-start gap-2 text-xs text-white/80">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
                         <span>{pt}</span>
                       </li>
                     ))}
@@ -339,7 +339,7 @@ export default async function SingleServicePage({ params }: PageProps) {
           <section className="mb-20 sm:mb-24">
             <div className="rounded-3xl bg-[#12131A] border border-white/10 p-8 sm:p-12 lg:p-14 relative overflow-hidden shadow-xl">
               <div className="text-center max-w-2xl mx-auto mb-12">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">
                   <span>HOW I WORK</span>
                 </div>
                 <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
@@ -380,10 +380,10 @@ export default async function SingleServicePage({ params }: PageProps) {
                 ].map((st, sIdx) => (
                   <div
                     key={sIdx}
-                    className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-amber-400/30 transition-all flex flex-col justify-between"
+                    className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-blue-400/30 transition-all flex flex-col justify-between"
                   >
                     <div>
-                      <div className="text-2xl font-extrabold text-amber-400/50 mb-3">
+                      <div className="text-2xl font-extrabold text-blue-400/50 mb-3">
                         {st.step}
                       </div>
                       <h4 className="text-sm font-bold text-white mb-2">{st.name}</h4>
@@ -402,7 +402,7 @@ export default async function SingleServicePage({ params }: PageProps) {
             <section className="mb-20 sm:mb-24">
               <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">
                     <span>PROVEN RESULTS</span>
                   </div>
                   <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -411,7 +411,7 @@ export default async function SingleServicePage({ params }: PageProps) {
                 </div>
                 <Link
                   href="/work"
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-amber-400 hover:text-amber-300 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-400 hover:text-blue-300 transition-colors"
                 >
                   <span>View All Projects</span>
                   <ArrowRight className="w-4 h-4" />
@@ -422,7 +422,7 @@ export default async function SingleServicePage({ params }: PageProps) {
                 {relevantProjects.map((proj) => (
                   <div
                     key={proj.slug}
-                    className="rounded-2xl bg-[#12131A] border border-white/10 overflow-hidden hover:border-amber-400/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between shadow-xl group"
+                    className="rounded-2xl bg-[#12131A] border border-white/10 overflow-hidden hover:border-blue-400/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between shadow-xl group"
                   >
                     <div className="relative aspect-video w-full bg-[#181A24] overflow-hidden">
                       <Image
@@ -438,7 +438,7 @@ export default async function SingleServicePage({ params }: PageProps) {
 
                     <div className="p-6 flex-1 flex flex-col justify-between">
                       <div>
-                        <h3 className="text-lg font-bold text-white mb-1.5 group-hover:text-amber-400 transition-colors">
+                        <h3 className="text-lg font-bold text-white mb-1.5 group-hover:text-blue-400 transition-colors">
                           {proj.title}
                         </h3>
                         <p className="text-xs text-white/60 mb-4 line-clamp-2">
@@ -449,7 +449,7 @@ export default async function SingleServicePage({ params }: PageProps) {
                       <div className="pt-4 border-t border-white/5 flex items-center justify-between">
                         <Link
                           href={`/work/${proj.slug}`}
-                          className="inline-flex items-center gap-1 text-xs font-bold text-amber-400 hover:underline"
+                          className="inline-flex items-center gap-1 text-xs font-bold text-blue-400 hover:underline"
                         >
                           <span>Read Case Study</span>
                           <ArrowUpRight className="w-3.5 h-3.5" />
@@ -484,7 +484,7 @@ export default async function SingleServicePage({ params }: PageProps) {
               {service.techStack.map((tool, idx) => (
                 <span
                   key={idx}
-                  className="px-4 py-2 rounded-full text-xs font-semibold bg-white/[0.04] text-white/80 border border-white/10 hover:border-amber-400/40 hover:bg-white/[0.08] transition-all"
+                  className="px-4 py-2 rounded-full text-xs font-semibold bg-white/[0.04] text-white/80 border border-white/10 hover:border-blue-400/40 hover:bg-white/[0.08] transition-all"
                 >
                   {tool}
                 </span>
@@ -497,7 +497,7 @@ export default async function SingleServicePage({ params }: PageProps) {
           {/* ================================================================= */}
           <section className="mb-20 sm:mb-24">
             <div className="text-center max-w-2xl mx-auto mb-10">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">
                 <span>FAQ</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
@@ -514,14 +514,14 @@ export default async function SingleServicePage({ params }: PageProps) {
           {/* ================================================================= */}
           {/* 7. BOTTOM CONSULTATION BANNER */}
           {/* ================================================================= */}
-          <div className="relative rounded-3xl border border-amber-500/30 bg-[#12131A] p-8 sm:p-12 lg:p-14 mb-16 shadow-[0_10px_40px_-10px_rgba(245,120,30,0.2)] overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="relative rounded-3xl border border-blue-500/30 bg-[#12131A] p-8 sm:p-12 lg:p-14 mb-16 shadow-[0_10px_40px_-10px_rgba(37,99,235,0.2)] overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
             <div
               className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full blur-[80px] pointer-events-none opacity-20"
               style={{ backgroundColor: service.brandColor }}
             />
 
             <div className="relative z-10 text-center md:text-left">
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 mb-2 uppercase tracking-widest">
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-400 mb-2 uppercase tracking-widest">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>LET&apos;S WORK TOGETHER</span>
               </div>
@@ -536,7 +536,7 @@ export default async function SingleServicePage({ params }: PageProps) {
             <div className="relative z-10 shrink-0">
               <Link
                 href={`/contact?service=${service.slug}`}
-                className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 text-white font-bold text-sm sm:text-base shadow-[0_10px_30px_-5px_rgba(245,120,30,0.5)] hover:scale-[1.03] active:scale-95 transition-all duration-300"
+                className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white font-bold text-sm sm:text-base shadow-[0_10px_30px_-5px_rgba(37,99,235,0.45)] hover:scale-[1.03] active:scale-95 transition-all duration-300"
               >
                 <span>Book a Free Consultation</span>
                 <ArrowUpRight className="w-4 h-4 transform transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -552,14 +552,14 @@ export default async function SingleServicePage({ params }: PageProps) {
               href={`/services/${prevService.slug}`}
               className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] transition-colors w-full sm:w-auto text-left group"
             >
-              <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 group-hover:text-amber-400 group-hover:border-amber-400/30 transition-all shrink-0">
+              <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 group-hover:text-blue-400 group-hover:border-blue-400/30 transition-all shrink-0">
                 <ArrowLeft className="w-4 h-4" />
               </div>
               <div>
                 <span className="text-[10px] uppercase font-bold text-white/40 block">
                   Previous Service
                 </span>
-                <span className="text-xs sm:text-sm font-bold text-white group-hover:text-amber-400 transition-colors">
+                <span className="text-xs sm:text-sm font-bold text-white group-hover:text-blue-400 transition-colors">
                   {prevService.title}
                 </span>
               </div>
@@ -580,11 +580,11 @@ export default async function SingleServicePage({ params }: PageProps) {
                 <span className="text-[10px] uppercase font-bold text-white/40 block">
                   Next Service
                 </span>
-                <span className="text-xs sm:text-sm font-bold text-white group-hover:text-amber-400 transition-colors">
+                <span className="text-xs sm:text-sm font-bold text-white group-hover:text-blue-400 transition-colors">
                   {nextService.title}
                 </span>
               </div>
-              <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 group-hover:text-amber-400 group-hover:border-amber-400/30 transition-all shrink-0">
+              <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 group-hover:text-blue-400 group-hover:border-blue-400/30 transition-all shrink-0">
                 <ArrowRight className="w-4 h-4" />
               </div>
             </Link>
