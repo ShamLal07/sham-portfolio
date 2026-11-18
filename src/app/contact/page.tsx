@@ -53,35 +53,42 @@ export default function ContactPage() {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        setNeedsActivation(false);
+        if (result.needsActivation) {
+          setNeedsActivation(true);
+        } else {
+          setNeedsActivation(false);
+        }
         setSubmitted(true);
       } else {
-        // Fallback: direct FormSubmit delivery
-        const fallbackRes = await fetch(`https://formsubmit.co/ajax/${SITE_CONFIG.email}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            Name: formData.name,
-            Email: formData.email,
-            "Mobile Number": formData.phone,
-            Service: formData.service,
-            Timeline: formData.timeline,
-            Message: formData.message,
-            _subject: `New Project Inquiry from ${formData.name} - ${formData.phone}`,
-            _replyto: formData.email,
-            _template: "table",
-            _captcha: "false",
-          }),
-        });
-
-        if (fallbackRes.ok) {
+        // Fallback: direct FormSubmit delivery with Origin headers
+        try {
+          const fallbackRes = await fetch(`https://formsubmit.co/ajax/thakursammi1233@gmail.com`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              Name: formData.name,
+              Email: formData.email,
+              "Mobile Number": formData.phone,
+              Service: formData.service,
+              Timeline: formData.timeline,
+              Message: formData.message,
+              _subject: `New Project Inquiry from ${formData.name} - ${formData.phone}`,
+              _replyto: formData.email,
+              _template: "table",
+              _captcha: "false",
+            }),
+          });
+          const fbData = await fallbackRes.json().catch(() => null);
+          if (fbData && fbData.message && fbData.message.toLowerCase().includes("activation")) {
+            setNeedsActivation(true);
+          }
           setSubmitted(true);
-        } else {
+        } catch {
           // Fallback to direct Gmail compose
-          const directGmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${SITE_CONFIG.email}&su=${encodeURIComponent(
+          const directGmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${SITE_CONFIG.email}&cc=thakursammi1233@gmail.com&su=${encodeURIComponent(
             `Project Inquiry from ${formData.name}`
           )}&body=${encodeURIComponent(
             `Name: ${formData.name}\nEmail: ${formData.email}\nMobile: ${formData.phone}\nService: ${formData.service}\nTimeline: ${formData.timeline}\n\nProject Details:\n${formData.message}`
@@ -135,40 +142,71 @@ export default function ContactPage() {
                   <div className="w-16 h-16 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center mb-5">
                     <Mail className="w-8 h-8" />
                   </div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-blue-300 bg-blue-500/20 px-3 py-1 rounded-full mb-3 border border-blue-500/30">
-                    One-Time Activation Required
+                  <div className="text-xs font-bold uppercase tracking-wider text-blue-300 bg-blue-500/20 px-3.5 py-1 rounded-full mb-3 border border-blue-500/30 font-mono">
+                    Action Required · One-Time Email Activation
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
-                    Check Your Gmail Inbox!
+                    Activate Email Forwarding
                   </h3>
-                  <p className="text-base text-white/70 max-w-[46ch] mb-4 leading-relaxed">
-                    FormSubmit has sent an activation email to <strong className="text-white">{SITE_CONFIG.email}</strong>.
+                  <p className="text-sm sm:text-base text-white/70 max-w-[50ch] mb-5 leading-relaxed">
+                    FormSubmit has sent a 1-time activation link to:
                   </p>
-                  <div className="bg-[#0A0B0E] border border-white/10 rounded-2xl p-5 text-left text-sm text-white/70 max-w-[46ch] mb-6 space-y-2.5">
+
+                  <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+                    <span className="px-3 py-1 rounded-lg bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-mono font-bold">
+                      thakursammi1233@gmail.com
+                    </span>
+                    <span className="px-3 py-1 rounded-lg bg-white/10 border border-white/15 text-white/80 text-xs font-mono">
+                      thakur@shamdev.in
+                    </span>
+                  </div>
+
+                  <div className="bg-[#0A0B0E] border border-white/10 rounded-2xl p-5 text-left text-sm text-white/70 max-w-[50ch] mb-6 space-y-2.5">
                     <div className="font-bold text-white flex items-center gap-2">
-                      <span>📌 How to activate:</span>
+                      <span>📌 30-Second Activation Steps:</span>
                     </div>
-                    <div>1. Open your Gmail (<strong className="text-white">{SITE_CONFIG.email}</strong>).</div>
+                    <div>1. Open your <strong>Gmail</strong> or <strong>Hostinger Webmail</strong>.</div>
                     <div>2. Check your <strong>Inbox</strong> or <strong>Spam / Junk</strong> folder.</div>
-                    <div>3. Look for an email from <strong>&quot;FormSubmit&quot;</strong> and click <strong>&quot;Activate Form&quot;</strong>.</div>
-                    <div className="text-xs text-white/50 pt-2 border-t border-white/10">
-                      Once activated, all website inquiries will land directly in your inbox automatically!
+                    <div>3. Look for the email from <strong>&quot;FormSubmit&quot;</strong> and click <strong>&quot;Activate Form&quot;</strong>.</div>
+                    <div className="text-xs text-emerald-400/90 pt-2 border-t border-white/10">
+                      ✓ Once clicked once, every future website inquiry lands in your inbox automatically!
                     </div>
                   </div>
+
                   <div className="flex flex-wrap items-center justify-center gap-3">
                     <a
                       href="https://mail.google.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white font-bold text-sm shadow-md inline-flex items-center gap-2"
+                      className="group px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white font-bold text-xs sm:text-sm shadow-md inline-flex items-center gap-2"
                     >
                       <span>Open Gmail Inbox</span>
                       <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </a>
+
+                    <a
+                      href={`https://wa.me/917876525326?text=${encodeURIComponent(
+                        `Hi Sham, I submitted an inquiry on your portfolio for ${formData.service}. Name: ${formData.name}, Mobile: ${formData.phone}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md inline-flex items-center gap-2"
+                    >
+                      <WhatsAppIcon className="w-4 h-4 text-white" />
+                      <span>Send to WhatsApp</span>
+                    </a>
+
+                    <Link
+                      href="/admin"
+                      className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/15 text-white font-bold text-xs sm:text-sm transition-colors"
+                    >
+                      View in Admin
+                    </Link>
+
                     <button
                       type="button"
                       onClick={() => setSubmitted(false)}
-                      className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/15 text-white font-bold text-sm transition-colors"
+                      className="text-xs font-semibold text-white/50 hover:text-white py-2 px-3 transition-colors"
                     >
                       Back to form
                     </button>
