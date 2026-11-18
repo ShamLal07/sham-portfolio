@@ -1,36 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0A0B0E;
-  --bg-subtle: #0D0E12;
-  --surface: #12131A;
-  --surface-hover: #171924;
-  --surface-muted: #1A1C28;
-  --border: rgba(255, 255, 255, 0.1);
-  --border-light: rgba(255, 255, 255, 0.06);
+  --bg: #05070E;
+  --bg-subtle: #080B16;
+  --surface: #0B0E1A;
+  --surface-hover: #111628;
+  --surface-muted: #171E36;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-light: rgba(255, 255, 255, 0.05);
   --border-dark: rgba(255, 255, 255, 0.18);
-  --text: #F8FAFC;
+  --text: #FFFFFF;
   --text-muted: #94A3B8;
   --text-light: #64748B;
-  --accent: #F5781E;
-  --accent-blue: #38BDF8;
-  --accent-soft: rgba(245, 120, 30, 0.12);
-  --dark-bg: #0A0B0E;
-  --dark-surface: #12131A;
-  --dark-border: rgba(255, 255, 255, 0.1);
-  --dark-text: #F8FAFC;
+  --accent: #2563EB;
+  --accent-blue: #3B82F6;
+  --accent-cyan: #06B6D4;
+  --accent-indigo: #6366F1;
+  --accent-soft: rgba(37, 99, 235, 0.14);
+  --dark-bg: #05070E;
+  --dark-surface: #0B0E1A;
+  --dark-border: rgba(255, 255, 255, 0.09);
+  --dark-text: #FFFFFF;
   --dark-muted: #94A3B8;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 48px -12px rgba(0, 0, 0, 0.6);
-  --shadow-hover: 0 20px 40px -12px rgba(245, 120, 30, 0.25);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 10px 30px -6px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 24px 60px -12px rgba(0, 0, 0, 0.85);
+  --shadow-hover: 0 20px 48px -10px rgba(37, 99, 235, 0.35);
   --radius-sm: 10px;
   --radius-md: 18px;
   --radius-lg: 24px;
   --radius-full: 9999px;
   --font-display: var(--font-display), 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-body: var(--font-body), 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --container-max: 1320px;
+  --container-max: 1360px;
 }
 
 * {
@@ -39,7 +41,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 104px;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -48,7 +50,8 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   font-size: 16.5px;
-  line-height: 1.72;
+  line-height: 1.84;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -56,13 +59,13 @@ body {
   padding: 0;
 }
 
-/* Headings: Google Font Roboto for all h1 & h2 headings; body text uses Manrope */
+/* Headings: Google Font Roboto for all h1 & h2 headings; spacious luxury tracking */
 h1,
 h2 {
   font-family: var(--font-display) !important;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.012em;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.24;
   margin: 0;
 }
 
@@ -71,15 +74,15 @@ h4,
 h5,
 h6 {
   font-family: var(--font-body);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.005em;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.34;
   margin: 0;
 }
 
 p {
   margin: 0;
-  line-height: 1.72;
+  line-height: 1.84;
 }
 
 @layer base {
@@ -90,11 +93,7 @@ p {
 }
 
 header {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 0px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  background: transparent;
 }
 
 /* Ensure button, link and pill text colors always maintain perfect contrast */

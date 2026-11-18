@@ -25,7 +25,7 @@ export function HeroCanvasAnimation() {
     let width = (canvas.width = canvas.parentElement?.clientWidth || window.innerWidth);
     let height = (canvas.height = canvas.parentElement?.clientHeight || window.innerHeight);
 
-    const colors = ["#F5781E", "#F59E0B", "#FBBF24", "#38BDF8", "#F8FAFC"];
+    const colors = ["#3B82F6", "#60A5FA", "#06B6D4", "#22D3EE", "#E2E8F0"];
 
     // Mouse coordinates
     const mouse = { x: -1000, y: -1000, radius: 140 };

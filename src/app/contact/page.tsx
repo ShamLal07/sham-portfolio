@@ -34,49 +34,61 @@ export default function ContactPage() {
     setErrorMessage("");
 
     try {
-      // Real email submission via FormSubmit to thakur@shamdev.in
-      const response = await fetch(`https://formsubmit.co/ajax/${SITE_CONFIG.email}`, {
+      // 1. Submit to internal API (persists in backend DB & triggers admin dispatch)
+      const response = await fetch("/api/inquiries", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
         body: JSON.stringify({
-          Name: formData.name,
-          Email: formData.email,
-          "Mobile Number": formData.phone,
-          Service: formData.service,
-          Timeline: formData.timeline,
-          Message: formData.message,
-          _subject: `New Project Inquiry from ${formData.name} - ${formData.phone} (${formData.service})`,
-          _replyto: formData.email,
-          _template: "table",
-          _captcha: "false",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          timeline: formData.timeline,
+          message: formData.message,
         }),
       });
 
       const result = await response.json();
 
-      // Check if FormSubmit requires 1-time email activation
-      if (
-        result.message &&
-        (result.message.toLowerCase().includes("activation") ||
-          result.message.toLowerCase().includes("activate"))
-      ) {
-        setNeedsActivation(true);
-        setSubmitted(true);
-      } else if (response.ok || result.success === "true" || result.success === true) {
+      if (response.ok && result.success) {
         setNeedsActivation(false);
         setSubmitted(true);
       } else {
-        // Fallback: Trigger direct Gmail web compose
-        const directGmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${SITE_CONFIG.email}&su=${encodeURIComponent(
-          `Project Inquiry from ${formData.name}`
-        )}&body=${encodeURIComponent(
-          `Name: ${formData.name}\nEmail: ${formData.email}\nMobile: ${formData.phone}\nService: ${formData.service}\nTimeline: ${formData.timeline}\n\nProject Details:\n${formData.message}`
-        )}`;
-        window.open(directGmailUrl, "_blank");
-        setSubmitted(true);
+        // Fallback: direct FormSubmit delivery
+        const fallbackRes = await fetch(`https://formsubmit.co/ajax/${SITE_CONFIG.email}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            Name: formData.name,
+            Email: formData.email,
+            "Mobile Number": formData.phone,
+            Service: formData.service,
+            Timeline: formData.timeline,
+            Message: formData.message,
+            _subject: `New Project Inquiry from ${formData.name} - ${formData.phone}`,
+            _replyto: formData.email,
+            _template: "table",
+            _captcha: "false",
+          }),
+        });
+
+        if (fallbackRes.ok) {
+          setSubmitted(true);
+        } else {
+          // Fallback to direct Gmail compose
+          const directGmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${SITE_CONFIG.email}&su=${encodeURIComponent(
+            `Project Inquiry from ${formData.name}`
+          )}&body=${encodeURIComponent(
+            `Name: ${formData.name}\nEmail: ${formData.email}\nMobile: ${formData.phone}\nService: ${formData.service}\nTimeline: ${formData.timeline}\n\nProject Details:\n${formData.message}`
+          )}`;
+          window.open(directGmailUrl, "_blank");
+          setSubmitted(true);
+        }
       }
     } catch {
       // Fallback on network/adblocker block: Open Gmail Web compose
@@ -100,8 +112,8 @@ export default function ContactPage() {
       <div className="site-container relative z-10">
         {/* Page Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-amber-500/40 bg-amber-500/10 text-amber-400 text-xs font-bold tracking-wider uppercase mb-5">
-            <span className="w-2 h-2 rounded-full bg-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-blue-500/40 bg-blue-500/10 text-blue-400 text-xs font-bold tracking-wider uppercase mb-5">
+            <span className="w-2 h-2 rounded-full bg-blue-400" />
             <span>CONTACT &amp; INQUIRIES</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.8rem] font-extrabold tracking-tight text-white mb-5 leading-[1.12]">
@@ -120,10 +132,10 @@ export default function ContactPage() {
               needsActivation ? (
                 /* One-time FormSubmit Activation Screen */
                 <div className="py-10 text-center flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center mb-5">
+                  <div className="w-16 h-16 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center mb-5">
                     <Mail className="w-8 h-8" />
                   </div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-amber-300 bg-amber-500/20 px-3 py-1 rounded-full mb-3 border border-amber-500/30">
+                  <div className="text-xs font-bold uppercase tracking-wider text-blue-300 bg-blue-500/20 px-3 py-1 rounded-full mb-3 border border-blue-500/30">
                     One-Time Activation Required
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
@@ -148,7 +160,7 @@ export default function ContactPage() {
                       href="https://mail.google.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group px-6 py-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-sm shadow-md inline-flex items-center gap-2"
+                      className="group px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white font-bold text-sm shadow-md inline-flex items-center gap-2"
                     >
                       <span>Open Gmail Inbox</span>
                       <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -182,7 +194,7 @@ export default function ContactPage() {
                   </h3>
 
                   <p className="text-sm sm:text-base text-white/70 max-w-[48ch] mb-8 leading-relaxed">
-                    Thank you, <strong className="text-white font-bold">{formData.name || "there"}</strong>! Your project details have been safely received at <strong className="text-amber-400 font-bold">{SITE_CONFIG.email}</strong>.
+                    Thank you, <strong className="text-white font-bold">{formData.name || "there"}</strong>! Your project details have been safely received at <strong className="text-blue-400 font-bold">{SITE_CONFIG.email}</strong>.
                   </p>
 
                   {/* Submission summary receipt */}
@@ -214,7 +226,7 @@ export default function ContactPage() {
 
                       <div>
                         <div className="text-white/50 font-semibold mb-0.5">Primary Service</div>
-                        <div className="font-bold text-amber-400 text-sm">{formData.service}</div>
+                        <div className="font-bold text-blue-400 text-sm">{formData.service}</div>
                       </div>
 
                       <div className="sm:col-span-2">
@@ -236,12 +248,12 @@ export default function ContactPage() {
                   {/* 3-Step Next Steps */}
                   <div className="w-full text-left mb-8">
                     <div className="text-xs font-bold uppercase tracking-wider text-white/50 mb-3 flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                      <Sparkles className="w-3.5 h-3.5 text-blue-400" />
                       <span>Next Steps</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div className="bg-[#12141D] p-3.5 rounded-xl border border-white/10">
-                        <div className="text-[11px] font-mono font-bold text-amber-400 mb-1">01 · Review</div>
+                        <div className="text-[11px] font-mono font-bold text-blue-400 mb-1">01 · Review</div>
                         <div className="text-xs font-bold text-white mb-0.5">Scope &amp; Fit</div>
                         <div className="text-[11px] text-white/60 leading-normal">Evaluating requirements &amp; tech stack.</div>
                       </div>
@@ -321,7 +333,7 @@ export default function ContactPage() {
                       setFormData({ ...formData, name: e.target.value })
                     }
                     placeholder="e.g. Alex Morgan"
-                    className="w-full px-5 py-3.5 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-amber-400 focus:bg-[#181B26] transition-all bg-[#141724]"
+                    className="w-full px-5 py-3.5 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-blue-400 focus:bg-[#181B26] transition-all bg-[#141724]"
                   />
                 </div>
 
@@ -343,7 +355,7 @@ export default function ContactPage() {
                         setFormData({ ...formData, email: e.target.value })
                       }
                       placeholder="alex@company.com"
-                      className="w-full px-5 py-3.5 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-amber-400 focus:bg-[#181B26] transition-all bg-[#141724]"
+                      className="w-full px-5 py-3.5 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-blue-400 focus:bg-[#181B26] transition-all bg-[#141724]"
                     />
                   </div>
 
@@ -353,7 +365,7 @@ export default function ContactPage() {
                       className="block text-xs font-bold text-white/80 uppercase tracking-wider mb-2 flex items-center justify-between"
                     >
                       <span>Mobile Number *</span>
-                      <span className="text-[11px] text-amber-400 font-normal lowercase">required</span>
+                      <span className="text-[11px] text-blue-400 font-normal lowercase">required</span>
                     </label>
                     <input
                       id="phone"
@@ -364,7 +376,7 @@ export default function ContactPage() {
                         setFormData({ ...formData, phone: e.target.value })
                       }
                       placeholder="+91 98765 43210"
-                      className="w-full px-5 py-3.5 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-amber-400 focus:bg-[#181B26] transition-all bg-[#141724]"
+                      className="w-full px-5 py-3.5 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-blue-400 focus:bg-[#181B26] transition-all bg-[#141724]"
                     />
                   </div>
                 </div>
@@ -385,7 +397,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, service: e.target.value })
                         }
-                        className="w-full px-5 py-3.5 pr-10 rounded-2xl border border-white/10 text-sm text-white bg-[#141724] focus:outline-none focus:border-amber-400 focus:bg-[#181B26] transition-all appearance-none cursor-pointer"
+                        className="w-full px-5 py-3.5 pr-10 rounded-2xl border border-white/10 text-sm text-white bg-[#141724] focus:outline-none focus:border-blue-400 focus:bg-[#181B26] transition-all appearance-none cursor-pointer"
                       >
                         <option value="Website Design" className="bg-[#141724] text-white">Website Design</option>
                         <option value="Frontend Development" className="bg-[#141724] text-white">Frontend Development</option>
@@ -412,7 +424,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, timeline: e.target.value })
                         }
-                        className="w-full px-5 py-3.5 pr-10 rounded-2xl border border-white/10 text-sm text-white bg-[#141724] focus:outline-none focus:border-amber-400 focus:bg-[#181B26] transition-all appearance-none cursor-pointer"
+                        className="w-full px-5 py-3.5 pr-10 rounded-2xl border border-white/10 text-sm text-white bg-[#141724] focus:outline-none focus:border-blue-400 focus:bg-[#181B26] transition-all appearance-none cursor-pointer"
                       >
                         <option value="As soon as possible" className="bg-[#141724] text-white">As soon as possible</option>
                         <option value="Within 2-4 weeks" className="bg-[#141724] text-white">Within 2–4 weeks</option>
@@ -441,7 +453,7 @@ export default function ContactPage() {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     placeholder="Tell me briefly about what you want to design, build, or fix..."
-                    className="w-full px-5 py-4 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-amber-400 focus:bg-[#181B26] transition-all bg-[#141724] resize-none"
+                    className="w-full px-5 py-4 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-blue-400 focus:bg-[#181B26] transition-all bg-[#141724] resize-none"
                   />
                 </div>
 
@@ -449,7 +461,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full group relative inline-flex items-center justify-center gap-3 py-4 rounded-full bg-gradient-to-r from-[#F5781E] via-[#F59E0B] to-[#F5781E] text-white font-bold text-base shadow-[0_4px_25px_rgba(245,120,30,0.45)] hover:shadow-[0_6px_30px_rgba(245,120,30,0.65)] hover:scale-[1.01] active:scale-95 transition-all duration-300 overflow-hidden disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+                  className="w-full group relative inline-flex items-center justify-center gap-3 py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white font-bold text-base shadow-[0_4px_25px_rgba(245,120,30,0.45)] hover:shadow-[0_6px_30px_rgba(245,120,30,0.65)] hover:scale-[1.01] active:scale-95 transition-all duration-300 overflow-hidden disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
                 >
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
                   {isSubmitting ? (
@@ -463,7 +475,7 @@ export default function ContactPage() {
                         <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out group-hover:-translate-y-[140%]">
                           Send Inquiry Directly
                         </span>
-                        <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 text-amber-100 font-extrabold">
+                        <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 text-blue-100 font-extrabold">
                           Deliver to Sham&apos;s Inbox →
                         </span>
                       </span>
@@ -486,14 +498,14 @@ export default function ContactPage() {
               {/* Email item */}
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs text-white/50 font-semibold mb-0.5">Email</div>
                     <a
                       href={`mailto:${SITE_CONFIG.email}`}
-                      className="text-sm sm:text-base font-bold text-white hover:text-amber-400 transition-colors break-all"
+                      className="text-sm sm:text-base font-bold text-white hover:text-blue-400 transition-colors break-all"
                     >
                       {SITE_CONFIG.email}
                     </a>
@@ -502,7 +514,7 @@ export default function ContactPage() {
                 <button
                   type="button"
                   onClick={handleCopyEmail}
-                  className="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 text-white/80 hover:bg-amber-500 hover:text-white border border-white/10 transition-colors cursor-pointer shrink-0"
+                  className="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 text-white/80 hover:bg-blue-500 hover:text-white border border-white/10 transition-colors cursor-pointer shrink-0"
                 >
                   {copied ? "Copied!" : "Copy"}
                 </button>
@@ -510,14 +522,14 @@ export default function ContactPage() {
 
               {/* Phone item */}
               <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="text-xs text-white/50 font-semibold mb-0.5">Phone</div>
                   <a
                     href={`tel:${SITE_CONFIG.phone}`}
-                    className="text-sm sm:text-base font-bold text-white hover:text-amber-400 transition-colors"
+                    className="text-sm sm:text-base font-bold text-white hover:text-blue-400 transition-colors"
                   >
                     {SITE_CONFIG.phone}
                   </a>
@@ -545,7 +557,7 @@ export default function ContactPage() {
 
               {/* Location item */}
               <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
                   <Globe className="w-5 h-5" />
                 </div>
                 <div>
@@ -558,7 +570,7 @@ export default function ContactPage() {
 
               {/* Availability item */}
               <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
@@ -575,7 +587,7 @@ export default function ContactPage() {
                   href={SITE_CONFIG.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-amber-400 transition-colors"
+                  className="inline-flex items-center gap-2 hover:text-blue-400 transition-colors"
                 >
                   <LinkedInIcon className="w-4 h-4" />
                   <span>LinkedIn</span>
@@ -585,7 +597,7 @@ export default function ContactPage() {
                   href={SITE_CONFIG.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-amber-400 transition-colors"
+                  className="inline-flex items-center gap-2 hover:text-blue-400 transition-colors"
                 >
                   <GitHubIcon className="w-4 h-4" />
                   <span>GitHub</span>

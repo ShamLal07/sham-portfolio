@@ -138,13 +138,13 @@ function getBrandTheme(project: Project) {
   if (slug === "workfully") {
     return {
       name: "Workfully",
-      bgGradient: "from-amber-500/20 to-orange-500/20",
-      btnGradient: "bg-gradient-to-r from-[#F5781E] via-[#F59E0B] to-[#F5781E] text-white shadow-[0_8px_25px_-5px_rgba(245,120,30,0.6)] hover:shadow-[0_12px_30px_-5px_rgba(245,120,30,0.8)]",
-      badgeBg: "bg-amber-500/15 border-amber-500/30 text-amber-300",
-      glow: "from-amber-500/25 via-orange-500/30 to-amber-500/25",
-      accentBg: "bg-amber-400",
-      accentText: "text-amber-400",
-      metricGradient: "from-white via-white to-amber-200",
+      bgGradient: "from-blue-500/20 to-indigo-500/20",
+      btnGradient: "bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white shadow-[0_8px_25px_-5px_rgba(245,120,30,0.6)] hover:shadow-[0_12px_30px_-5px_rgba(245,120,30,0.8)]",
+      badgeBg: "bg-blue-500/15 border-blue-500/30 text-blue-300",
+      glow: "from-blue-500/25 via-indigo-500/30 to-blue-500/25",
+      accentBg: "bg-blue-400",
+      accentText: "text-blue-400",
+      metricGradient: "from-white via-white to-blue-200",
     };
   }
 
@@ -203,13 +203,13 @@ function getBrandTheme(project: Project) {
   if (slug === "mgi-access") {
     return {
       name: "MGI Access",
-      bgGradient: "from-amber-500/20 to-yellow-500/20",
+      bgGradient: "from-blue-500/20 to-yellow-500/20",
       btnGradient: "bg-gradient-to-r from-[#D97706] via-[#F59E0B] to-[#D97706] text-white shadow-[0_8px_25px_-5px_rgba(245,158,11,0.6)]",
-      badgeBg: "bg-amber-500/15 border-amber-500/30 text-amber-300",
-      glow: "from-amber-500/25 via-yellow-500/30 to-amber-500/25",
-      accentBg: "bg-amber-400",
-      accentText: "text-amber-400",
-      metricGradient: "from-white via-white to-amber-200",
+      badgeBg: "bg-blue-500/15 border-blue-500/30 text-blue-300",
+      glow: "from-blue-500/25 via-yellow-500/30 to-blue-500/25",
+      accentBg: "bg-blue-400",
+      accentText: "text-blue-400",
+      metricGradient: "from-white via-white to-blue-200",
     };
   }
 
@@ -229,13 +229,13 @@ function getBrandTheme(project: Project) {
   // Default theme
   return {
     name: project.title,
-    bgGradient: "from-amber-500/20 to-orange-500/20",
-    btnGradient: "bg-gradient-to-r from-[#F5781E] via-[#F59E0B] to-[#F5781E] text-white shadow-[0_8px_25px_-5px_rgba(245,120,30,0.6)] hover:shadow-[0_12px_30px_-5px_rgba(245,120,30,0.8)]",
-    badgeBg: "bg-amber-500/15 border-amber-500/30 text-amber-300",
-    glow: "from-amber-500/25 via-orange-500/30 to-amber-500/25",
-    accentBg: "bg-amber-400",
-    accentText: "text-amber-400",
-    metricGradient: "from-white via-white to-amber-200",
+    bgGradient: "from-blue-500/20 to-indigo-500/20",
+    btnGradient: "bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white shadow-[0_8px_25px_-5px_rgba(245,120,30,0.6)] hover:shadow-[0_12px_30px_-5px_rgba(245,120,30,0.8)]",
+    badgeBg: "bg-blue-500/15 border-blue-500/30 text-blue-300",
+    glow: "from-blue-500/25 via-indigo-500/30 to-blue-500/25",
+    accentBg: "bg-blue-400",
+    accentText: "text-blue-400",
+    metricGradient: "from-white via-white to-blue-200",
   };
 }
 
@@ -354,7 +354,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
         <div className="mb-8">
           <Link
             href="/work"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white/60 hover:text-amber-400 transition-colors py-1 group"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white/60 hover:text-blue-400 transition-colors py-1 group"
           >
             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
             <span>Back to Selected Work</span>
@@ -707,14 +707,14 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           {/* Left Card: Next Case Study */}
           <Link
             href={`/work/${nextProject.slug}`}
-            className="lg:col-span-7 p-7 sm:p-8 rounded-3xl bg-[#12131A]/90 border border-white/10 shadow-xl hover:border-amber-400/40 transition-all flex flex-col justify-between group"
+            className="lg:col-span-7 p-7 sm:p-8 rounded-3xl bg-[#12131A]/90 border border-white/10 shadow-xl hover:border-blue-400/40 transition-all flex flex-col justify-between group"
           >
             <div className="flex items-start justify-between gap-5 mb-6">
               <div>
-                <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block mb-1.5">
+                <span className="text-xs font-bold text-blue-400 uppercase tracking-wider block mb-1.5">
                   Next Case Study
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-amber-400 transition-colors">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-blue-400 transition-colors">
                   {nextProject.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-white/60 mt-1.5 max-w-sm line-clamp-2 leading-relaxed">
@@ -740,11 +740,11 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                 <span className="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-white/75">
                   Next Project
                 </span>
-                <span className="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-bold text-amber-400">
+                <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-bold text-blue-400">
                   {nextProject.platform}
                 </span>
               </div>
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-gradient-to-r group-hover:from-amber-500 group-hover:to-orange-500 transition-all shadow-md">
+              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-indigo-500 transition-all shadow-md">
                 <ArrowUpRight className="w-4 h-4 transform transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
             </div>
@@ -767,7 +767,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
             <div>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-sm shadow-lg shadow-orange-500/25 hover:scale-[1.03] active:scale-95 transition-all self-start"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-500/25 hover:scale-[1.03] active:scale-95 transition-all self-start"
               >
                 <span>Contact Me</span>
                 <ArrowUpRight className="w-4 h-4" />
