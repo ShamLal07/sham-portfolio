@@ -538,10 +538,10 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative py-28 sm:py-32 lg:py-40 bg-[#000000] border-t border-white/10 text-white overflow-hidden"
+      className="relative py-28 sm:py-32 lg:py-40 bg-[#05070E] border-t border-white/10 text-white overflow-hidden"
     >
       {/* Subtle Ambient Studio Lighting */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-white/[0.02] blur-[150px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-blue-600/[0.06] via-transparent to-transparent pointer-events-none" />
 
       <div className="site-container relative z-10">
         {/* Section Top Header Area */}
@@ -553,10 +553,10 @@ export function Services() {
           className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 sm:mb-20 lg:mb-24"
         >
           <div>
-            {/* Pill Eyebrow Tag with White Dot */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/20 shadow-sm mb-4">
-              <span className="w-2 h-2 rounded-full bg-white ring-4 ring-white/20 animate-pulse" />
-              <span className="text-xs font-mono font-bold text-white uppercase tracking-widest">
+            {/* Pill Eyebrow Tag with Green Dot */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 shadow-sm mb-4">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 ring-4 ring-emerald-500/20" />
+              <span className="text-xs font-mono font-bold text-blue-300 uppercase tracking-widest">
                 My Services
               </span>
             </div>
@@ -567,7 +567,7 @@ export function Services() {
             </h2>
 
             {/* Subtitle with generous line-height */}
-            <p className="mt-4 text-zinc-300 text-base sm:text-lg max-w-2xl leading-[1.8] font-normal">
+            <p className="mt-4 text-slate-300 text-base sm:text-lg max-w-2xl leading-[1.8] font-normal">
               I build modern, fast, and scalable digital products. From custom websites
               to full-stack web applications, I turn ideas into high-converting solutions.
             </p>
@@ -575,14 +575,14 @@ export function Services() {
 
           {/* Decorative Handwritten Slogan & Curved Arrow from Reference */}
           <div className="hidden lg:flex flex-col items-end justify-center select-none pt-2">
-            <div className="font-serif italic text-right text-zinc-500 leading-relaxed text-lg font-medium tracking-wide">
+            <div className="font-serif italic text-right text-blue-300/50 leading-relaxed text-lg font-medium tracking-wide">
               <div>Clean Code</div>
               <div>Creative Design</div>
               <div>Real Results</div>
             </div>
             {/* Curved Hand-drawn SVG Arrow pointing down to cards */}
             <svg
-              className="w-16 h-12 text-zinc-600 mt-1 mr-5"
+              className="w-16 h-12 text-blue-400/40 mt-1 mr-5"
               viewBox="0 0 60 40"
               fill="none"
               stroke="currentColor"
@@ -609,10 +609,10 @@ export function Services() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -8 }}
-                className="group relative bg-[#0C0C0C] border border-white/10 rounded-[28px] p-7 sm:p-9 flex flex-col justify-between shadow-xl hover:shadow-[0_20px_45px_-12px_rgba(255,255,255,0.12)] hover:border-white/50 transition-all duration-300"
+                className="group relative bg-[#090C16] border border-white/10 rounded-[28px] p-7 sm:p-9 flex flex-col justify-between shadow-xl hover:shadow-[0_20px_45px_-12px_rgba(59,130,246,0.25)] hover:border-blue-500/50 transition-all duration-300"
               >
                 {/* Ambient top glowing line on hover */}
-                <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/0 group-hover:via-white/80 to-transparent transition-all duration-500" />
+                <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-blue-500/0 group-hover:via-blue-400/80 to-transparent transition-all duration-500" />
 
                 <div>
                   {/* Card Top Row: Visual 3D Icon on Left + Category Pill on Right */}
@@ -620,18 +620,18 @@ export function Services() {
                     <div className="transform transition-transform duration-300 group-hover:scale-110">
                       {icon}
                     </div>
-                    <span className="text-[11px] font-mono font-medium text-zinc-300 bg-white/[0.05] px-3.5 py-1 rounded-full border border-white/10 tracking-tight whitespace-nowrap mt-1 group-hover:border-white/30 group-hover:text-white transition-colors">
+                    <span className="text-[11px] font-mono font-medium text-slate-300 bg-white/[0.04] px-3.5 py-1 rounded-full border border-white/10 tracking-tight whitespace-nowrap mt-1 group-hover:border-blue-500/30 group-hover:text-blue-200 transition-colors">
                       {service.badge || service.title}
                     </span>
                   </div>
 
                   {/* Service Title */}
-                  <h3 className="text-xl sm:text-[1.32rem] font-bold text-white tracking-tight mb-2.5 group-hover:text-zinc-200 transition-colors">
+                  <h3 className="text-xl sm:text-[1.32rem] font-bold text-white tracking-tight mb-2.5 group-hover:text-blue-400 transition-colors">
                     {service.title}
                   </h3>
 
                   {/* Short Description */}
-                  <p className="text-[0.88rem] text-zinc-400 leading-[1.75] mb-6 font-normal min-h-[46px]">
+                  <p className="text-[0.88rem] text-slate-400 leading-[1.75] mb-6 font-normal min-h-[46px]">
                     {service.description}
                   </p>
 
@@ -640,9 +640,9 @@ export function Services() {
                     {service.deliverables.map((item) => (
                       <li
                         key={item}
-                        className="flex items-center gap-2.5 text-[0.84rem] font-medium text-white/90"
+                        className="flex items-center gap-2.5 text-[0.84rem] font-medium text-white/85"
                       >
-                        <span className="w-4 h-4 rounded-full bg-white/10 text-white flex items-center justify-center shrink-0 shadow-xs group-hover:bg-white group-hover:text-black transition-colors">
+                        <span className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 shadow-xs group-hover:bg-emerald-500/30 transition-colors">
                           <svg
                             className="w-2.5 h-2.5"
                             viewBox="0 0 12 12"
@@ -665,10 +665,10 @@ export function Services() {
                 <div className="flex items-center justify-between pt-4 border-t border-white/[0.08] mt-2">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-300 group-hover:text-white transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-slate-300 group-hover:text-blue-300 transition-colors"
                   >
                     <span>Discuss {service.title}</span>
-                    <span className="w-7 h-7 rounded-full bg-white/[0.06] text-white/80 flex items-center justify-center border border-white/10 shadow-sm group-hover:bg-white group-hover:text-black group-hover:border-white group-hover:scale-110 transition-all duration-200">
+                    <span className="w-7 h-7 rounded-full bg-white/[0.06] text-white/70 flex items-center justify-center border border-white/10 shadow-sm group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 group-hover:scale-110 transition-all duration-200">
                       <ArrowUpRight className="w-3.5 h-3.5 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </Link>
@@ -680,42 +680,42 @@ export function Services() {
 
         {/* Bottom Call to Action & Value Highlights */}
         <div className="flex flex-col items-center justify-center mt-16 sm:mt-20 lg:mt-24">
-          {/* Main Pure White Button */}
+          {/* Main Electric Blue / Indigo Gradient Pill Button with Rolling Text */}
           <Link
             href="/contact"
-            className="group relative inline-flex items-center gap-3.5 px-9 py-4 rounded-full bg-white text-black text-sm sm:text-base font-extrabold shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_40px_rgba(255,255,255,0.45)] hover:bg-zinc-200 hover:scale-[1.03] active:scale-95 transition-all duration-300 overflow-hidden"
+            className="group relative inline-flex items-center gap-3.5 px-9 py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 bg-[length:200%_auto] text-white text-sm sm:text-base font-bold shadow-[0_10px_30px_-5px_rgba(37,99,235,0.45)] hover:shadow-[0_16px_40px_-5px_rgba(37,99,235,0.7)] hover:scale-[1.03] active:scale-95 transition-all duration-300 overflow-hidden"
           >
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-black/10 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
             <span className="inline-grid grid-cols-1 grid-rows-1 overflow-hidden h-6 select-none items-center justify-center">
               <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out group-hover:-translate-y-[140%]">
                 Let&apos;s Build Something Great
               </span>
-              <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 text-black font-extrabold">
+              <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 text-blue-100 font-extrabold">
                 Start Your Project
               </span>
             </span>
-            <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center relative overflow-hidden shrink-0 border border-black/15">
-              <ArrowUpRight className="w-4 h-4 text-black transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
-              <ArrowUpRight className="w-4 h-4 text-zinc-800 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
+            <div className="w-7 h-7 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center relative overflow-hidden shrink-0 border border-white/30">
+              <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
+              <ArrowUpRight className="w-4 h-4 text-blue-100 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
             </div>
           </Link>
 
           {/* 4 Feature Trust Indicators below CTA button */}
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 mt-10 text-xs sm:text-sm font-medium text-zinc-400">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 mt-10 text-xs sm:text-sm font-medium text-slate-400">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-white" />
+              <ShieldCheck className="w-4 h-4 text-blue-400" />
               <span>Clean Code</span>
             </div>
             <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-white" />
+              <Zap className="w-4 h-4 text-cyan-400" />
               <span>Fast Performance</span>
             </div>
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-white" />
+              <Users className="w-4 h-4 text-indigo-400" />
               <span>Client Focused</span>
             </div>
             <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-white" />
+              <Sparkles className="w-4 h-4 text-emerald-400" />
               <span>Modern Design</span>
             </div>
           </div>

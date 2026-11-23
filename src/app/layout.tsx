@@ -127,7 +127,7 @@ export default function RootLayout({
       <head>
         <JsonLd data={rootStructuredData} />
       </head>
-      <body className="antialiased min-h-screen flex flex-col bg-[#000000] text-white selection:bg-white selection:text-black relative">
+      <body className="antialiased min-h-screen flex flex-col bg-[#0A0B0E] text-white selection:bg-[#F5781E] selection:text-white relative">
         {/* Google Tag Manager (GTM-W9CCPCZ8) */}
         <Script
           id="gtm-script"
@@ -154,11 +154,11 @@ export default function RootLayout({
         </noscript>
         {/* Global Architectural Background Grid, 5-6 Vertical Guide Lines & Ambient Shade */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-          {/* Subtle Ambient Monochrome Silver/White Radial Glows */}
-          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1100px] h-[650px] bg-white/[0.03] blur-[160px]" />
-          <div className="absolute top-1/3 -right-36 w-[600px] h-[600px] bg-white/[0.02] blur-[180px]" />
-          <div className="absolute top-2/3 -left-36 w-[600px] h-[600px] bg-white/[0.02] blur-[180px]" />
-          <div className="absolute -bottom-24 right-1/4 w-[700px] h-[500px] bg-white/[0.02] blur-[160px]" />
+          {/* Subtle Ambient Sunset Tone & Radial Glows */}
+          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1100px] h-[650px] bg-gradient-to-b from-amber-500/[0.09] via-orange-600/[0.04] to-transparent blur-[140px]" />
+          <div className="absolute top-1/3 -right-36 w-[600px] h-[600px] bg-amber-600/[0.04] blur-[160px]" />
+          <div className="absolute top-2/3 -left-36 w-[600px] h-[600px] bg-orange-600/[0.035] blur-[160px]" />
+          <div className="absolute -bottom-24 right-1/4 w-[700px] h-[500px] bg-amber-500/[0.05] blur-[150px]" />
 
           {/* 1px Gray Grid (Rows & Columns Matrix) */}
           <div

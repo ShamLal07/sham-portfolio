@@ -88,31 +88,31 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative bg-[#0C0C0C] border border-white/10 hover:border-white/50 rounded-2xl overflow-hidden shadow-xl hover:shadow-[0_16px_40px_-10px_rgba(255,255,255,0.12)] transition-all duration-300 flex flex-col justify-between"
+      className="group relative bg-[#0B0E17] border border-white/10 hover:border-blue-500/50 rounded-2xl overflow-hidden shadow-xl hover:shadow-[0_16px_40px_-10px_rgba(59,130,246,0.22)] transition-all duration-300 flex flex-col justify-between"
     >
-      {/* Dynamic Cursor Sheen with Monochrome White/Silver specular highlight */}
+      {/* Dynamic Cursor Sheen with Electric Blue tint */}
       <motion.div
         className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"
         style={{
           background: useTransform(
             [glareX, glareY],
             ([gx, gy]) =>
-              `radial-gradient(400px circle at ${gx} ${gy}, rgba(255, 255, 255, 0.12), transparent 70%)`
+              `radial-gradient(400px circle at ${gx} ${gy}, rgba(59, 130, 246, 0.15), transparent 70%)`
           ),
         }}
       />
 
       {/* Top Ambient Glow Edge */}
-      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-white/0 group-hover:via-white/90 to-transparent transition-all duration-500 pointer-events-none z-20" />
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-500/0 group-hover:via-blue-400/90 to-transparent transition-all duration-500 pointer-events-none z-20" />
 
       {/* 1. Developer Browser Window Header */}
-      <div className="px-4 py-2 bg-[#060606] border-b border-white/[0.08] flex items-center justify-between z-10 shrink-0">
+      <div className="px-4 py-2 bg-[#080A10] border-b border-white/[0.08] flex items-center justify-between z-10 shrink-0">
         <div className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-zinc-600 inline-block" />
-          <span className="w-2.5 h-2.5 rounded-full bg-zinc-500 inline-block" />
-          <span className="w-2.5 h-2.5 rounded-full bg-white/90 inline-block" />
+          <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
         </div>
-        <span className="text-[10px] font-mono text-zinc-500 tracking-wider truncate max-w-[170px]">
+        <span className="text-[10px] font-mono text-white/40 tracking-wider truncate max-w-[170px]">
           shamdev.in/work/{project.slug}
         </span>
       </div>
@@ -120,7 +120,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
       {/* 2. Top Image Frame with Floating Platform Badge */}
       <Link
         href={`/work/${project.slug}`}
-        className="block relative w-full aspect-[16/10] bg-[#050505] overflow-hidden"
+        className="block relative w-full aspect-[16/10] bg-[#05070D] overflow-hidden"
       >
         <Image
           src={imgSrc}
@@ -137,12 +137,12 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
         />
 
         {/* Gradient shadow for contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0C] via-transparent to-black/20 opacity-70 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E17] via-transparent to-black/20 opacity-70 pointer-events-none" />
 
         {/* Floating Platform Pill with Live Status Beacon */}
         <div className="absolute top-3 right-3 z-10">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/85 backdrop-blur-md border border-white/20 text-[11px] font-semibold text-white shadow-lg">
-            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#080A12]/85 backdrop-blur-md border border-white/15 text-[11px] font-semibold text-white/90 shadow-lg">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span>{project.platform}</span>
           </div>
         </div>
@@ -152,14 +152,14 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
       <div className="p-5 flex flex-col flex-1 justify-between relative z-10">
         <div>
           {/* Project Title */}
-          <h3 className="font-extrabold text-base sm:text-lg text-white tracking-tight group-hover:text-zinc-200 transition-colors mb-1.5 leading-snug">
+          <h3 className="font-extrabold text-base sm:text-lg text-white tracking-tight group-hover:text-blue-400 transition-colors mb-1.5 leading-snug">
             <Link href={`/work/${project.slug}`} className="hover:underline">
               {project.title}
             </Link>
           </h3>
 
           {/* Clean 1-Line Meaningful Business Impact / Summary */}
-          <p className="text-xs sm:text-[0.82rem] text-zinc-400 leading-relaxed font-normal line-clamp-2 min-h-[2.5rem] mb-4">
+          <p className="text-xs sm:text-[0.82rem] text-slate-400 leading-relaxed font-normal line-clamp-2 min-h-[2.5rem] mb-4">
             {cleanSummary}
           </p>
 
@@ -168,7 +168,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
             {coreTech.map((tech) => (
               <span
                 key={tech}
-                className="text-[11px] font-mono font-medium text-zinc-300 bg-white/[0.05] border border-white/10 px-2.5 py-1 rounded-md group-hover:border-white/30 group-hover:text-white transition-colors"
+                className="text-[11px] font-mono font-medium text-slate-300 bg-white/[0.04] border border-white/10 px-2.5 py-1 rounded-md group-hover:border-blue-500/30 group-hover:text-blue-200 transition-colors"
               >
                 {tech}
               </span>
@@ -180,10 +180,10 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
         <div className="pt-3.5 border-t border-white/[0.08] flex items-center justify-between gap-2">
           <Link
             href={`/work/${project.slug}`}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-white hover:text-zinc-300 transition-colors group/link"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-white/80 hover:text-blue-400 transition-colors group/link"
           >
             <span>View Case Study</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-white transform transition-transform duration-300 ease-out group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-blue-400 transform transition-transform duration-300 ease-out group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
           </Link>
 
           {project.liveUrl && (
@@ -192,10 +192,10 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Visit live site of ${project.title}`}
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-white/[0.06] hover:bg-white hover:text-black border border-white/15 text-[11px] font-semibold text-zinc-300 hover:text-black transition-all cursor-pointer"
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-white/[0.05] hover:bg-blue-600/20 border border-white/10 hover:border-blue-500/40 text-[11px] font-semibold text-slate-300 hover:text-blue-300 transition-all cursor-pointer"
             >
               <span>Live Site</span>
-              <ExternalLink className="w-3 h-3 text-zinc-400 group-hover:text-black" />
+              <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-blue-300" />
             </a>
           )}
         </div>

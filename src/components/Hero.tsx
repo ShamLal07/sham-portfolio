@@ -9,10 +9,10 @@ import { HeroCanvasAnimation } from "./HeroCanvasAnimation";
 import { WhatsAppIcon } from "./SocialIcons";
 
 const STATS = [
-  { value: "4+", label: "Years Experience", icon: <ShieldCheck className="w-3.5 h-3.5 text-white/85" /> },
-  { value: "35+", label: "Shipped Websites", icon: <CheckCircle2 className="w-3.5 h-3.5 text-white/85" /> },
-  { value: "98+", label: "Speed Score", icon: <Zap className="w-3.5 h-3.5 text-white/85" /> },
-  { value: "Global", label: "Client Base", icon: <Globe className="w-3.5 h-3.5 text-white/85" /> },
+  { value: "4+", label: "Years Experience", icon: <ShieldCheck className="w-3.5 h-3.5 text-blue-400" /> },
+  { value: "35+", label: "Shipped Websites", icon: <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> },
+  { value: "98+", label: "Speed Score", icon: <Zap className="w-3.5 h-3.5 text-cyan-400" /> },
+  { value: "Global", label: "Client Base", icon: <Globe className="w-3.5 h-3.5 text-indigo-400" /> },
 ];
 
 const SHOWCASE_TABS = [
@@ -67,22 +67,22 @@ export function Hero() {
     <section
       ref={containerRef}
       id="home"
-      className="relative pt-36 sm:pt-40 md:pt-48 pb-20 md:pb-28 bg-[#000000] text-white overflow-hidden"
+      className="relative pt-36 sm:pt-40 md:pt-48 pb-20 md:pb-28 bg-[#05070E] text-white overflow-hidden"
     >
-      {/* Interactive Canvas Constellation Animation (Monochrome Silver/White) */}
+      {/* Interactive Canvas Constellation Animation */}
       <HeroCanvasAnimation />
 
-      {/* 1. Ambient Background: Subtle Monochrome Silver/White Wash */}
+      {/* 1. Ambient Background: Electric Cyber Blue & Cyan Radiant Wash */}
       <div className="absolute right-0 top-0 bottom-0 w-full pointer-events-none z-0 overflow-hidden">
-        {/* Soft Radial White Core */}
-        <div className="absolute -right-24 top-1/4 -translate-y-1/2 w-[550px] h-[550px] sm:w-[750px] sm:h-[750px] rounded-full bg-white/[0.04] blur-[150px]" />
+        {/* Soft Radial Blue Core */}
+        <div className="absolute -right-24 top-1/4 -translate-y-1/2 w-[550px] h-[550px] sm:w-[750px] sm:h-[750px] rounded-full bg-gradient-to-br from-blue-600/20 via-indigo-600/15 to-transparent blur-[140px]" />
 
-        {/* Deep Ambient Monochrome Wash */}
-        <div className="absolute right-10 bottom-10 w-[450px] h-[450px] rounded-full bg-white/[0.025] blur-[160px]" />
+        {/* Deep Cyan Ambient Wash */}
+        <div className="absolute right-10 bottom-10 w-[450px] h-[450px] rounded-full bg-cyan-600/10 blur-[150px]" />
 
         {/* Fluted Vertical Texture Lines on Right */}
         <div
-          className="absolute inset-0 opacity-[0.08] pointer-events-none"
+          className="absolute inset-0 opacity-[0.10] pointer-events-none"
           style={{
             backgroundImage:
               "repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0.4) 1px, transparent 1px, transparent 24px)",
@@ -95,23 +95,23 @@ export function Hero() {
       </div>
 
       {/* Top soft center spotlight */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[650px] h-[300px] bg-white/[0.03] blur-[130px] pointer-events-none" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[650px] h-[300px] bg-blue-500/[0.08] blur-[120px] pointer-events-none" />
 
       {/* 2. Main Hero Content Container */}
       <motion.div
         style={{ opacity: heroOpacity, y: heroY }}
         className="site-container relative z-10 text-center flex flex-col items-center"
       >
-        {/* Clean Agency Eyebrow Badge (Monochrome Luxury) */}
+        {/* Clean Agency Eyebrow Badge (No duplicate logo box!) */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/20 text-xs font-mono font-bold text-white/90 backdrop-blur-md shadow-sm mb-6 sm:mb-8"
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-xs font-mono font-bold text-blue-300 backdrop-blur-md shadow-sm mb-6 sm:mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span>FULL STACK &bull; WORDPRESS &bull; SHOPIFY &bull; NEXT.JS</span>
-          <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-white/10 text-white/90 border border-white/20">
+          <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">
             T
           </span>
         </motion.div>
@@ -124,7 +124,7 @@ export function Hero() {
           className="max-w-4xl font-extrabold text-4xl sm:text-6xl lg:text-[4.75rem] tracking-tight text-white leading-[1.12] mb-6"
         >
           I Design &amp; Build <br className="hidden sm:inline" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-300">
             Websites That Convert.
           </span>
         </motion.h1>
@@ -134,12 +134,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl text-base sm:text-lg text-zinc-300 leading-relaxed mb-10 font-normal"
+          className="max-w-2xl text-base sm:text-lg text-slate-300 leading-relaxed mb-10 font-normal"
         >
           Senior Full-Stack &amp; CMS Developer crafting high-performance, conversion-focused websites with thoughtful UI/UX and clean, reliable code.
         </motion.p>
 
-        {/* Unique Interactive CTA Buttons (High Contrast Black & White) */}
+        {/* Unique Interactive CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -149,13 +149,13 @@ export function Hero() {
           {/* Primary CTA */}
           <Link
             href="/work"
-            className="group relative inline-flex items-center gap-3.5 px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white text-black font-extrabold text-sm sm:text-base shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_40px_rgba(255,255,255,0.45)] hover:bg-zinc-200 hover:scale-[1.03] active:scale-95 transition-all duration-300 overflow-hidden"
+            className="group relative inline-flex items-center gap-3.5 px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 bg-[length:200%_auto] text-white font-bold text-sm sm:text-base shadow-[0_10px_30px_-5px_rgba(37,99,235,0.45)] hover:shadow-[0_16px_40px_-5px_rgba(37,99,235,0.7)] hover:scale-[1.03] active:scale-95 transition-all duration-300 overflow-hidden"
           >
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-black/10 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
             <span className="tracking-wide">Explore Selected Work</span>
-            <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center relative overflow-hidden shrink-0 border border-black/15 shadow-inner">
-              <ArrowUpRight className="w-4 h-4 text-black transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
-              <ArrowUpRight className="w-4 h-4 text-zinc-800 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
+            <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center relative overflow-hidden shrink-0 border border-white/30 shadow-inner">
+              <ArrowUpRight className="w-4 h-4 text-white transform transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5" />
+              <ArrowUpRight className="w-4 h-4 text-blue-200 absolute transform -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
             </div>
           </Link>
 
@@ -164,9 +164,9 @@ export function Hero() {
             href="https://wa.me/917876525326?text=Hi%20Sham%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white/[0.05] border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white hover:text-black hover:border-white hover:scale-[1.03] active:scale-95 transition-all duration-300 backdrop-blur-md shadow-md"
+            className="group relative inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white/[0.05] border border-white/15 text-white font-semibold text-sm sm:text-base hover:bg-emerald-500/10 hover:border-emerald-500/40 hover:scale-[1.03] active:scale-95 transition-all duration-300 backdrop-blur-md shadow-md"
           >
-            <WhatsAppIcon className="w-4 h-4" />
+            <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
             <span>Chat on WhatsApp</span>
           </a>
         </motion.div>
@@ -178,17 +178,17 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="w-full max-w-5xl mx-auto mb-16"
         >
-          <div className="rounded-3xl bg-[#0D0D0D] border border-white/15 p-2 sm:p-3 shadow-[0_30px_90px_-20px_rgba(0,0,0,0.9)] relative overflow-hidden group">
+          <div className="rounded-3xl bg-[#090C16] border border-white/12 p-2 sm:p-3 shadow-[0_30px_90px_-20px_rgba(59,130,246,0.3)] relative overflow-hidden group">
             {/* Ambient Top Glow Line */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
 
             {/* Browser Header Bar */}
-            <div className="px-4 py-3 bg-[#060606] rounded-t-2xl border-b border-white/[0.08] flex flex-wrap items-center justify-between gap-3">
+            <div className="px-4 py-3 bg-[#060810] rounded-t-2xl border-b border-white/[0.08] flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-zinc-600 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-zinc-500 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-white/90 inline-block" />
-                <span className="ml-3 text-xs font-mono text-zinc-400 hidden sm:inline">
+                <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
+                <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
+                <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
+                <span className="ml-3 text-xs font-mono text-slate-400 hidden sm:inline">
                   shamdev.in/work/{currentShowcase.slug}
                 </span>
               </div>
@@ -204,8 +204,8 @@ export function Hero() {
                       onClick={() => setActiveTab(idx)}
                       className={`px-3 py-1 rounded-lg text-xs font-mono font-semibold transition-all cursor-pointer ${
                         isActive
-                          ? "bg-white text-black font-bold shadow-md shadow-white/15"
-                          : "text-zinc-400 hover:text-white hover:bg-white/5"
+                          ? "bg-blue-600 text-white shadow-md shadow-blue-500/25"
+                          : "text-slate-400 hover:text-white hover:bg-white/5"
                       }`}
                     >
                       <span>{tab.name}</span>
@@ -216,7 +216,7 @@ export function Hero() {
             </div>
 
             {/* Screenshot Frame */}
-            <div className="relative aspect-[16/9] w-full bg-[#050505] rounded-b-2xl overflow-hidden">
+            <div className="relative aspect-[16/9] w-full bg-[#05070D] rounded-b-2xl overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentShowcase.id}
@@ -234,20 +234,20 @@ export function Hero() {
                     sizes="(max-width: 1200px) 100vw, 1100px"
                     className="object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-70" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#090C16] via-transparent to-transparent opacity-70" />
                 </motion.div>
               </AnimatePresence>
 
               {/* Floating Live Metric Overlay Chips */}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/85 backdrop-blur-md border border-white/20 text-xs font-mono text-white shadow-lg">
-                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-xs font-mono text-white shadow-lg">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span>{currentShowcase.platform}</span>
                 </div>
 
                 <Link
                   href={`/work/${currentShowcase.slug}`}
-                  className="pointer-events-auto inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-black hover:bg-zinc-200 text-xs font-bold shadow-md transition-all active:scale-95"
+                  className="pointer-events-auto inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-md transition-all active:scale-95"
                 >
                   <span>View Case Study</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -267,15 +267,15 @@ export function Hero() {
           {STATS.map((stat) => (
             <div
               key={stat.label}
-              className="p-4 sm:p-5 rounded-2xl bg-[#0A0A0A] border border-white/10 hover:border-white/40 hover:bg-[#121212] transition-all flex flex-col items-center justify-center group shadow-md"
+              className="p-4 sm:p-5 rounded-2xl bg-[#090C16] border border-white/10 hover:border-blue-500/40 hover:bg-[#0E1322] transition-all flex flex-col items-center justify-center group shadow-md"
             >
               <div className="flex items-center gap-1.5 mb-1.5">
                 {stat.icon}
-                <span className="font-extrabold text-xl sm:text-2xl text-white group-hover:text-zinc-200 transition-colors font-[family-name:var(--font-display)]">
+                <span className="font-extrabold text-xl sm:text-2xl text-white group-hover:text-blue-300 transition-colors font-[family-name:var(--font-display)]">
                   {stat.value}
                 </span>
               </div>
-              <span className="text-[11px] sm:text-xs text-zinc-400 font-medium tracking-tight">
+              <span className="text-[11px] sm:text-xs text-slate-400 font-medium tracking-tight">
                 {stat.label}
               </span>
             </div>

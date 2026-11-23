@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Clock, Calendar, ArrowUpRight, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, Clock, Calendar, ArrowUpRight, Sparkles, Tag, ChevronLeft, ChevronRight } from "lucide-react";
 import { BlogPost } from "@/types/cms";
 
 interface BlogListingClientProps {
@@ -49,43 +49,43 @@ export function BlogListingClient({ initialPosts }: BlogListingClientProps) {
       {/* Featured Article Hero Spotlight */}
       {featuredPost && selectedCategory === "All" && !searchQuery && (
         <div className="mb-14 sm:mb-20">
-          <div className="text-xs font-mono font-bold text-white tracking-wider uppercase mb-3 flex items-center gap-2">
-            <Sparkles className="w-3.5 h-3.5 text-white" />
+          <div className="text-xs font-bold text-amber-400 tracking-wider uppercase mb-3 flex items-center gap-2">
+            <Sparkles className="w-3.5 h-3.5" />
             <span>FEATURED ARTICLE</span>
           </div>
 
           <Link
             href={`/blog/${featuredPost.slug}`}
-            className="group block rounded-3xl bg-[#0C0C0C] border border-white/10 hover:border-white/30 p-6 sm:p-8 lg:p-10 transition-all duration-300 shadow-2xl relative overflow-hidden"
+            className="group block rounded-3xl bg-gradient-to-br from-[#161824] via-[#10121A] to-[#0A0B0E] border border-white/10 hover:border-amber-400/40 p-6 sm:p-8 lg:p-10 transition-all duration-300 shadow-2xl relative overflow-hidden"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7 space-y-4">
                 <div className="flex flex-wrap items-center gap-3 text-xs">
-                  <span className="px-3 py-1 rounded-full font-bold bg-white/10 text-white border border-white/20">
+                  <span className="px-3 py-1 rounded-full font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30">
                     {featuredPost.category}
                   </span>
-                  <span className="text-zinc-400 flex items-center gap-1 font-medium">
-                    <Clock className="w-3.5 h-3.5 text-white" />
+                  <span className="text-white/60 flex items-center gap-1 font-medium">
+                    <Clock className="w-3.5 h-3.5 text-amber-400" />
                     {featuredPost.readTime}
                   </span>
-                  <span className="text-zinc-400 flex items-center gap-1 font-medium">
-                    <Calendar className="w-3.5 h-3.5 text-white" />
+                  <span className="text-white/60 flex items-center gap-1 font-medium">
+                    <Calendar className="w-3.5 h-3.5 text-amber-400" />
                     {featuredPost.publishedAt}
                   </span>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white group-hover:text-zinc-200 transition-colors tracking-tight leading-snug">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white group-hover:text-amber-300 transition-colors tracking-tight leading-snug">
                   {featuredPost.title}
                 </h2>
 
-                <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
+                <p className="text-sm sm:text-base text-white/70 leading-relaxed font-normal">
                   {featuredPost.excerpt}
                 </p>
 
                 <div className="pt-2 flex items-center gap-3">
-                  <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white group-hover:translate-x-1 transition-transform">
+                  <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-amber-400 group-hover:translate-x-1 transition-transform">
                     <span>Read Full Guide</span>
-                    <ArrowUpRight className="w-4 h-4 text-white" />
+                    <ArrowUpRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>
@@ -121,8 +121,8 @@ export function BlogListingClient({ initialPosts }: BlogListingClientProps) {
                 }}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
                   isActive
-                    ? "bg-white text-black font-extrabold shadow-sm"
-                    : "bg-[#0C0C0C] text-zinc-400 hover:text-white hover:bg-[#141414] border border-white/10"
+                    ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md shadow-orange-500/25"
+                    : "bg-white/[0.05] text-white/70 hover:text-white hover:bg-white/[0.1] border border-white/10"
                 }`}
               >
                 {cat}
@@ -133,7 +133,7 @@ export function BlogListingClient({ initialPosts }: BlogListingClientProps) {
 
         {/* Search Input */}
         <div className="relative w-full md:w-72 shrink-0">
-          <Search className="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+          <Search className="w-4 h-4 text-white/40 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
             value={searchQuery}
@@ -142,13 +142,13 @@ export function BlogListingClient({ initialPosts }: BlogListingClientProps) {
               setCurrentPage(1);
             }}
             placeholder="Search articles & topics..."
-            className="w-full pl-10 pr-4 py-2 text-xs sm:text-sm rounded-full bg-[#0C0C0C] border border-white/10 text-white placeholder-zinc-500 focus:outline-hidden focus:border-white focus:ring-1 focus:ring-white transition-all"
+            className="w-full pl-10 pr-4 py-2 text-xs sm:text-sm rounded-full bg-white/[0.05] border border-white/10 text-white placeholder-white/40 focus:outline-hidden focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all"
           />
         </div>
       </div>
 
       {/* Posts Count Indicator */}
-      <div className="mb-6 flex items-center justify-between text-xs text-zinc-400">
+      <div className="mb-6 flex items-center justify-between text-xs text-white/50">
         <span>
           Showing {filteredPosts.length} article{filteredPosts.length === 1 ? "" : "s"}
         </span>
@@ -156,7 +156,7 @@ export function BlogListingClient({ initialPosts }: BlogListingClientProps) {
           <button
             type="button"
             onClick={() => setSearchQuery("")}
-            className="text-white hover:underline cursor-pointer font-bold"
+            className="text-amber-400 hover:underline cursor-pointer"
           >
             Clear Search
           </button>
@@ -169,7 +169,7 @@ export function BlogListingClient({ initialPosts }: BlogListingClientProps) {
           {paginatedPosts.map((post) => (
             <article
               key={post.id || post.slug}
-              className="group rounded-3xl bg-[#0C0C0C] border border-white/10 hover:border-white/30 p-5 sm:p-6 transition-all duration-300 shadow-xl flex flex-col justify-between"
+              className="group rounded-3xl bg-[#11131C] border border-white/10 hover:border-amber-400/40 p-5 sm:p-6 transition-all duration-300 shadow-xl flex flex-col justify-between"
             >
               <div>
                 {/* Thumbnail */}
@@ -182,32 +182,32 @@ export function BlogListingClient({ initialPosts }: BlogListingClientProps) {
                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#000000]/85 backdrop-blur-md text-white border border-white/20">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#0A0B0E]/85 backdrop-blur-md text-amber-300 border border-amber-400/30">
                       {post.category}
                     </span>
                   </div>
                 </Link>
 
                 {/* Metadata info */}
-                <div className="flex items-center gap-3 text-xs text-zinc-400 mb-3 font-medium">
+                <div className="flex items-center gap-3 text-xs text-white/50 mb-3 font-medium">
                   <span className="flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5 text-white" />
+                    <Clock className="w-3.5 h-3.5 text-amber-400" />
                     {post.readTime}
                   </span>
                   <span>·</span>
                   <span className="flex items-center gap-1">
-                    <Calendar className="w-3.5 h-3.5 text-white" />
+                    <Calendar className="w-3.5 h-3.5 text-amber-400" />
                     {post.publishedAt}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white group-hover:text-zinc-200 transition-colors tracking-tight leading-snug mb-3 line-clamp-2">
+                <h3 className="text-xl font-bold text-white group-hover:text-amber-300 transition-colors tracking-tight leading-snug mb-3 line-clamp-2">
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed line-clamp-3 mb-5 font-normal">
+                <p className="text-xs sm:text-sm text-white/65 leading-relaxed line-clamp-3 mb-5 font-normal">
                   {post.excerpt}
                 </p>
               </div>
@@ -218,7 +218,7 @@ export function BlogListingClient({ initialPosts }: BlogListingClientProps) {
                   {post.tags.slice(0, 2).map((tag) => (
                     <span
                       key={tag}
-                      className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-white/[0.04] text-zinc-300"
+                      className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-white/[0.04] text-white/70"
                     >
                       #{tag}
                     </span>
@@ -227,25 +227,25 @@ export function BlogListingClient({ initialPosts }: BlogListingClientProps) {
 
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-1 text-xs font-bold text-white group-hover:translate-x-1 transition-transform"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-amber-400 group-hover:translate-x-1 transition-transform"
                 >
                   <span>Read</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </article>
           ))}
         </div>
       ) : (
-        <div className="py-20 text-center rounded-3xl bg-[#0C0C0C] border border-white/10 p-8">
-          <p className="text-lg text-zinc-300 font-medium">No articles matched your filter criteria.</p>
+        <div className="py-20 text-center rounded-3xl bg-white/[0.02] border border-white/10 p-8">
+          <p className="text-lg text-white/70 font-medium">No articles matched your filter criteria.</p>
           <button
             type="button"
             onClick={() => {
               setSearchQuery("");
               setSelectedCategory("All");
             }}
-            className="mt-4 px-6 py-2.5 rounded-full bg-white text-black font-extrabold text-xs hover:bg-zinc-200 transition-all cursor-pointer"
+            className="mt-4 px-6 py-2.5 rounded-full bg-amber-500 text-white font-bold text-xs hover:bg-amber-400 transition-all cursor-pointer"
           >
             Reset Filters
           </button>
@@ -272,7 +272,7 @@ export function BlogListingClient({ initialPosts }: BlogListingClientProps) {
               onClick={() => setCurrentPage(page)}
               className={`w-9 h-9 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 currentPage === page
-                  ? "bg-white text-black font-extrabold shadow-sm"
+                  ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md shadow-orange-500/25"
                   : "bg-white/[0.04] text-white/70 hover:bg-white/[0.1] hover:text-white"
               }`}
             >

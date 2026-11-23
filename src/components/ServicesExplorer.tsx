@@ -35,19 +35,22 @@ export function ServicesExplorer() {
       {/* 1. Header Section */}
       <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
         {/* Eyebrow Pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/20 text-white text-xs font-mono font-bold uppercase tracking-widest shadow-sm mb-5">
-          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest shadow-sm mb-5">
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
           <span>MY SERVICES ({ALL_SERVICES_CATALOG.length} CAPABILITIES)</span>
         </div>
 
         {/* Impactful Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-5 leading-[1.12]">
           Innovative Digital Services <br className="hidden sm:inline" />
-          For Business Growth
+          For Business{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-200">
+            Growth
+          </span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-2xl mx-auto font-normal">
+        <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto font-normal">
           Explore expert-led web development, UI/UX design, E-Commerce, and CMS solutions designed to scale your brand and maximize ROI.
         </p>
       </div>
@@ -60,7 +63,7 @@ export function ServicesExplorer() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search all services (e.g., WordPress, Shopify, UI/UX, Next.js, Web Design)..."
-            className="w-full pl-5 pr-14 py-3.5 rounded-full bg-[#0C0C0C] border border-white/15 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-white focus:bg-[#141414] focus:ring-2 focus:ring-white/20 transition-all shadow-lg"
+            className="w-full pl-5 pr-14 py-3.5 rounded-full bg-[#12131A] border border-white/15 text-sm text-white placeholder-white/40 focus:outline-none focus:border-blue-400 focus:bg-white/[0.08] focus:ring-2 focus:ring-blue-500/20 transition-all shadow-lg"
           />
           {searchQuery ? (
             <button
@@ -75,7 +78,7 @@ export function ServicesExplorer() {
           ) : (
             <div
               style={{ right: "10px", top: "50%", transform: "translateY(-50%)" }}
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow-md pointer-events-none"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 flex items-center justify-center text-white shadow-md pointer-events-none"
             >
               <Search className="w-3.5 h-3.5" />
             </div>
@@ -92,10 +95,10 @@ export function ServicesExplorer() {
               key={cat.id}
               type="button"
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 isActive
-                  ? "bg-white text-black font-extrabold shadow-sm scale-105"
-                  : "bg-[#0C0C0C] text-zinc-400 hover:bg-[#141414] hover:text-white border border-white/10"
+                  ? "bg-blue-500 text-white shadow-md shadow-blue-500/25 border border-blue-400 font-bold scale-105"
+                  : "bg-white/[0.04] text-white/70 hover:bg-white/[0.08] hover:text-white border border-white/10"
               }`}
             >
               {cat.label}
@@ -110,44 +113,44 @@ export function ServicesExplorer() {
           {filteredServices.map((service) => (
             <div
               key={service.id}
-              className="bg-[#0C0C0C] rounded-2xl p-7 sm:p-8 border border-white/10 hover:border-white/30 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between shadow-xl group relative overflow-hidden"
+              className="bg-[#12131A] rounded-2xl p-7 sm:p-8 border border-white/10 hover:border-blue-400/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between shadow-xl group relative overflow-hidden"
             >
-              {/* Top-Right Soft Ambient Glow */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.02] rounded-full blur-2xl pointer-events-none group-hover:bg-white/[0.05] transition-all" />
+              {/* Top-Right Soft Amber Ambient Glow */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl pointer-events-none group-hover:bg-blue-500/15 transition-all" />
 
               <div>
                 {/* Header row with Icon & Category Badge */}
                 <div className="flex items-center justify-between mb-5">
                   <div
-                    className={`w-14 h-14 rounded-2xl bg-white/[0.05] border border-white/15 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-md`}
+                    className={`w-14 h-14 rounded-2xl ${service.iconBg} border ${service.iconBorder} flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-md`}
                   >
                     <ServiceBrandIcon id={service.id} />
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/[0.06] text-zinc-400 border border-white/10">
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/[0.06] text-white/60 border border-white/10">
                     {service.deliveryTime}
                   </span>
                 </div>
 
                 {/* Service Title */}
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-zinc-200 transition-colors tracking-tight">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors tracking-tight">
                   <Link href={`/services/${service.slug}`} className="hover:underline">
                     {service.title}
                   </Link>
                 </h3>
 
                 {/* Short Description */}
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6 font-normal">
+                <p className="text-xs sm:text-sm text-white/60 leading-relaxed mb-6 font-normal">
                   {service.shortDesc}
                 </p>
 
-                {/* Deliverables Checklist */}
+                {/* Deliverables Checklist with Amber Checkmark Icons */}
                 <ul className="space-y-2.5 mb-8">
                   {service.deliverables.map((item, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-2.5 text-xs text-zinc-300 leading-tight"
+                      className="flex items-start gap-2.5 text-xs text-white/75 leading-tight"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-white shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -158,7 +161,7 @@ export function ServicesExplorer() {
               <div className="pt-4 border-t border-white/10 flex items-center justify-between">
                 <Link
                   href={`/services/${service.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-white hover:text-zinc-300 transition-colors group/link cursor-pointer"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-400 hover:text-blue-300 transition-colors group/link cursor-pointer"
                 >
                   <span>Explore Service</span>
                   <ArrowUpRight className="w-3.5 h-3.5 transform transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
@@ -166,7 +169,7 @@ export function ServicesExplorer() {
 
                 <Link
                   href={`/contact?service=${service.slug}`}
-                  className="text-xs font-semibold text-zinc-400 hover:text-white transition-colors"
+                  className="text-xs font-semibold text-white/50 hover:text-white transition-colors"
                 >
                   Book Now →
                 </Link>
@@ -175,9 +178,9 @@ export function ServicesExplorer() {
           ))}
         </div>
       ) : (
-        <div className="text-center py-16 px-4 bg-[#0C0C0C] rounded-2xl border border-white/10 max-w-lg mx-auto mb-20">
-          <p className="text-base text-white font-bold mb-2">No matching services found</p>
-          <p className="text-xs text-zinc-400 mb-5">
+        <div className="text-center py-16 px-4 bg-[#12131A] rounded-2xl border border-white/10 max-w-lg mx-auto mb-20">
+          <p className="text-base text-white/80 font-bold mb-2">No matching services found</p>
+          <p className="text-xs text-white/50 mb-5">
             Try adjusting your search query or reset the filter to explore all {ALL_SERVICES_CATALOG.length} services.
           </p>
           <button
@@ -186,7 +189,7 @@ export function ServicesExplorer() {
               setSearchQuery("");
               setActiveCategory("all");
             }}
-            className="px-5 py-2 rounded-full bg-white text-black text-xs font-bold hover:bg-zinc-200 transition-colors cursor-pointer"
+            className="px-5 py-2 rounded-full bg-blue-500 text-white text-xs font-bold hover:bg-blue-400 transition-colors cursor-pointer"
           >
             Reset Filters
           </button>
@@ -194,19 +197,19 @@ export function ServicesExplorer() {
       )}
 
       {/* 5. Bottom Consultation CTA Banner */}
-      <div className="relative rounded-3xl border border-white/15 bg-[#0C0C0C] p-7 sm:p-10 lg:p-12 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="relative rounded-3xl border border-blue-500/30 bg-[#12131A] p-7 sm:p-10 lg:p-12 shadow-[0_10px_40px_-10px_rgba(37,99,235,0.2)] overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Ambient Warm Underglow */}
-        <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-white/[0.02] blur-[80px] pointer-events-none" />
+        <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-blue-500/10 blur-[80px] pointer-events-none" />
 
         <div className="relative z-10 text-center md:text-left">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-white mb-2 uppercase tracking-widest font-mono">
-            <Sparkles className="w-3.5 h-3.5 text-white" />
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-400 mb-2 uppercase tracking-widest">
+            <Sparkles className="w-3.5 h-3.5" />
             <span>Ready To Scale?</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
             Have a project in mind?
           </h2>
-          <p className="text-sm sm:text-base text-zinc-300 font-normal max-w-xl leading-relaxed">
+          <p className="text-sm sm:text-base text-white/70 font-normal max-w-xl leading-relaxed">
             Let&apos;s discuss your ideas, goals and how I can help turn them into a real, high-converting digital solution.
           </p>
         </div>
@@ -214,10 +217,10 @@ export function ServicesExplorer() {
         <div className="relative z-10 shrink-0">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white hover:bg-zinc-200 text-black font-extrabold text-sm sm:text-base shadow-[0_10px_30px_rgba(255,255,255,0.2)] hover:scale-[1.03] active:scale-95 transition-all duration-300"
+            className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 bg-[length:200%_auto] text-white font-bold text-sm sm:text-base shadow-[0_10px_30px_-5px_rgba(37,99,235,0.45)] hover:shadow-[0_16px_40px_-5px_rgba(37,99,235,0.7)] hover:scale-[1.03] active:scale-95 transition-all duration-300"
           >
             <span>Get a Free Consultation</span>
-            <ArrowUpRight className="w-4 h-4 transform transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-black" />
+            <ArrowUpRight className="w-4 h-4 transform transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
       </div>
