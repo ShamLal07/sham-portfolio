@@ -119,8 +119,8 @@ export default function ContactPage() {
       <div className="site-container relative z-10">
         {/* Page Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-blue-500/40 bg-blue-500/10 text-blue-400 text-xs font-bold tracking-wider uppercase mb-5">
-            <span className="w-2 h-2 rounded-full bg-blue-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-white/20 bg-white/[0.05] text-white text-xs font-mono font-bold tracking-wider uppercase mb-5">
+            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             <span>CONTACT &amp; INQUIRIES</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.8rem] font-extrabold tracking-tight text-white mb-5 leading-[1.12]">
@@ -134,7 +134,7 @@ export default function ContactPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left Column: Interactive Form matching reference image 100% */}
-          <div className="lg:col-span-7 bg-[#0E1017] border border-white/10 rounded-[28px] p-7 sm:p-10 shadow-2xl">
+          <div className="lg:col-span-7 bg-[#0C0C0C] border border-white/10 rounded-[28px] p-7 sm:p-10 shadow-2xl">
             {submitted ? (
               needsActivation ? (
                 /* One-time FormSubmit Activation Screen */
@@ -393,7 +393,7 @@ export default function ContactPage() {
                         setFormData({ ...formData, email: e.target.value })
                       }
                       placeholder="alex@company.com"
-                      className="w-full px-5 py-3.5 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-blue-400 focus:bg-[#181B26] transition-all bg-[#141724]"
+                      className="w-full px-5 py-3.5 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-white focus:bg-[#141414] transition-all bg-[#000000]"
                     />
                   </div>
 
@@ -403,7 +403,7 @@ export default function ContactPage() {
                       className="block text-xs font-bold text-white/80 uppercase tracking-wider mb-2 flex items-center justify-between"
                     >
                       <span>Mobile Number *</span>
-                      <span className="text-[11px] text-blue-400 font-normal lowercase">required</span>
+                      <span className="text-[11px] text-zinc-400 font-normal lowercase">required</span>
                     </label>
                     <input
                       id="phone"
@@ -414,7 +414,7 @@ export default function ContactPage() {
                         setFormData({ ...formData, phone: e.target.value })
                       }
                       placeholder="+91 98765 43210"
-                      className="w-full px-5 py-3.5 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-blue-400 focus:bg-[#181B26] transition-all bg-[#141724]"
+                      className="w-full px-5 py-3.5 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-white focus:bg-[#141414] transition-all bg-[#000000]"
                     />
                   </div>
                 </div>
@@ -435,14 +435,14 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, service: e.target.value })
                         }
-                        className="w-full px-5 py-3.5 pr-10 rounded-2xl border border-white/10 text-sm text-white bg-[#141724] focus:outline-none focus:border-blue-400 focus:bg-[#181B26] transition-all appearance-none cursor-pointer"
+                        className="w-full px-5 py-3.5 pr-10 rounded-2xl border border-white/10 text-sm text-white bg-[#000000] focus:outline-none focus:border-white focus:bg-[#141414] transition-all appearance-none cursor-pointer"
                       >
-                        <option value="Website Design" className="bg-[#141724] text-white">Website Design</option>
-                        <option value="Frontend Development" className="bg-[#141724] text-white">Frontend Development</option>
-                        <option value="WordPress Development" className="bg-[#141724] text-white">WordPress Development</option>
-                        <option value="Shopify Development" className="bg-[#141724] text-white">Shopify Storefront</option>
-                        <option value="CMS (Webflow / HubSpot / Wix)" className="bg-[#141724] text-white">CMS Development</option>
-                        <option value="Website Improvements" className="bg-[#141724] text-white">Website Improvements</option>
+                        <option value="Website Design" className="bg-[#0C0C0C] text-white">Website Design</option>
+                        <option value="Frontend Development" className="bg-[#0C0C0C] text-white">Frontend Development</option>
+                        <option value="WordPress Development" className="bg-[#0C0C0C] text-white">WordPress Development</option>
+                        <option value="Shopify Development" className="bg-[#0C0C0C] text-white">Shopify Storefront</option>
+                        <option value="CMS (Webflow / HubSpot / Wix)" className="bg-[#0C0C0C] text-white">CMS Development</option>
+                        <option value="Website Improvements" className="bg-[#0C0C0C] text-white">Website Improvements</option>
                       </select>
                       <ChevronDown className="w-4 h-4 text-white/50 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                     </div>
@@ -462,12 +462,12 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, timeline: e.target.value })
                         }
-                        className="w-full px-5 py-3.5 pr-10 rounded-2xl border border-white/10 text-sm text-white bg-[#141724] focus:outline-none focus:border-blue-400 focus:bg-[#181B26] transition-all appearance-none cursor-pointer"
+                        className="w-full px-5 py-3.5 pr-10 rounded-2xl border border-white/10 text-sm text-white bg-[#000000] focus:outline-none focus:border-white focus:bg-[#141414] transition-all appearance-none cursor-pointer"
                       >
-                        <option value="As soon as possible" className="bg-[#141724] text-white">As soon as possible</option>
-                        <option value="Within 2-4 weeks" className="bg-[#141724] text-white">Within 2–4 weeks</option>
-                        <option value="1-2 months" className="bg-[#141724] text-white">1–2 months</option>
-                        <option value="Flexible / Ongoing" className="bg-[#141724] text-white">Flexible / Ongoing</option>
+                        <option value="As soon as possible" className="bg-[#0C0C0C] text-white">As soon as possible</option>
+                        <option value="Within 2-4 weeks" className="bg-[#0C0C0C] text-white">Within 2–4 weeks</option>
+                        <option value="1-2 months" className="bg-[#0C0C0C] text-white">1–2 months</option>
+                        <option value="Flexible / Ongoing" className="bg-[#0C0C0C] text-white">Flexible / Ongoing</option>
                       </select>
                       <ChevronDown className="w-4 h-4 text-white/50 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                     </div>
@@ -491,7 +491,7 @@ export default function ContactPage() {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     placeholder="Tell me briefly about what you want to design, build, or fix..."
-                    className="w-full px-5 py-4 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-blue-400 focus:bg-[#181B26] transition-all bg-[#141724] resize-none"
+                    className="w-full px-5 py-4 rounded-2xl border border-white/10 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-white focus:bg-[#141414] transition-all bg-[#000000] resize-none"
                   />
                 </div>
 
@@ -499,25 +499,24 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full group relative inline-flex items-center justify-center gap-3 py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white font-bold text-base shadow-[0_4px_25px_rgba(245,120,30,0.45)] hover:shadow-[0_6px_30px_rgba(245,120,30,0.65)] hover:scale-[1.01] active:scale-95 transition-all duration-300 overflow-hidden disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+                  className="w-full group relative inline-flex items-center justify-center gap-3 py-4 rounded-full bg-white hover:bg-zinc-200 text-black font-extrabold text-base shadow-[0_4px_25px_rgba(255,255,255,0.2)] hover:scale-[1.01] active:scale-95 transition-all duration-300 overflow-hidden disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="w-5 h-5 animate-spin text-white" />
+                      <Loader2 className="w-5 h-5 animate-spin text-black" />
                       <span>Sending Inquiry to Inbox...</span>
                     </>
                   ) : (
                     <>
                       <span className="inline-grid grid-cols-1 grid-rows-1 overflow-hidden h-6 select-none items-center justify-center">
-                        <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out group-hover:-translate-y-[140%]">
+                        <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out group-hover:-translate-y-[140%] text-black font-extrabold">
                           Send Inquiry Directly
                         </span>
-                        <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 text-blue-100 font-extrabold">
+                        <span className="col-start-1 row-start-1 flex items-center justify-center whitespace-nowrap leading-none transition-transform duration-300 ease-out translate-y-[140%] group-hover:translate-y-0 text-black font-extrabold">
                           Deliver to Sham&apos;s Inbox →
                         </span>
                       </span>
-                      <Send className="w-4 h-4 text-white transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                      <Send className="w-4 h-4 text-black transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </>
                   )}
                 </button>
@@ -528,7 +527,7 @@ export default function ContactPage() {
           {/* Right Column: Direct Contact & Info Cards matching reference image 100% */}
           <div className="lg:col-span-5 space-y-7">
             {/* Direct Contact Card */}
-            <div className="bg-[#0E1017] border border-white/10 rounded-[28px] p-7 sm:p-9 shadow-xl space-y-6 text-white">
+            <div className="bg-[#0C0C0C] border border-white/10 rounded-[28px] p-7 sm:p-9 shadow-xl space-y-6 text-white">
               <h3 className="text-xl font-bold text-white tracking-tight pb-2">
                 Direct Contact
               </h3>
@@ -536,14 +535,14 @@ export default function ContactPage() {
               {/* Email item */}
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-white/50 font-semibold mb-0.5">Email</div>
+                    <div className="text-xs text-zinc-400 font-semibold mb-0.5">Email</div>
                     <a
                       href={`mailto:${SITE_CONFIG.email}`}
-                      className="text-sm sm:text-base font-bold text-white hover:text-blue-400 transition-colors break-all"
+                      className="text-sm sm:text-base font-bold text-white hover:text-zinc-300 transition-colors break-all"
                     >
                       {SITE_CONFIG.email}
                     </a>
@@ -552,7 +551,7 @@ export default function ContactPage() {
                 <button
                   type="button"
                   onClick={handleCopyEmail}
-                  className="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 text-white/80 hover:bg-blue-500 hover:text-white border border-white/10 transition-colors cursor-pointer shrink-0"
+                  className="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 text-white hover:bg-white hover:text-black border border-white/15 transition-colors cursor-pointer shrink-0"
                 >
                   {copied ? "Copied!" : "Copy"}
                 </button>
@@ -560,14 +559,14 @@ export default function ContactPage() {
 
               {/* Phone item */}
               <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-white/50 font-semibold mb-0.5">Phone</div>
+                  <div className="text-xs text-zinc-400 font-semibold mb-0.5">Phone</div>
                   <a
                     href={`tel:${SITE_CONFIG.phone}`}
-                    className="text-sm sm:text-base font-bold text-white hover:text-blue-400 transition-colors"
+                    className="text-sm sm:text-base font-bold text-white hover:text-zinc-300 transition-colors"
                   >
                     {SITE_CONFIG.phone}
                   </a>
@@ -576,16 +575,16 @@ export default function ContactPage() {
 
               {/* WhatsApp item */}
               <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/15 text-white flex items-center justify-center shrink-0">
                   <WhatsAppIcon className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-white/50 font-semibold mb-0.5">WhatsApp</div>
+                  <div className="text-xs text-zinc-400 font-semibold mb-0.5">WhatsApp</div>
                   <a
                     href="https://wa.me/917876525326?text=Hi%20Sham,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group text-sm sm:text-base font-bold text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1.5"
+                    className="group text-sm sm:text-base font-bold text-white hover:text-zinc-300 transition-colors inline-flex items-center gap-1.5"
                   >
                     <span>+91-7876525326</span>
                     <ArrowUpRight className="w-3.5 h-3.5 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -595,11 +594,11 @@ export default function ContactPage() {
 
               {/* Location item */}
               <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white shrink-0">
                   <Globe className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-white/50 font-semibold mb-0.5">Location</div>
+                  <div className="text-xs text-zinc-400 font-semibold mb-0.5">Location</div>
                   <div className="text-sm sm:text-base font-bold text-white">
                     India · Working remotely worldwide
                   </div>
@@ -608,26 +607,26 @@ export default function ContactPage() {
 
               {/* Availability item */}
               <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-white/50 font-semibold mb-0.5">Availability</div>
-                  <div className="text-sm font-semibold text-emerald-400">
+                  <div className="text-xs text-zinc-400 font-semibold mb-0.5">Availability</div>
+                  <div className="text-sm font-semibold text-white">
                     Open for select freelance projects
                   </div>
                 </div>
               </div>
 
               {/* Profiles bottom bar */}
-              <div className="pt-5 border-t border-white/10 flex items-center gap-5 text-sm font-semibold text-white/70">
+              <div className="pt-5 border-t border-white/10 flex items-center gap-5 text-sm font-semibold text-zinc-300">
                 <a
                   href={SITE_CONFIG.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-blue-400 transition-colors"
+                  className="inline-flex items-center gap-2 hover:text-white transition-colors"
                 >
-                  <LinkedInIcon className="w-4 h-4" />
+                  <LinkedInIcon className="w-4 h-4 text-white" />
                   <span>LinkedIn</span>
                 </a>
 
@@ -635,9 +634,9 @@ export default function ContactPage() {
                   href={SITE_CONFIG.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-blue-400 transition-colors"
+                  className="inline-flex items-center gap-2 hover:text-white transition-colors"
                 >
-                  <GitHubIcon className="w-4 h-4" />
+                  <GitHubIcon className="w-4 h-4 text-white" />
                   <span>GitHub</span>
                 </a>
 
@@ -645,16 +644,16 @@ export default function ContactPage() {
                   href="https://wa.me/917876525326"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-white hover:text-zinc-300 transition-colors"
                 >
-                  <WhatsAppIcon className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4 text-white" />
                   <span>WhatsApp</span>
                 </a>
               </div>
             </div>
 
             {/* Quick Collaboration Notes Card */}
-            <div className="bg-[#0E1017] border border-white/10 rounded-[28px] p-7 sm:p-8 text-xs sm:text-sm text-white/60 space-y-3.5 shadow-xl">
+            <div className="bg-[#0C0C0C] border border-white/10 rounded-[28px] p-7 sm:p-8 text-xs sm:text-sm text-zinc-400 space-y-3.5 shadow-xl">
               <div className="font-bold text-white text-base mb-1">
                 Collaboration Notes
               </div>

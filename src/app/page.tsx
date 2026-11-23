@@ -50,7 +50,7 @@ export default async function HomePage() {
   const dynamicProjects = await getAllDynamicProjects();
 
   return (
-    <main className="relative bg-[#05070E] text-white selection:bg-blue-500/30 selection:text-blue-200 min-h-screen">
+    <main className="relative bg-[#000000] text-white selection:bg-white selection:text-black min-h-screen">
       {/* Top Dynamic Scroll Progress Indicator */}
       <ScrollProgressBar />
 

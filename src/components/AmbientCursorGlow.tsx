@@ -48,8 +48,8 @@ export function AmbientCursorGlow() {
         translateY: "-50%",
       }}
     >
-      {/* Soft warm sunset ambient spotlight aura */}
-      <div className="w-[450px] h-[450px] rounded-full bg-gradient-to-br from-amber-500/[0.07] via-orange-500/[0.04] to-transparent blur-[90px]" />
+      {/* Soft pure white/silver monochrome ambient spotlight aura */}
+      <div className="w-[500px] h-[500px] rounded-full bg-white/[0.035] blur-[100px]" />
     </motion.div>
   );
 }

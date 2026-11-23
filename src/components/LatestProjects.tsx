@@ -58,7 +58,7 @@ function EditorialProjectCard({ project, idx }: { project: DynamicProject; idx: 
         rotateY,
         transformStyle: "preserve-3d",
       }}
-      className="group rounded-3xl bg-gradient-to-b from-[#0F1424] to-[#080B14] border border-white/10 hover:border-blue-500/50 p-6 sm:p-8 transition-colors duration-300 shadow-xl hover:shadow-[0_20px_50px_-15px_rgba(59,130,246,0.22)] flex flex-col justify-between relative overflow-hidden"
+      className="group rounded-3xl bg-[#0C0C0C] border border-white/10 hover:border-white/50 p-6 sm:p-8 transition-colors duration-300 shadow-xl hover:shadow-[0_20px_50px_-15px_rgba(255,255,255,0.12)] flex flex-col justify-between relative overflow-hidden"
     >
       {/* Glare effect */}
       <motion.div
@@ -67,13 +67,13 @@ function EditorialProjectCard({ project, idx }: { project: DynamicProject; idx: 
           background: useTransform(
             [glareX, glareY],
             ([gx, gy]) =>
-              `radial-gradient(500px circle at ${gx} ${gy}, rgba(59, 130, 246, 0.16), transparent 70%)`
+              `radial-gradient(500px circle at ${gx} ${gy}, rgba(255, 255, 255, 0.12), transparent 70%)`
           ),
         }}
       />
 
       {/* Top ambient highlight on hover */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/0 group-hover:via-blue-400/90 to-transparent transition-all duration-500 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/0 group-hover:via-white/80 to-transparent transition-all duration-500 pointer-events-none" />
 
       <div>
         {/* Media Preview Container with Browser Top Bar */}
@@ -87,11 +87,11 @@ function EditorialProjectCard({ project, idx }: { project: DynamicProject; idx: 
             priority={idx < 2}
           />
           {/* Subtle inner shadow overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D15]/85 via-transparent to-black/25 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0C]/85 via-transparent to-black/25 pointer-events-none" />
 
           {/* Top Badges */}
           <div className="absolute top-4 left-4 flex flex-wrap items-center gap-2 z-10">
-            <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#0A0D15]/90 backdrop-blur-md text-blue-300 border border-blue-400/30 shadow-md">
+            <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-black/90 backdrop-blur-md text-white border border-white/20 shadow-md">
               {project.platform}
             </span>
             <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-white/15 backdrop-blur-md text-white/90 border border-white/20">
@@ -101,8 +101,8 @@ function EditorialProjectCard({ project, idx }: { project: DynamicProject; idx: 
 
           {/* Outcome Tag on Media bottom */}
           {project.outcome && (
-            <div className="absolute bottom-3 left-3 right-3 px-3.5 py-2 rounded-xl bg-[#080B12]/90 backdrop-blur-md border border-white/10 text-xs font-medium text-white/90 flex items-center gap-2 z-10 group-hover:border-blue-400/30 transition-colors">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            <div className="absolute bottom-3 left-3 right-3 px-3.5 py-2 rounded-xl bg-black/90 backdrop-blur-md border border-white/15 text-xs font-medium text-white/90 flex items-center gap-2 z-10 group-hover:border-white/30 transition-colors">
+              <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
               <span className="line-clamp-1">{project.outcome}</span>
             </div>
           )}
@@ -111,7 +111,7 @@ function EditorialProjectCard({ project, idx }: { project: DynamicProject; idx: 
         {/* Project Header Info */}
         <div className="flex items-start justify-between gap-4 mb-3">
           <div>
-            <h3 className="text-2xl font-extrabold text-white group-hover:text-blue-300 transition-colors tracking-tight">
+            <h3 className="text-2xl font-extrabold text-white group-hover:text-zinc-200 transition-colors tracking-tight">
               {project.title}
             </h3>
             <p className="text-xs font-semibold text-white/50 uppercase tracking-wider mt-1 font-mono">
@@ -121,16 +121,16 @@ function EditorialProjectCard({ project, idx }: { project: DynamicProject; idx: 
         </div>
 
         {/* Short Description */}
-        <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-6 font-normal">
+        <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6 font-normal">
           {project.shortDesc || project.overview}
         </p>
 
-        {/* Tech Stack Pills (Max 3 clean badges) */}
+        {/* Tech Stack Pills (Max 4 clean badges) */}
         <div className="flex flex-wrap gap-2 mb-8">
           {project.tags.slice(0, 4).map((tag) => (
             <span
               key={tag}
-              className="text-xs font-mono font-medium px-2.5 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-slate-300 group-hover:border-blue-500/30 group-hover:text-blue-200 transition-colors"
+              className="text-xs font-mono font-medium px-2.5 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-zinc-300 group-hover:border-white/30 group-hover:text-white transition-colors"
             >
               {tag}
             </span>
@@ -147,10 +147,10 @@ function EditorialProjectCard({ project, idx }: { project: DynamicProject; idx: 
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.96 }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs sm:text-sm shadow-md shadow-blue-500/25 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black hover:bg-zinc-200 font-extrabold text-xs sm:text-sm shadow-md transition-all cursor-pointer"
           >
             <span>View Live Site</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <ExternalLink className="w-3.5 h-3.5 text-black" />
           </motion.a>
         )}
 
@@ -158,10 +158,10 @@ function EditorialProjectCard({ project, idx }: { project: DynamicProject; idx: 
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.96 }}>
             <Link
               href={project.caseStudyUrl}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white/90 hover:text-white border border-white/15 hover:border-blue-400/40 font-semibold text-xs sm:text-sm transition-all"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white hover:text-black text-white/90 border border-white/20 font-semibold text-xs sm:text-sm transition-all"
             >
               <span>Read Case Study</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-blue-400" />
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </motion.div>
         )}
@@ -186,10 +186,10 @@ export function LatestProjects({ initialProjects = SEED_DYNAMIC_PROJECTS }: Late
   }, [activeCategory, initialProjects]);
 
   return (
-    <section id="latest-projects" className="py-20 md:py-28 bg-[#05070E] text-white border-t border-white/10 relative overflow-hidden">
+    <section id="latest-projects" className="py-20 md:py-28 bg-[#000000] text-white border-t border-white/10 relative overflow-hidden">
       {/* Ambient background glow accents */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-blue-600/[0.05] blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-indigo-600/[0.04] blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-white/[0.02] blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-white/[0.02] blur-[140px] pointer-events-none" />
 
       <div className="site-container relative z-10">
         {/* Section Header */}
@@ -201,14 +201,14 @@ export function LatestProjects({ initialProjects = SEED_DYNAMIC_PROJECTS }: Late
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16"
         >
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold mb-3 border border-blue-500/20 font-mono">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] text-white text-xs font-bold mb-3 border border-white/20 font-mono">
               <Sparkles className="w-3.5 h-3.5" />
               <span>LIVE BUILDS &amp; CLIENT DELIVERIES</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight text-white leading-tight">
               Latest Projects
             </h2>
-            <p className="text-base sm:text-lg text-white/65 mt-3 leading-relaxed">
+            <p className="text-base sm:text-lg text-zinc-300 mt-3 leading-relaxed">
               Real client websites and custom web applications engineered for speed, conversion, and seamless content management.
             </p>
           </div>
@@ -223,13 +223,13 @@ export function LatestProjects({ initialProjects = SEED_DYNAMIC_PROJECTS }: Late
                   type="button"
                   onClick={() => setActiveCategory(cat)}
                   className={`relative px-4 py-2 rounded-full text-xs font-bold transition-colors whitespace-nowrap cursor-pointer ${
-                    active ? "text-white" : "text-white/70 hover:text-white"
+                    active ? "text-black font-extrabold" : "text-zinc-400 hover:text-white"
                   }`}
                 >
                   {active && (
                     <motion.div
                       layoutId="latestCategoryPill"
-                      className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 shadow-md shadow-blue-500/25"
+                      className="absolute inset-0 rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.25)]"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -263,10 +263,10 @@ export function LatestProjects({ initialProjects = SEED_DYNAMIC_PROJECTS }: Late
         >
           <Link
             href="/work"
-            className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 hover:border-blue-400/50 text-white font-bold text-sm transition-all shadow-lg hover:scale-105 active:scale-95"
+            className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/20 text-white font-bold text-sm transition-all shadow-lg hover:scale-105 active:scale-95"
           >
             <span>Explore All 30+ Client Works &amp; Case Studies</span>
-            <ArrowUpRight className="w-4 h-4 text-blue-400 transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="w-4 h-4 text-white group-hover:text-black transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </motion.div>
       </div>

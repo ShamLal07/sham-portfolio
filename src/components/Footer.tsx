@@ -13,9 +13,9 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t border-white/10 bg-[#06080E] py-12 sm:py-16 text-white relative overflow-hidden">
+    <footer className="border-t border-white/10 bg-[#000000] py-12 sm:py-16 text-white relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-blue-600/[0.05] blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-white/[0.02] blur-[120px] pointer-events-none" />
 
       <div className="site-container relative z-10">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pb-8 border-b border-white/10">
@@ -26,29 +26,29 @@ export function Footer() {
             </Link>
             <span className="text-lg font-extrabold text-white">Sham Lal</span>
             <span className="hidden sm:inline text-white/20">·</span>
-            <span className="text-sm text-white/60 font-medium">
+            <span className="text-sm text-zinc-400 font-medium">
               Web Developer &amp; UI/UX Designer
             </span>
           </div>
 
           {/* Links with generous gap */}
-          <nav className="flex flex-wrap items-center gap-6 text-sm font-semibold text-white/70">
-            <Link href="/work" className="hover:text-blue-400 transition-colors py-1">
+          <nav className="flex flex-wrap items-center gap-6 text-sm font-semibold text-zinc-400">
+            <Link href="/work" className="hover:text-white transition-colors py-1">
               Work
             </Link>
-            <Link href="/services" className="hover:text-blue-400 transition-colors py-1">
+            <Link href="/services" className="hover:text-white transition-colors py-1">
               Services
             </Link>
-            <Link href="/about" className="hover:text-blue-400 transition-colors py-1">
+            <Link href="/about" className="hover:text-white transition-colors py-1">
               About
             </Link>
-            <Link href="/#experience" className="hover:text-blue-400 transition-colors py-1">
+            <Link href="/#experience" className="hover:text-white transition-colors py-1">
               Experience
             </Link>
-            <Link href="/blog" className="hover:text-blue-400 transition-colors py-1">
+            <Link href="/blog" className="hover:text-white transition-colors py-1">
               Blog
             </Link>
-            <Link href="/contact" className="hover:text-blue-400 transition-colors py-1">
+            <Link href="/contact" className="hover:text-white transition-colors py-1">
               Contact
             </Link>
           </nav>
@@ -59,7 +59,7 @@ export function Footer() {
               href="https://wa.me/917876525326?text=Hi%20Sham%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/25 hover:text-emerald-300 transition-all"
+              className="p-2.5 rounded-full border border-white/15 bg-white/[0.05] text-white hover:text-black hover:border-white hover:bg-white transition-all"
               aria-label="WhatsApp"
               title="Chat on WhatsApp"
             >
@@ -69,7 +69,7 @@ export function Footer() {
               href={SITE_CONFIG.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-full border border-white/10 bg-white/[0.05] text-white/70 hover:text-blue-400 hover:border-blue-400/40 hover:bg-white/[0.12] transition-all"
+              className="p-2.5 rounded-full border border-white/15 bg-white/[0.05] text-zinc-300 hover:text-white hover:border-white/40 hover:bg-white/[0.12] transition-all"
               aria-label="LinkedIn"
             >
               <LinkedInIcon className="w-4 h-4" />
@@ -78,14 +78,14 @@ export function Footer() {
               href={SITE_CONFIG.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-full border border-white/10 bg-white/[0.05] text-white/70 hover:text-blue-400 hover:border-blue-400/40 hover:bg-white/[0.12] transition-all"
+              className="p-2.5 rounded-full border border-white/15 bg-white/[0.05] text-zinc-300 hover:text-white hover:border-white/40 hover:bg-white/[0.12] transition-all"
               aria-label="GitHub"
             >
               <GitHubIcon className="w-4 h-4" />
             </a>
             <a
               href={`mailto:${SITE_CONFIG.email}`}
-              className="p-2.5 rounded-full border border-white/10 bg-white/[0.05] text-white/70 hover:text-blue-400 hover:border-blue-400/40 hover:bg-white/[0.12] transition-all"
+              className="p-2.5 rounded-full border border-white/15 bg-white/[0.05] text-zinc-300 hover:text-white hover:border-white/40 hover:bg-white/[0.12] transition-all"
               aria-label="Email"
             >
               <Mail className="w-4 h-4" />
@@ -93,7 +93,7 @@ export function Footer() {
             <button
               type="button"
               onClick={scrollToTop}
-              className="w-10 h-10 rounded-full border border-white/10 bg-white/[0.05] flex items-center justify-center text-white/70 hover:text-blue-400 hover:border-blue-400/40 hover:bg-white/[0.12] transition-all ml-1 cursor-pointer active:scale-95"
+              className="w-10 h-10 rounded-full border border-white/15 bg-white/[0.05] flex items-center justify-center text-zinc-300 hover:text-white hover:border-white/40 hover:bg-white/[0.12] transition-all ml-1 cursor-pointer active:scale-95"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />
@@ -102,7 +102,7 @@ export function Footer() {
         </div>
 
         {/* Bottom copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white/40">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-zinc-500">
           <div>
             © {new Date().getFullYear()} Sham Lal. All rights reserved.
           </div>

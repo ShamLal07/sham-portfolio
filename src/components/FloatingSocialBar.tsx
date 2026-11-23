@@ -11,8 +11,8 @@ export function FloatingSocialBar() {
         "Hi Sham, I'm visiting shamdev.in and I'd like to discuss a project."
       )}`,
       label: "WhatsApp • Chat with Sham",
-      bgColor: "bg-[#25D366] hover:bg-[#20bd5a] text-white border-[#25D366]/60 hover:border-emerald-300",
-      shadowGlow: "hover:shadow-[0_0_24px_rgba(37,211,102,0.65)]",
+      bgColor: "bg-white/10 hover:bg-white text-white hover:text-black border-white/20 hover:border-white",
+      shadowGlow: "hover:shadow-[0_0_20px_rgba(255,255,255,0.45)]",
       icon: (
         <svg className="w-5 h-5 fill-current transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8 2.53 1.09 2.53.73 2.99.69.46-.04 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z" />
@@ -39,8 +39,8 @@ export function FloatingSocialBar() {
       name: "LinkedIn",
       url: SITE_CONFIG.linkedin,
       label: "LinkedIn • Sham Lal",
-      bgColor: "bg-[#0A66C2] hover:bg-[#0077B5] text-white border-[#0A66C2]/60 hover:border-cyan-300",
-      shadowGlow: "hover:shadow-[0_0_24px_rgba(10,102,194,0.65)]",
+      bgColor: "bg-white/10 hover:bg-white text-white hover:text-black border-white/20 hover:border-white",
+      shadowGlow: "hover:shadow-[0_0_20px_rgba(255,255,255,0.45)]",
       icon: (
         <svg className="w-5 h-5 fill-current transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37z" />
@@ -52,18 +52,18 @@ export function FloatingSocialBar() {
   return (
     <aside
       className="fixed bottom-0 right-3 sm:right-6 md:right-8 z-40 flex flex-col items-center gap-2.5 select-none"
-      aria-label="Connect Directly on GitHub, Upwork, and LinkedIn"
+      aria-label="Connect Directly on WhatsApp, GitHub, and LinkedIn"
     >
       {/* 1. Glass Vertical Dock on the RIGHT side */}
-      <div className="flex flex-col items-center gap-3 p-2 sm:p-2.5 rounded-2xl bg-[#12141F]/90 backdrop-blur-2xl border border-white/20 shadow-[0_12px_45px_rgba(0,0,0,0.85)] hover:border-amber-400/50 transition-all duration-300">
+      <div className="flex flex-col items-center gap-3 p-2 sm:p-2.5 rounded-2xl bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/20 shadow-[0_12px_45px_rgba(0,0,0,0.95)] hover:border-white/40 transition-all duration-300">
         {/* Availability / Connect Radar Beacon */}
-        <div className="relative group/status flex items-center justify-center p-1.5 rounded-xl text-emerald-400 transition-colors cursor-pointer">
+        <div className="relative group/status flex items-center justify-center p-1.5 rounded-xl text-white transition-colors cursor-pointer">
           <span className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80" />
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 shadow-[0_0_12px_#10B981]" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-70" />
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-white shadow-[0_0_12px_#ffffff]" />
           </span>
           {/* Tooltip to the LEFT */}
-          <span className="pointer-events-none absolute right-full mr-3.5 px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap bg-[#12131A] text-emerald-300 border border-emerald-500/40 opacity-0 group-hover/status:opacity-100 translate-x-2 group-hover/status:translate-x-0 transition-all duration-200 shadow-2xl z-50">
+          <span className="pointer-events-none absolute right-full mr-3.5 px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap bg-[#0C0C0C] text-white border border-white/20 opacity-0 group-hover/status:opacity-100 translate-x-2 group-hover/status:translate-x-0 transition-all duration-200 shadow-2xl z-50">
             Available • Let&apos;s Connect
           </span>
         </div>
@@ -84,7 +84,7 @@ export function FloatingSocialBar() {
             {social.icon}
 
             {/* Slide-out Tooltip to the LEFT */}
-            <span className="pointer-events-none absolute right-full mr-3.5 px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide whitespace-nowrap bg-[#12141F] text-white border border-white/20 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-200 shadow-2xl z-50 backdrop-blur-md">
+            <span className="pointer-events-none absolute right-full mr-3.5 px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide whitespace-nowrap bg-[#0C0C0C] text-white border border-white/20 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-200 shadow-2xl z-50 backdrop-blur-md">
               {social.label}
             </span>
           </a>
@@ -94,7 +94,7 @@ export function FloatingSocialBar() {
       {/* 2. Taller Animated Connector Wire extending down to bottom screen edge */}
       <div className="relative flex flex-col items-center w-6 h-20 sm:h-28 overflow-hidden">
         {/* Vertical Wire Line */}
-        <div className="w-[2px] h-full bg-gradient-to-b from-[#F5781E] via-amber-400/50 to-transparent relative">
+        <div className="w-[2px] h-full bg-gradient-to-b from-white/80 via-white/30 to-transparent relative">
           {/* Flowing Light Beam Pulse */}
           <div className="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-transparent via-white to-transparent animate-pulse" />
         </div>

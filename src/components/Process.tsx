@@ -13,8 +13,6 @@ import {
   Sparkles,
   ShieldCheck,
   Clock,
-  Terminal,
-  FileCode,
   Laptop,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -163,15 +161,15 @@ export function Process() {
   return (
     <section
       id="process"
-      className="py-20 md:py-32 bg-[#05070E] text-white border-t border-white/10 relative overflow-hidden"
+      className="py-24 sm:py-32 lg:py-40 bg-[#000000] text-white border-t border-white/10 relative overflow-hidden"
     >
       {/* Studio Background Ambient Lighting */}
-      <div className="absolute top-1/3 -left-48 w-96 h-96 rounded-full bg-blue-600/[0.05] blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-48 w-96 h-96 rounded-full bg-indigo-600/[0.04] blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/3 -left-48 w-96 h-96 rounded-full bg-white/[0.02] blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-48 w-96 h-96 rounded-full bg-white/[0.02] blur-[150px] pointer-events-none" />
 
       {/* Fluted Grid Background Texture */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-[0.025] pointer-events-none"
         style={{
           backgroundImage:
             "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
@@ -189,8 +187,8 @@ export function Process() {
           className="text-center max-w-3xl mx-auto mb-14 sm:mb-20"
         >
           {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 text-xs font-mono font-bold tracking-wider mb-4">
-            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/20 text-white text-xs font-mono font-bold tracking-wider mb-4">
+            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             <span>ENGINEERING ROADMAP · OUR 5-STEP PROCESS</span>
           </div>
 
@@ -198,25 +196,25 @@ export function Process() {
             Our Simple 5-Step Process
           </h2>
 
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+          <p className="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
             No guesswork, no missed deadlines, no surprise scope creep. Every project follows a
             battle-tested engineering roadmap designed for complete transparency from day one.
           </p>
 
           {/* Quick Metrics Trust Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-400 font-mono">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-zinc-400 font-mono">
             <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <CheckCircle2 className="w-4 h-4 text-white" />
               <span>14–15 Day Typical Turnaround</span>
             </span>
             <span className="hidden sm:inline text-white/20">|</span>
             <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <CheckCircle2 className="w-4 h-4 text-white" />
               <span>30-Day Post-Launch Warranty</span>
             </span>
             <span className="hidden sm:inline text-white/20">|</span>
             <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <CheckCircle2 className="w-4 h-4 text-white" />
               <span>Direct WhatsApp Communication</span>
             </span>
           </div>
@@ -233,13 +231,13 @@ export function Process() {
                 onClick={() => setActiveStepIndex(idx)}
                 className={`relative px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all shrink-0 cursor-pointer flex items-center gap-2 border ${
                   isActive
-                    ? "bg-[#0E1322] border-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.25)]"
-                    : "bg-[#090C16] border-white/10 text-slate-400 hover:text-white hover:border-white/20"
+                    ? "bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.25)]"
+                    : "bg-[#0C0C0C] border-white/10 text-zinc-400 hover:text-white hover:border-white/20"
                 }`}
               >
                 <span
                   className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-extrabold ${
-                    isActive ? "bg-blue-600 text-white" : "bg-white/10 text-white/60"
+                    isActive ? "bg-black text-white" : "bg-white/10 text-white/60"
                   }`}
                 >
                   {step.number}
@@ -262,24 +260,24 @@ export function Process() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="rounded-3xl bg-gradient-to-b from-[#0F1424] to-[#080B14] border border-blue-500/40 p-6 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden flex flex-col justify-between flex-1"
+                className="rounded-3xl bg-[#0C0C0C] border border-white/20 p-6 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden flex flex-col justify-between flex-1"
               >
                 {/* Ambient Top Glow */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
                 <div>
                   {/* Terminal Header */}
                   <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/[0.08]">
                     <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                      <span className="ml-2 text-xs font-mono text-blue-300 font-bold">
+                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-600" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-500" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-400" />
+                      <span className="ml-2 text-xs font-mono text-white font-bold">
                         {activeStep.terminalTag}
                       </span>
                     </div>
 
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-mono font-bold">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-mono font-bold">
                       <Clock className="w-3.5 h-3.5" />
                       <span>{activeStep.duration}</span>
                     </div>
@@ -290,27 +288,27 @@ export function Process() {
                     <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 leading-tight">
                       {activeStep.title}
                     </h3>
-                    <p className="text-sm font-semibold text-blue-400">
+                    <p className="text-sm font-semibold text-zinc-300">
                       {activeStep.subtitle}
                     </p>
                   </div>
 
                   {/* Narrative Description */}
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-8">
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-8 font-normal">
                     {activeStep.description}
                   </p>
 
                   {/* Technical Deliverables Checklist */}
-                  <div className="bg-[#090C16] rounded-2xl border border-white/10 p-5 sm:p-6 mb-6">
-                    <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <div className="bg-[#000000] rounded-2xl border border-white/10 p-5 sm:p-6 mb-6">
+                    <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-400 mb-4 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-white" />
                       <span>Guaranteed Client Deliverables</span>
                     </h4>
                     <ul className="space-y-3">
                       {activeStep.deliverables.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-white/90">
-                          <span className="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                          <span className="w-5 h-5 rounded-full bg-white/10 border border-white/25 flex items-center justify-center shrink-0 mt-0.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-white" />
                           </span>
                           <span>{item}</span>
                         </li>
@@ -319,9 +317,9 @@ export function Process() {
                   </div>
 
                   {/* Live Terminal Command Preview */}
-                  <div className="bg-[#04060A] rounded-xl border border-white/10 p-3.5 font-mono text-xs text-slate-400 flex items-center gap-2 overflow-x-auto">
-                    <span className="text-blue-400 select-none">$</span>
-                    <span className="text-slate-300">{activeStep.codeSnippet}</span>
+                  <div className="bg-[#050505] rounded-xl border border-white/10 p-3.5 font-mono text-xs text-zinc-400 flex items-center gap-2 overflow-x-auto">
+                    <span className="text-white select-none font-bold">$</span>
+                    <span className="text-zinc-200">{activeStep.codeSnippet}</span>
                   </div>
                 </div>
 
@@ -331,15 +329,15 @@ export function Process() {
                     {activeStep.techPills.map((tech) => (
                       <span
                         key={tech}
-                        className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-slate-300"
+                        className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.05] border border-white/15 text-zinc-300"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <div className="text-xs font-mono font-bold text-emerald-400 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5" />
+                  <div className="text-xs font-mono font-bold text-white flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-white" />
                     <span>{activeStep.metric}</span>
                   </div>
                 </div>
@@ -358,15 +356,15 @@ export function Process() {
                   onClick={() => setActiveStepIndex(idx)}
                   className={`text-left p-4 sm:p-5 rounded-2xl transition-all duration-300 border flex items-center justify-between gap-4 cursor-pointer group ${
                     isCurrent
-                      ? "bg-[#0E1322] border-blue-500 shadow-lg shadow-blue-500/15"
-                      : "bg-[#080B14] border-white/10 hover:border-white/20 hover:bg-[#0B0E1B]"
+                      ? "bg-[#141414] border-white/40 shadow-lg shadow-black"
+                      : "bg-[#0C0C0C] border-white/10 hover:border-white/20 hover:bg-[#141414]"
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     <div
                       className={`w-11 h-11 rounded-xl flex items-center justify-center font-mono font-extrabold text-sm shrink-0 transition-colors ${
                         isCurrent
-                          ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                          ? "bg-white text-black shadow-md shadow-white/10"
                           : "bg-white/[0.05] text-white/50 group-hover:text-white"
                       }`}
                     >
@@ -375,9 +373,9 @@ export function Process() {
 
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-[11px] font-mono text-slate-400">{step.duration}</span>
+                        <span className="text-[11px] font-mono text-zinc-400">{step.duration}</span>
                         {isCurrent && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                         )}
                       </div>
                       <h4
@@ -393,8 +391,8 @@ export function Process() {
                   <ArrowUpRight
                     className={`w-4 h-4 transition-all duration-300 shrink-0 ${
                       isCurrent
-                        ? "text-blue-400 translate-x-0.5 -translate-y-0.5"
-                        : "text-white/20 group-hover:text-white/50"
+                        ? "text-white translate-x-0.5 -translate-y-0.5"
+                        : "text-white/20 group-hover:text-white/60"
                     }`}
                   />
                 </button>
@@ -404,17 +402,17 @@ export function Process() {
         </div>
 
         {/* Trust Guarantee Ribbon (4 Pillars) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-[#090C16] border border-white/10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-[#0C0C0C] border border-white/10 mb-12">
           {TRUST_PILLARS.map((pillar) => {
             const Icon = pillar.icon;
             return (
               <div key={pillar.title} className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 text-white flex items-center justify-center shrink-0">
                   <Icon className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white mb-1">{pillar.title}</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">{pillar.desc}</p>
+                  <p className="text-xs text-zinc-400 leading-relaxed">{pillar.desc}</p>
                 </div>
               </div>
             );
@@ -427,7 +425,7 @@ export function Process() {
             href="https://wa.me/917876525326?text=Hi%20Sham%2C%20I%20reviewed%20your%205-step%20process%20and%20would%20like%20to%20discuss%20my%20website%20project."
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm shadow-[0_10px_25px_-5px_rgba(16,185,129,0.35)] hover:scale-105 active:scale-95 transition-all cursor-pointer"
+            className="group relative inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white hover:bg-zinc-200 text-black font-extrabold text-sm shadow-[0_10px_25px_-5px_rgba(255,255,255,0.2)] hover:scale-105 active:scale-95 transition-all cursor-pointer"
           >
             <WhatsAppIcon className="w-4 h-4" />
             <span>Start on WhatsApp (+91 78765 25326)</span>
@@ -435,10 +433,10 @@ export function Process() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 hover:border-blue-500/40 text-white font-semibold text-sm transition-all hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 hover:border-white/40 text-white font-semibold text-sm transition-all hover:scale-105 active:scale-95"
           >
             <span>Book Discovery Call</span>
-            <ArrowUpRight className="w-4 h-4 text-blue-400" />
+            <ArrowUpRight className="w-4 h-4 text-white" />
           </Link>
         </div>
       </div>

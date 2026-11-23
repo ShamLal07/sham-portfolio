@@ -68,18 +68,18 @@ export default function AboutPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[#0A0B0E] text-white overflow-hidden">
+    <div className="min-h-screen bg-[#000000] text-white overflow-hidden">
       {/* =========================================================================
           1. Hero Section: Strong Personal Introduction
           ========================================================================= */}
       <section className="relative pt-16 pb-18 sm:pt-20 sm:pb-24 border-b border-white/10 overflow-hidden">
-        {/* Ambient Warm Sunset Background Glow */}
+        {/* Ambient Subtle Background Glow */}
         <div className="absolute right-0 top-0 bottom-0 w-full pointer-events-none z-0 overflow-hidden">
-          <div className="absolute -right-24 top-1/3 -translate-y-1/2 w-[500px] h-[500px] sm:w-[650px] sm:h-[650px] rounded-full bg-gradient-to-br from-blue-500/20 via-cyan-600/15 to-transparent blur-[120px]" />
-          <div className="absolute top-0 left-1/4 w-[320px] h-[220px] bg-blue-600/5 blur-[100px]" />
+          <div className="absolute -right-24 top-1/3 -translate-y-1/2 w-[500px] h-[500px] sm:w-[650px] sm:h-[650px] rounded-full bg-white/[0.02] blur-[120px]" />
+          <div className="absolute top-0 left-1/4 w-[320px] h-[220px] bg-white/[0.015] blur-[100px]" />
           {/* Subtle ribbed fluted pattern matching homepage */}
           <div
-            className="absolute inset-0 opacity-[0.10] pointer-events-none"
+            className="absolute inset-0 opacity-[0.08] pointer-events-none"
             style={{
               backgroundImage:
                 "repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.35) 0px, rgba(255, 255, 255, 0.35) 1px, transparent 1px, transparent 24px)",
@@ -96,21 +96,21 @@ export default function AboutPage() {
             {/* Left Column: Headline, Bio & Primary CTAs */}
             <div className="lg:col-span-7">
               {/* Eyebrow Pill */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 text-xs font-bold tracking-wide uppercase mb-6">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/20 text-white text-xs font-mono font-bold tracking-wide uppercase mb-6">
+                <Sparkles className="w-3.5 h-3.5 text-white" />
                 <span>About Sham Lal · Web Designer &amp; Developer</span>
               </div>
 
               {/* Exact Requested Headline */}
               <h1 className="font-extrabold text-3xl sm:text-5xl lg:text-[3.65rem] tracking-tight text-white leading-[1.14] mb-6">
                 I Design and Build Digital Experiences{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-200">
+                <span className="text-zinc-300">
                   That Work.
                 </span>
               </h1>
 
               {/* Exact Requested Supporting Text */}
-              <p className="text-base sm:text-lg text-white/75 leading-relaxed mb-8 max-w-2xl font-normal">
+              <p className="text-base sm:text-lg text-zinc-300 leading-relaxed mb-8 max-w-2xl font-normal">
                 I’m Sham, a Web Designer and Web Developer focused on creating
                 thoughtful user experiences, responsive websites, and practical
                 digital solutions for businesses.
@@ -120,13 +120,12 @@ export default function AboutPage() {
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   href="/work"
-                  className="group relative inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white font-bold text-sm sm:text-base shadow-[0_10px_30px_-5px_rgba(37,99,235,0.45)] hover:shadow-[0_16px_40px_-5px_rgba(37,99,235,0.7)] hover:scale-[1.02] active:scale-95 transition-all duration-300 overflow-hidden"
+                  className="group relative inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white hover:bg-zinc-200 text-black font-extrabold text-sm sm:text-base shadow-[0_10px_30px_rgba(255,255,255,0.2)] hover:scale-[1.02] active:scale-95 transition-all duration-300 overflow-hidden"
                 >
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
                   <span>View My Work</span>
-                  <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center relative overflow-hidden shrink-0 border border-white/30">
-                    <ArrowUpRight className="w-3.5 h-3.5 text-white transform transition-transform duration-300 group-hover:translate-x-4 group-hover:-translate-y-4" />
-                    <ArrowUpRight className="w-3.5 h-3.5 text-blue-200 absolute transform -translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
+                  <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center relative overflow-hidden shrink-0 border border-black/20">
+                    <ArrowUpRight className="w-3.5 h-3.5 text-black transform transition-transform duration-300 group-hover:translate-x-4 group-hover:-translate-y-4" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-black absolute transform -translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
                   </div>
                 </Link>
 
@@ -137,7 +136,7 @@ export default function AboutPage() {
                   <span>Let’s Talk</span>
                   <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center relative overflow-hidden shrink-0 border border-white/20">
                     <ArrowUpRight className="w-3.5 h-3.5 text-white transform transition-transform duration-300 group-hover:translate-x-4 group-hover:-translate-y-4" />
-                    <ArrowUpRight className="w-3.5 h-3.5 text-blue-200 absolute transform -translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-white absolute transform -translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
                   </div>
                 </Link>
 
@@ -942,11 +941,10 @@ export default function AboutPage() {
               <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
                 <Link
                   href="/contact"
-                  className="group relative inline-flex items-center gap-3 px-9 py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white font-bold text-base shadow-[0_10px_30px_-5px_rgba(37,99,235,0.45)] hover:shadow-[0_16px_40px_-5px_rgba(37,99,235,0.7)] hover:scale-[1.03] active:scale-95 transition-all duration-300 overflow-hidden"
+                  className="group relative inline-flex items-center gap-3 px-9 py-4 rounded-full bg-white hover:bg-zinc-200 text-black font-extrabold text-base shadow-[0_10px_30px_rgba(255,255,255,0.2)] hover:scale-[1.03] active:scale-95 transition-all duration-300 overflow-hidden"
                 >
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
                   <span>Let’s Talk</span>
-                  <ArrowUpRight className="w-4 h-4 text-blue-200 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight className="w-4 h-4 text-black transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
 
                 <Link
