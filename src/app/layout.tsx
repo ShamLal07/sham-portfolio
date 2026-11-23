@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Roboto } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -127,6 +128,30 @@ export default function RootLayout({
         <JsonLd data={rootStructuredData} />
       </head>
       <body className="antialiased min-h-screen flex flex-col bg-[#0A0B0E] text-white selection:bg-[#F5781E] selection:text-white relative">
+        {/* Google Tag Manager (GTM-W9CCPCZ8) */}
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-W9CCPCZ8"
+        />
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+          `}
+        </Script>
+
+        {/* Google Tag Manager (noscript fallback) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-W9CCPCZ8"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {/* Global Architectural Background Grid, 5-6 Vertical Guide Lines & Ambient Shade */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
           {/* Subtle Ambient Sunset Tone & Radial Glows */}
